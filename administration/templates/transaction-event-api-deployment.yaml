@@ -32,3 +32,7 @@ spec:
               configMapKeyRef:
                 name: {{ .Values.transactioneventapi.name }}-config
                 key: ShareName
+          resources:
+            requests:
+              cpu: 1
+              memory: 100Mi

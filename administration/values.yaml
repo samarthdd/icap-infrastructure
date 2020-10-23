@@ -8,4 +8,4 @@ transactioneventapi:
   rolename: adaptation-service-role
   applabel: transaction-event-api
   secrets:
-    TransactionStoreConnectionStringCsv: RGVmYXVsdEVuZHBvaW50c1Byb3RvY29sPWh0dHBzO0FjY291bnROYW1lPXNlYmljYXA7QWNjb3VudEtleT1aWFk1SVR6a0JlcGJLUVVrNHF3dlJudWFWZ2t3M0Q5VGc5OVZjTG5xV05vVG9JbXBxb0c5NzZ2TWhwU2JjT0ZqcU9GNjRxbkk1dGV6eXN2dk1XRTdFZz09O0VuZHBvaW50U3VmZml4PWNvcmUud2luZG93cy5uZXQ=
+    TransactionStoreConnectionStringCsv: REPLACE_ME

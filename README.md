@@ -64,6 +64,7 @@ http://localhost:8080/
 
 ### Administration Cluster
 
+To connect to the correct Azure file store, make sure you update the secrets in 'administration/values.yaml'
 
 ```
 cd .\administration
@@ -73,3 +74,17 @@ Create the Kubernetes namespace
 ```
 kubectl create ns icap-administration
 ```
+
+Install the cluster components
+```
+helm install . --namespace icap-administration --generate-name
+```
+
+The cluster's services should now be deployed
+```
+> kubectl get pods -n icap-administration
+NAME                                 READY   STATUS    RESTARTS   AGE
+transaction-event-api-7fdd99bb74-n45r6   1/1     Running   0       
+```
+
+You can then forward ports to the service generated 'transaction-event-api-service' if deploying to a local cluster.

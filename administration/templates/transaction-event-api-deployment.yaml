@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.transactioneventapi.name }}
-          image: "glasswallsolutions/transactioneventapi:master-latest"
+          image: {{ .Values.imagestore.transactioneventapi.image }}{{ .Values.imagestore.transactioneventapi.tag }}
           ports:
             - name: http
               containerPort: 80

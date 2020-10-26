@@ -39,3 +39,5 @@ podjanitor:
   name: pod-janitor
   namespace: icap-adaptation
   rolename: janitor-role
+  deleteSuccessfulAfter: 1m
+  deleteFailedAfter: 3m

@@ -21,11 +21,10 @@ spec:
           containers:
           - name: pod-janitor
             image: glasswallsolutions/pod-janitor:main-latest
-            env:
-            - name: POD_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
+            args:
+            - --pod-namespace={{ .Values.podjanitor.namespace }}
+            - --delete-successful-after={{ .Values.podjanitor.deleteSuccessfulAfter }}
+            - --delete-failed-after={{ .Values.podjanitor.deleteFailedAfter }}
             resources:
               limits:
                 cpu: 100m

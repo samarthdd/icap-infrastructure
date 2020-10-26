@@ -7,7 +7,7 @@ apiVersion: v1
 metadata:
   name: glasswallsource-pvc
 spec:
-  storageClassName: glasswallsource
+  storageClassName: azurefile
   accessModes: [ "ReadWriteOnce" ]
   resources:
     requests:

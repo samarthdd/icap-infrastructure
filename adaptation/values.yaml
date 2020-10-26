@@ -39,3 +39,11 @@ podjanitor:
   name: pod-janitor
   namespace: icap-adaptation
   rolename: janitor-role
+
+imagestore:
+  requestprocessing:
+    image: glasswallsolutions/icap-request-processing
+    tag: main-c1836fc
+  adaptationservice:
+    image: glasswallsolutions/icap-adaptation-service
+    tag: main-73b04a5

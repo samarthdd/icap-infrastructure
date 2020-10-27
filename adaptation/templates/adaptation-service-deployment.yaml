@@ -15,7 +15,7 @@ spec:
       serviceAccountName: {{ .Values.serviceAccount.adaptationname  }}
       containers:
       - name: adaptation-service
-        image: {{ .Values.imagestore.adaptationservice.image }}:{{ .Values.imagestore.adaptationservice.tag }}
+        image: {{ .Values.imagestore.adaptationservice.repository }}:{{ .Values.imagestore.adaptationservice.tag }}
         env:
         - name: POD_NAMESPACE
           valueFrom:
@@ -28,7 +28,7 @@ spec:
         - name: OUTPUT_MOUNT
           value: {{ .Values.volumemountpath.target }}
         - name: REQUEST_PROCESSING_IMAGE
-          value: {{ .Values.imagestore.requestprocessing.image }}:{{ .Values.imagestore.requestprocessing.tag }}
+          value: {{ .Values.imagestore.requestprocessing.repository }}:{{ .Values.imagestore.requestprocessing.tag }}
         resources:
           limits:
             cpu: 1

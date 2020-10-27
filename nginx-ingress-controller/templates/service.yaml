@@ -11,10 +11,12 @@ spec:
     component: controller
   ports:
   - port: {{.Values.service.httpPort}}
-    targetPort: {{.Values.service.httpTargetPort}}
+    targetPort: {{.Values.container.httpPort}}
+    nodePort: {{.Values.service.httpNodePort}}
     name: http
   - port: {{.Values.service.httpsPort}}
-    targetPort: {{.Values.service.httpsTargetPort}}
+    targetPort: {{.Values.container.httpsPort}}
+    nodePort: {{.Values.service.httpsNodePort}}
     name: https
   type: {{.Values.service.type}}
-  loadBalancerIP: {{.Values.service.loadBalancerIP}}
+

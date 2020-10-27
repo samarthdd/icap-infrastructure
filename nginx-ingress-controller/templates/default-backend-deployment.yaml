@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-ingress-default-backend
@@ -8,6 +8,10 @@ metadata:
     component: default-backend
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-ingress
+      component: default-backend
   template:
     metadata:
       labels:
@@ -16,10 +20,7 @@ spec:
     spec:
       containers:
         - name: default-backend
-          # Any image is permissable as long as:
-          # 1. It serves a 404 page at /
-          # 2. It serves 200 on a /healthz endpoint
-          image: gcr.io/google_containers/defaultbackend:1.0
+          image: "{{.Values.image.defaultBackend.registry}}/defaultbackend:{{.Values.image.defaultBackend.tag}}"
           livenessProbe:
             httpGet:
               path: /healthz

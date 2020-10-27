@@ -18,4 +18,12 @@ resources:
     cpu: 100m
     memory: 256Mi
 
+service:
+  httpPort: 80
+  httpTargetPort: 80
+  httpsPort: 443
+  httpsTargetPort: 443
+  type: LoadBalancer
+  loadBalancerIP: 35.189.76.197
+
 

@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.appLabel}}
+  namespace: nginx
+  labels:
+    app: {{.Values.appLabel}}
+spec:
+  selector:
+    app: {{.Values.appLabel}}
+    component: controller
+  ports:
+  - port: {{.Values.service.httpPort}}
+    targetPort: {{.Values.service.httpTargetPort}}
+    name: http
+  - port: {{.Values.service.httpsPort}}
+    targetPort: {{.Values.service.httpsTargetPort}}
+    name: https
+  type: {{.Values.service.type}}
+  loadBalancerIP: {{.Values.service.loadBalancerIP}}

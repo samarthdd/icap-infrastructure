@@ -52,13 +52,16 @@ spec:
             timeoutSeconds: 5
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.container.httpPort }}
               protocol: TCP
             - name: https
-              containerPort: 443
+              containerPort: {{ .Values.container.httpsPort }}
+              protocol: TCP
+            - name: icap
+              containerPort: {{ .Values.container.icapPort }}
               protocol: TCP
             - name: metrics
-              containerPort: 10254
+              containerPort: {{ .Values.container.metricsPort }}
           resources:
             requests:
               cpu: {{.Values.resources.requests.cpu}}

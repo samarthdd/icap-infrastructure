@@ -4,8 +4,8 @@
 fullnameOverride: transactioneventapi
 replicaCount: 1
 image:
-  repository: transactioneventapi
-  tag: stable
+  repository: glasswallsolutions/transactioneventapi
+  tag: main-latest
   pullPolicy: IfNotPresent
 imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.

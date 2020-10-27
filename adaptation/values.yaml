@@ -47,3 +47,6 @@ imagestore:
   adaptationservice:
     image: glasswallsolutions/icap-adaptation-service
     tag: main-73b04a5
+  icapservice:
+    image: glasswallsolutions/mvp-icap-service
+    tag: main-8bf43ab

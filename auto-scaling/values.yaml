@@ -1,6 +1,6 @@
-metadataName: "sleeping-pods"
+metadataName: "sleeping-pods-deployment"
 
-appLabel: "autoscaler-sleeping-pod"
+appLabel: "sleeping-container"
 
 replicaCount: 1
 

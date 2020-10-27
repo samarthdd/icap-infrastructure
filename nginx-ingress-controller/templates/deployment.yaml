@@ -57,9 +57,6 @@ spec:
             - name: https
               containerPort: {{ .Values.container.httpsPort }}
               protocol: TCP
-            - name: icap
-              containerPort: {{ .Values.container.icapPort }}
-              protocol: TCP
             - name: metrics
               containerPort: {{ .Values.container.metricsPort }}
           resources:

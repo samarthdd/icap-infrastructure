@@ -1,5 +1,9 @@
+metadataName: "sleeping-pods"
+
+appLabel: "autoscaler-sleeping-pod"
+
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: ""
+  registry: "registry.hub.docker.com/library"
+  tag: "latest"

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.appLabel}}
+  namespace: nginx
+  labels:
+    app: {{.Values.appLabel}}
+spec:
+  selector:
+    app: {{.Values.appLabel}}
+    component: controller
+  ports:
+  - port: {{.Values.service.httpPort}}
+    targetPort: {{.Values.container.httpPort}}
+    nodePort: {{.Values.service.httpNodePort}}
+    name: http
+  - port: {{.Values.service.httpsPort}}
+    targetPort: {{.Values.container.httpsPort}}
+    nodePort: {{.Values.service.httpsNodePort}}
+    name: https
+  - port: {{.Values.service.icapPort}}
+    targetPort: {{.Values.container.icapPort}}
+    nodePort: {{.Values.service.icapNodePort}}
+    protocol: TCP
+    name: icap
+  type: {{.Values.service.type}}
+

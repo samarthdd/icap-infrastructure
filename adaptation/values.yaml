@@ -52,3 +52,6 @@ imagestore:
   podjanitor:
     image: glasswallsolutions/pod-janitor
     tag: main-a0f37dc
+  icapservice:
+    image: glasswallsolutions/mvp-icap-service
+    tag: main-8bf43ab

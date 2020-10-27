@@ -61,3 +61,103 @@ The management console now accessible through the browser
 http://localhost:8080/
 ```
 
+## Standing up the Adaptation Service
+
+After you have deployed the AKS Cluster to Azure you will then need to follow the steps below to stand up the Adaptation service.
+
+### Deploying Adaptation Cluster - using helm
+
+Deploying to AKS
+
+In order to get the credentials for the AKS cluster you must run the command below:
+
+```
+az aks get-credentials --name gw-icap-aks --resource-group gw-icap-aks-deploy
+```
+
+*all commands below should be run from the root directory of the repo "aks-deployment-icap"*
+
+Create the Kubernetes namespace
+```
+kubectl create ns icap-adaptation
+```
+
+Create container registry secret - this requires a service account created within Dockerhub
+
+***The command below should only be run on a fresh deployment, if you're deploying to a cluster that has already been deployed to, then this will already be within the secret store***
+
+```
+kubectl create -n icap-adaptation secret docker-registry regcred	\ 
+	--docker-server=https://index.docker.io/v1/ 	\
+	--docker-username=<username>	\
+	--docker-password="<password>"	\ # Please ensure you add quotes to password
+	--docker-email=<email address>
+```
+
+Install the cluster components
+```
+helm install ./adaptation --namespace icap-adaptation --generate-name
+```
+
+The cluster's services should now be deployed (Please note the adaptation service can restart several times before it is "running")
+```
+> kubectl get pods -n icap-adaptation
+NAME                                 READY   STATUS    RESTARTS   AGE
+adaptation-service-64cc49f99-kwfp6   1/1     Running   0          3m22s
+mvp-icap-service-b7ddccb9-gf4z6      1/1     Running   0          3m22s
+rabbitmq-controller-747n4            1/1     Running   0          3m22s
+```
+
+If required, the following steps provide access to the RabbitMQ Management Console
+
+Run the below command to enable the Management Plugin, this step takes a couple of minutes
+```
+kubectl exec -it rabbitmq-controller-747n4 -- /bin/bash -c "rabbitmq-plugins enable rabbitmq_management"
+```
+
+Setup of port forwarding from a local port (e.g. 8080) to the RabbitMQ Management Port
+```
+kubectl port-forward -n icap-adaptation rabbitmq-controller-747n4 8080:15672
+```
+The management console now accessible through the browser
+```
+http://localhost:8080/
+```
+
+### Standing up Management UI
+
+All of these commands are run in the root folder. Firstly create the namespace
+
+```
+kubectl create ns management-ui
+```
+
+Next use Helm to deploy the chart
+
+```
+helm install ./administration/management-ui/ --namespace management-ui --generate-name
+```
+
+Services should start on their own and the management UI will be available from the public IP that is attached to the load balancer.
+
+To see this use the following command
+
+```
+❯ kubectl get service -n management-ui
+NAME                             TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
+icap-management-portal-service   LoadBalancer   xxx.xxx.xxx.xxx   xxx.xxx.xxx.xxx   80:32231/TCP   24h
+```
+
+### Standing up Transaction-Event-API
+
+All of these commands are run in the root folder. Firstly create the namespace
+
+```
+kubectl create ns transaction-event-api
+```
+
+Next use Helm to deploy the chart
+
+```
+helm install ./administration/transactioneventapi --namespace management-ui --generate-name
+```

@@ -1,0 +1,9 @@
+metadataName: "sleeping-pods-deployment"
+
+appLabel: "sleeping-container"
+
+replicaCount: 1
+
+image:
+  registry: "docker.io/library"
+  tag: "latest"

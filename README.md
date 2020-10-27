@@ -96,7 +96,7 @@ kubectl create -n icap-adaptation secret docker-registry regcred	\
 
 Install the cluster components
 ```
-helm install ./helm_charts/icap-infrastructure/adaptation --namespace icap-adaptation --generate-name
+helm install ./adaptation --namespace icap-adaptation --generate-name
 ```
 
 The cluster's services should now be deployed (Please note the adaptation service can restart several times before it is "running")
@@ -126,7 +126,7 @@ http://localhost:8080/
 
 ### Standing up Management UI
 
-All of these commands are run int he root folder. Firstly create the namespace
+All of these commands are run in the root folder. Firstly create the namespace
 
 ```
 kubectl create ns management-ui
@@ -135,7 +135,7 @@ kubectl create ns management-ui
 Next use Helm to deploy the chart
 
 ```
-helm install ./pod-creations/icap-management-ui/kube --namespace management-ui --generate-name
+helm install ./administration/icap-management-ui/kube --namespace management-ui --generate-name
 ```
 
 Services should start on their own and the management UI will be available from the public IP that is attached to the load balancer.
@@ -150,7 +150,7 @@ icap-management-portal-service   LoadBalancer   xxx.xxx.xxx.xxx   xxx.xxx.xxx.xx
 
 ### Standing up Transaction-Event-API
 
-All of these commands are run int he root folder. Firstly create the namespace
+All of these commands are run in the root folder. Firstly create the namespace
 
 ```
 kubectl create ns transaction-event-api
@@ -159,5 +159,5 @@ kubectl create ns transaction-event-api
 Next use Helm to deploy the chart
 
 ```
-helm install ./pod-creations/transaction-event-api/TransactionEventApi/charts --namespace management-ui --generate-name
+helm install ./administration/transaction-event-api/TransactionEventApi/charts --namespace management-ui --generate-name
 ```

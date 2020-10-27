@@ -135,7 +135,7 @@ kubectl create ns management-ui
 Next use Helm to deploy the chart
 
 ```
-helm install ./administration/icap-management-ui/kube --namespace management-ui --generate-name
+helm install ./administration/management-ui/ --namespace management-ui --generate-name
 ```
 
 Services should start on their own and the management UI will be available from the public IP that is attached to the load balancer.
@@ -159,5 +159,5 @@ kubectl create ns transaction-event-api
 Next use Helm to deploy the chart
 
 ```
-helm install ./administration/transaction-event-api/TransactionEventApi/charts --namespace management-ui --generate-name
+helm install ./administration/transactioneventapi --namespace management-ui --generate-name
 ```

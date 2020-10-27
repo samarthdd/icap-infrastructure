@@ -44,14 +44,14 @@ podjanitor:
 
 imagestore:
   requestprocessing:
-    image: glasswallsolutions/icap-request-processing
+    repository: glasswallsolutions/icap-request-processing
     tag: main-c1836fc
   adaptationservice:
-    image: glasswallsolutions/icap-adaptation-service
+    repository: glasswallsolutions/icap-adaptation-service
     tag: main-73b04a5
   podjanitor:
-    image: glasswallsolutions/pod-janitor
+    repository: glasswallsolutions/pod-janitor
     tag: main-a0f37dc
   icapservice:
-    image: glasswallsolutions/mvp-icap-service
+    repository: glasswallsolutions/mvp-icap-service
     tag: main-8bf43ab

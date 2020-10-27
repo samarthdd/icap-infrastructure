@@ -16,7 +16,7 @@ spec:
     spec:
       containers:     
         - name: mvp-icap-service
-          image: {{ .Values.imagestore.icapservice.image }}:{{ .Values.imagestore.icapservice.tag }}
+          image: {{ .Values.imagestore.icapservice.repository }}:{{ .Values.imagestore.icapservice.tag }}
           ports:
             - containerPort: 1344
           envFrom:

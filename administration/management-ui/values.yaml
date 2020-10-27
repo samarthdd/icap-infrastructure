@@ -5,3 +5,7 @@ deployment:
 service:
   name: icap-management-portal-service
   port: 80
+imagestore:
+  icapmanagementui:
+    image: glasswallsolutions/icap-management-ui
+    tag: main

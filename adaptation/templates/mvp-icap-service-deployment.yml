@@ -16,7 +16,7 @@ spec:
     spec:
       containers:     
         - name: mvp-icap-service
-          image: glasswallsolutions/mvp-icap-service:master-latest
+          image: glasswallsolutions/mvp-icap-service:develop-latest
           ports:
             - containerPort: 1344
           envFrom:

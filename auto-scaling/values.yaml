@@ -7,3 +7,5 @@ replicaCount: 1
 image:
   registry: "registry.hub.docker.com/library"
   tag: "latest"
+
+priorityClassName: "verylowpriority"

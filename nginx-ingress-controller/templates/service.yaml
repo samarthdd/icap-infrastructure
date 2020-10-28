@@ -18,5 +18,9 @@ spec:
     targetPort: {{.Values.container.httpsPort}}
     nodePort: {{.Values.service.httpsNodePort}}
     name: https
+  - port: {{ .Values.service.icapPort }}
+    name: icap-tcp
+    targetPort: {{ .Values.service.icapPort }}
+    protocol: TCP
   type: {{.Values.service.type}}
 

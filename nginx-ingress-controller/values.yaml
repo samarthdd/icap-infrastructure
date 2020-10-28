@@ -30,6 +30,7 @@ service:
   httpNodePort: 30080
   httpsPort: 443
   httpsNodePort: 30443
+  icapPort: 1344
   type: NodePort
 
 

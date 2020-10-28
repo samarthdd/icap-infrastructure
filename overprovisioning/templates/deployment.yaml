@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.metadataName }}
+  labels:
+    app: {{ .Values.appLabel }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.appLabel }}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.appLabel}}
+    spec:
+      containers:
+        - image: "{{.Values.image.registry}}/busybox:{{.Values.image.tag}}"
+          name: {{.Values.metadataName}}
+          command:
+            - sleep
+            - infinity
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      priorityClassName: {{ .Values.priorityClassName }}

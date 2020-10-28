@@ -112,7 +112,7 @@ alertmanager:
 
   ## Deploy alertmanager
   ##
-  enabled: true
+  enabled: false
 
   ## Api that prometheus will use to communicate with alertmanager. Possible values are v1, v2
   ##
@@ -514,7 +514,7 @@ grafana:
   ##
   defaultDashboardsEnabled: true
 
-  adminPassword: prom-operator
+  adminPassword: admin
 
   ingress:
     ## If true, Grafana Ingress will be created
@@ -912,7 +912,7 @@ kubeDns:
 ## Component scraping etcd
 ##
 kubeEtcd:
-  enabled: true
+  enabled: false
 
   ## If your etcd is not deployed as a pod, specify IPs it can be found on
   ##

@@ -21,18 +21,20 @@ spec:
       serviceAccountName: {{.Values.metadataName}}
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - {{.Values.appLabel}}
-                  - key: component
-                    operator: In
-                    values:
-                      - controller
-              topologyKey: kubernetes.io/hostname
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - {{.Values.appLabel}}
+                    - key: component
+                      operator: In
+                      values:
+                        - controller
+                topologyKey: kubernetes.io/hostname
       terminationGracePeriodSeconds: 30
       containers:
         - image: "{{.Values.image.ingressController.registry}}/nginx-ingress-controller:{{.Values.image.ingressController.tag}}"
@@ -56,6 +58,9 @@ spec:
               protocol: TCP
             - name: https
               containerPort: {{ .Values.container.httpsPort }}
+              protocol: TCP
+            - name: icap
+              containerPort: {{ .Values.container.icapPort }}
               protocol: TCP
             - name: metrics
               containerPort: {{ .Values.container.metricsPort }}
@@ -82,6 +87,7 @@ spec:
             - --annotations-prefix=ingress.kubernetes.io
             - --configmap=$(POD_NAMESPACE)/{{.Values.metadataName}}
             - --enable-metrics
+            - --tcp-services-configmap=$(POD_NAMESPACE)/icap-tcp-traffic
           securityContext:
             capabilities:
               drop:

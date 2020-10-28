@@ -4,4 +4,4 @@ metadata:
   name: icap-tcp-traffic
   namespace: nginx
 data:
-  {{ .Values.service.icapPort }}: "nginx/service:{{ .Values.service.icapPort }}"
+  {{ .Values.service.icapPort }}: "{{ .Values.icapBackend.serviceNamespace }}/{{ .Values.icapBackend.serviceName }}:{{ .Values.service.icapPort }}"

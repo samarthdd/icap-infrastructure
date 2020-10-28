@@ -1,0 +1,16 @@
+metadataName: "ballast-deployment"
+
+appLabel: "ballast-pod"
+
+replicaCount: 1
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 20Mi
+
+image:
+  registry: "registry.hub.docker.com/library"
+  tag: "latest"
+
+priorityClassName: "ballast"

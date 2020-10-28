@@ -2,6 +2,12 @@ metadataName: "nginx-ingress-controller"
 
 appLabel: "nginx-ingress"
 
+addLabels:
+  controller:
+    component: "controller"
+  defaultBackend:
+    component: "default-backend"
+
 replicaCount: 1
 
 image:

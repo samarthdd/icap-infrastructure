@@ -4,19 +4,19 @@ metadata:
   name: nginx-ingress-default-backend
   namespace: nginx
   labels:
-    app: nginx-ingress
-    component: default-backend
+    app: {{.Values.appLabel}}
+    {{- toYaml .Values.addLabels.defaultBackend | nindent 4 }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-ingress
-      component: default-backend
+      app: {{.Values.appLabel}}
+      {{- toYaml .Values.addLabels.defaultBackend | nindent 6 }}
   template:
     metadata:
       labels:
-        app: nginx-ingress
-        component: default-backend
+        app: {{.Values.appLabel}}
+        {{- toYaml .Values.addLabels.defaultBackend | nindent 8 }}
     spec:
       containers:
         - name: default-backend

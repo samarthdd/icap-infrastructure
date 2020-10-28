@@ -5,18 +5,18 @@ metadata:
   namespace: nginx
   labels:
     app: {{.Values.appLabel}}
-    component: controller
+    {{- toYaml .Values.addLabels.controller | nindent 4 }}
 spec:
   replicas: {{.Values.replicaCount}}
   selector:
     matchLabels:
       app: {{.Values.appLabel}}
-      component: controller
+      {{- toYaml .Values.addLabels.controller | nindent 6 }}
   template:
     metadata:
       labels:
         app: {{.Values.appLabel}}
-        component: controller
+        {{- toYaml .Values.addLabels.controller | nindent 8 }}
     spec:
       serviceAccountName: {{.Values.metadataName}}
       affinity:
@@ -30,10 +30,12 @@ spec:
                       operator: In
                       values:
                         - {{.Values.appLabel}}
-                    - key: component
+                    {{- range $key, $val := .Values.addLabels.controller }}
+                    - key: {{ $key }}
                       operator: In
                       values:
-                        - controller
+                        - {{ $val }}
+                    {{- end }}
                 topologyKey: kubernetes.io/hostname
       terminationGracePeriodSeconds: 30
       containers:

@@ -4,12 +4,12 @@ metadata:
   name: nginx-ingress-default-backend
   namespace: nginx
   labels:
-    app: nginx-ingress
-    component: default-backend
+    app: {{.Values.appLabel}}
+    {{- toYaml .Values.addLabels.controller | nindent 4 }}
 spec:
   ports:
     - port: 80
       targetPort: 8080
   selector:
-    app: nginx-ingress
-    component: default-backend
+    app: {{.Values.appLabel}}
+    {{- toYaml .Values.addLabels.controller | nindent 4 }}

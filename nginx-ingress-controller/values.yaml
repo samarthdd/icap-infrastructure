@@ -15,8 +15,8 @@ image:
 container:
   httpPort: 80
   httpsPort: 443
-  metricsPort: 10254
   icapPort: 1344
+  metricsPort: 10254
 
 resources:
   requests:
@@ -32,7 +32,10 @@ service:
   httpsPort: 443
   httpsNodePort: 30443
   icapPort: 1344
-  icapNodePort: 31344
   type: NodePort
+
+icapBackend:
+  serviceNamespace: "icap-adaptation"
+  serviceName: "icap-service"
 
 

@@ -38,7 +38,7 @@ podjanitor:
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
-    tag: develop-2e7ac78
+    tag: develop-81a7f9f
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
     tag: develop-53f8a8a

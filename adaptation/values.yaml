@@ -47,4 +47,4 @@ imagestore:
     tag: main-5ce5e69
   icapservice:
     repository: glasswallsolutions/mvp-icap-service
-    tag: main-f1cc689
+    tag: main-d40a62f

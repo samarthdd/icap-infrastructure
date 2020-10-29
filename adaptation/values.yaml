@@ -47,4 +47,4 @@ imagestore:
     tag: develop-305e37e
   icapservice:
     repository: glasswallsolutions/mvp-icap-service
-    tag: develop-b7b58e9
+    tag: develop-65b8e04

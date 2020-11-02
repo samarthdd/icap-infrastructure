@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: icap-tcp-traffic
+  namespace: nginx
+data:
+  {{ .Values.service.icapPort }}: "{{ .Values.icapBackend.serviceNamespace }}/{{ .Values.icapBackend.serviceName }}:{{ .Values.service.icapPort }}"

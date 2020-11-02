@@ -1,0 +1,47 @@
+metadataName: "nginx-ingress-controller"
+
+appLabel: "nginx-ingress"
+
+addLabels:
+  controller:
+    component: "controller"
+  defaultBackend:
+    component: "default-backend"
+
+replicaCount: 1
+
+image:
+  ingressController:
+    registry: "quay.io/kubernetes-ingress-controller"
+    tag: "0.26.1"
+  defaultBackend:
+    registry: "gcr.io/google_containers"
+    tag: "1.0"
+
+container:
+  httpPort: 80
+  httpsPort: 443
+  icapPort: 1344
+  metricsPort: 10254
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 128Mi
+  limits:
+    cpu: 1000m
+    memory: 256Mi
+
+service:
+  httpPort: 80
+  httpNodePort: 30080
+  httpsPort: 443
+  httpsNodePort: 30443
+  icapPort: 1344
+  type: NodePort
+
+icapBackend:
+  serviceNamespace: "icap-adaptation"
+  serviceName: "icap-service"
+
+

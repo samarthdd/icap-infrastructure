@@ -33,10 +33,18 @@ podjanitor:
   name: pod-janitor
   namespace: icap-adaptation
   rolename: janitor-role
+  deleteSuccessfulAfter: 1m
+  deleteFailedAfter: 3m
 imagestore:
   requestprocessing:
-    image: glasswallsolutions/icap-request-processing
-    tag: main-c1836fc
+    repository: glasswallsolutions/icap-request-processing
+    tag: main-800f834
   adaptationservice:
-    image: glasswallsolutions/icap-adaptation-service
-    tag: main-08d071c
+    repository: glasswallsolutions/icap-adaptation-service
+    tag: main-5aa8c68
+  podjanitor:
+    repository: glasswallsolutions/pod-janitor
+    tag: main-5ce5e69
+  icapservice:
+    repository: glasswallsolutions/mvp-icap-service
+    tag: main-e5c11b0

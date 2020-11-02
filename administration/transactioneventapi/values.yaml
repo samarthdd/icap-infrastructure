@@ -3,10 +3,6 @@
 # Declare variables to be passed into your templates.
 fullnameOverride: transactioneventapi
 replicaCount: 1
-image:
-  repository: transactioneventapi
-  tag: stable
-  pullPolicy: IfNotPresent
 imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.
   # Secrets must be manually created in the namespace.
@@ -63,3 +59,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+imagestore:
+  transactioneventapi:
+    repository: glasswallsolutions/transactioneventapi
+    tag: main-a9fa630

@@ -1,0 +1,106 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.metadataName}}
+  namespace: nginx
+  labels:
+    app: {{.Values.appLabel}}
+    {{- toYaml .Values.addLabels.controller | nindent 4 }}
+spec:
+  replicas: {{.Values.replicaCount}}
+  selector:
+    matchLabels:
+      app: {{.Values.appLabel}}
+      {{- toYaml .Values.addLabels.controller | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.appLabel}}
+        {{- toYaml .Values.addLabels.controller | nindent 8 }}
+    spec:
+      serviceAccountName: {{.Values.metadataName}}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - {{.Values.appLabel}}
+                    {{- range $key, $val := .Values.addLabels.controller }}
+                    - key: {{ $key }}
+                      operator: In
+                      values:
+                        - {{ $val }}
+                    {{- end }}
+                topologyKey: kubernetes.io/hostname
+      terminationGracePeriodSeconds: 30
+      containers:
+        - image: "{{.Values.image.ingressController.registry}}/nginx-ingress-controller:{{.Values.image.ingressController.tag}}"
+          name: {{.Values.metadataName}}
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 10254
+              scheme: HTTP
+            timeoutSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 10254
+              scheme: HTTP
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
+          ports:
+            - name: http
+              containerPort: {{ .Values.container.httpPort }}
+              protocol: TCP
+            - name: https
+              containerPort: {{ .Values.container.httpsPort }}
+              protocol: TCP
+            - name: icap
+              containerPort: {{ .Values.container.icapPort }}
+              protocol: TCP
+            - name: metrics
+              containerPort: {{ .Values.container.metricsPort }}
+          resources:
+            requests:
+              cpu: {{.Values.resources.requests.cpu}}
+              memory: {{.Values.resources.requests.memory}}
+            limits:
+              cpu: {{.Values.resources.limits.cpu}}
+              memory: {{.Values.resources.limits.memory}}
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          args:
+            - /{{.Values.metadataName}}
+            - --default-backend-service=$(POD_NAMESPACE)/{{.Values.appLabel}}-default-backend
+            - --ingress-class=nginx
+            - --annotations-prefix=ingress.kubernetes.io
+            - --configmap=$(POD_NAMESPACE)/{{.Values.metadataName}}
+            - --enable-metrics
+            - --tcp-services-configmap=$(POD_NAMESPACE)/icap-tcp-traffic
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+            # www-data -> 33
+            runAsUser: 33
+          volumeMounts:
+            - name: cache
+              mountPath: "/var/run/cache"
+      volumes:
+        - name: cache
+          emptyDir: {}

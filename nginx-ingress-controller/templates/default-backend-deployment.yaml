@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ingress-default-backend
+  namespace: nginx
+  labels:
+    app: {{.Values.appLabel}}
+    {{- toYaml .Values.addLabels.defaultBackend | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{.Values.appLabel}}
+      {{- toYaml .Values.addLabels.defaultBackend | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        app: {{.Values.appLabel}}
+        {{- toYaml .Values.addLabels.defaultBackend | nindent 8 }}
+    spec:
+      containers:
+        - name: default-backend
+          image: "{{.Values.image.defaultBackend.registry}}/defaultbackend:{{.Values.image.defaultBackend.tag}}"
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              cpu: 10m
+              memory: 20Mi
+            requests:
+              cpu: 10m
+              memory: 20Mi

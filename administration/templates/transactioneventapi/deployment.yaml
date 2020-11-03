@@ -41,9 +41,6 @@ spec:
               path: /
               port: http
           {{- end }}
-          envFrom:
-          - configMapRef:
-              name: {{ template "transactioneventapi.fullname" . }}-configuration
           env:
             - name: TransactionStoreConnectionStringCsv
               valueFrom:

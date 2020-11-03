@@ -5,8 +5,8 @@ serviceAccount:
   policyupdatename: policy-update-service-sa
   janitorname: pod-janitor-sa
 volumemountpath:
-  source: "/var/source"
-  target: "/var/target"
+  source: "/mnt/azure"
+  target: "/mnt/azure"
 queue:
   messagebrokersecret: "rabbitcredentialssecret"
   host:
@@ -77,7 +77,7 @@ imagestore:
   podjanitor:
     registry: ""
     repository: glasswallsolutions/pod-janitor
-    tag: develop-dd4c0f8
+    tag: main-5ce5e69
   icapservice:
     registry: ""
     repository: glasswallsolutions/mvp-icap-service

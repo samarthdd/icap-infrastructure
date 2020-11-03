@@ -227,3 +227,8 @@ Next we will deploy the services using either Helm or Argocd. Both of the Readme
 [Helm Readme](/helm/README.md)
 
 ***All commands need to be run from the root directory for the paths to be correct***
+=======
+```
+helm install ./administration/transactioneventapi --namespace management-ui --generate-name
+```
+

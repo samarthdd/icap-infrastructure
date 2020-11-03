@@ -1,8 +1,8 @@
 apiVersion: v2
-name: icap-management-portal
-description: A simple Helm chart for running icap-management-portal
+name: icap-management-ui
+description: A Helm chart for running the icap-management-ui
 type: application
-version: 1.0.1
+version: 1.0.2
 home: https://github.com/filetrust/icap-management-ui
 maintainers:
   - name: werzl

@@ -35,16 +35,23 @@ podjanitor:
   rolename: janitor-role
   deleteSuccessfulAfter: 1m
   deleteFailedAfter: 3m
+eventsubmissionservice:
+  name: event-submission-service
+  replicas: 1
+  amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
     tag: develop-81a7f9f
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
-    tag: develop-53f8a8a
+    tag: develop-330790c
   podjanitor:
     repository: glasswallsolutions/pod-janitor
     tag: develop-305e37e
   icapservice:
     repository: glasswallsolutions/mvp-icap-service
     tag: develop-65b8e04
+  eventsubmission:
+    repository: glasswallsolutions/event-submission-service
+    tag: develop-457bea3

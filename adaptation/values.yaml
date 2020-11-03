@@ -42,7 +42,7 @@ eventsubmissionservice:
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
-    tag: develop-81a7f9f
+    tag: develop-ee9b4e3
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
     tag: develop-330790c

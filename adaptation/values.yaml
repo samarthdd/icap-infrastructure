@@ -3,8 +3,8 @@ serviceAccount:
   adaptationname: adaptation-service-sa
   janitorname: pod-janitor-sa
 volumemountpath:
-  source: "/var/source"
-  target: "/var/target"
+  source: "/mnt/azure"
+  target: "/mnt/azure"
 queue:
   host:
     url: "rabbitmq-service"

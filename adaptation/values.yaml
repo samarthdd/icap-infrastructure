@@ -35,6 +35,10 @@ podjanitor:
   rolename: janitor-role
   deleteSuccessfulAfter: 1m
   deleteFailedAfter: 3m
+eventsubmissionservice:
+  name: event-submission-service
+  replicas: 1
+  amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
@@ -48,3 +52,6 @@ imagestore:
   icapservice:
     repository: glasswallsolutions/mvp-icap-service
     tag: main-e5c11b0
+  eventsubmission:
+    repository: glasswallsolutions/event-submission-service
+    tag: main-f528704

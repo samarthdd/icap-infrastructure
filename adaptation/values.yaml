@@ -3,8 +3,8 @@ serviceAccount:
   adaptationname: adaptation-service-sa
   janitorname: pod-janitor-sa
 volumemountpath:
-  source: "/mnt/azure"
-  target: "/mnt/azure"
+  source: "/var/source"
+  target: "/var/target"
 queue:
   host:
     url: "rabbitmq-service"
@@ -42,16 +42,16 @@ eventsubmissionservice:
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
-    tag: main-800f834
+    tag: develop-81a7f9f
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
-    tag: main-81ad02c
+    tag: develop-330790c
   podjanitor:
     repository: glasswallsolutions/pod-janitor
-    tag: main-5ce5e69
+    tag: develop-305e37e
   icapservice:
     repository: glasswallsolutions/mvp-icap-service
-    tag: main-e5c11b0
+    tag: develop-65b8e04
   eventsubmission:
     repository: glasswallsolutions/event-submission-service
-    tag: main-f528704
+    tag: develop-457bea3

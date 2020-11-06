@@ -41,17 +41,22 @@ eventsubmissionservice:
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
 imagestore:
   requestprocessing:
+    registry: ""
     repository: glasswallsolutions/icap-request-processing
     tag: main-51c6a0a
   adaptationservice:
+    registry: ""
     repository: glasswallsolutions/icap-adaptation-service
     tag: main-5e25136
   podjanitor:
+    registry: ""
     repository: glasswallsolutions/pod-janitor
     tag: main-5ce5e69
   icapservice:
+    registry: ""
     repository: glasswallsolutions/mvp-icap-service
     tag: main-e5c11b0
   eventsubmission:
+    registry: ""
     repository: glasswallsolutions/event-submission-service
     tag: main-f528704

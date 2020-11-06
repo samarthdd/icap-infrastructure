@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: icap-service-tls-config
 data:
-  certificate.pem: {{.Values.icapservice.tlscertificate }}
-  key.pem: {{ .Values.icapservice.tlscertificate }}
+  certificate.pem: {{ toYaml .Values.icapservice.tlscertificate | indent 2 }}
+  key.pem: {{ toYaml .Values.icapservice.tlscertificate | indent 2 }}

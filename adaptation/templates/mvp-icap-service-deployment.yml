@@ -19,6 +19,7 @@ spec:
           image: {{ .Values.imagestore.icapservice.repository }}:{{ .Values.imagestore.icapservice.tag }}
           ports:
             - containerPort: 1344
+            - containerPort: 1345
           envFrom:
           - configMapRef:
               name: icap-service-config

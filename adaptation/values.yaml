@@ -27,6 +27,8 @@ icapservice:
   applabel: adaptation
   replicas: 1
   port: 1344
+  tlscertificate: "test certificate"
+  tlskey: "test key"
 icapserviceconfig:
   processingtimeoutduration: 00:01:00
 podjanitor:

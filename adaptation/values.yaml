@@ -45,7 +45,7 @@ imagestore:
     tag: main-51c6a0a
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
-    tag: main-5e25136
+    tag: main-c5f562f
   podjanitor:
     repository: glasswallsolutions/pod-janitor
     tag: main-5ce5e69

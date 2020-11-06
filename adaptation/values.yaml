@@ -57,7 +57,7 @@ imagestore:
     tag: develop-305e37e
   icapservice:
     repository: glasswallsolutions/mvp-icap-service
-    tag: develop-e31a379
+    tag: develop-4423be0
   eventsubmission:
     repository: glasswallsolutions/event-submission-service
     tag: develop-457bea3

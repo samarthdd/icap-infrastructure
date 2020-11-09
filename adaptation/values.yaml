@@ -3,7 +3,7 @@ serviceAccount:
   adaptationname: adaptation-service-sa
   janitorname: pod-janitor-sa
 volumemountpath:
-  source: "/mnt/azure"
+  source: "/var/azure"
   target: "/mnt/azure"
 queue:
   host:
@@ -42,10 +42,10 @@ eventsubmissionservice:
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
-    tag: main-800f834
+    tag: main-51c6a0a
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
-    tag: main-81ad02c
+    tag: main-c5f562f
   podjanitor:
     repository: glasswallsolutions/pod-janitor
     tag: main-5ce5e69

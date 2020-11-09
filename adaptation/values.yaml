@@ -63,4 +63,4 @@ imagestore:
     tag: main-f528704
   policyupdate:
     repository: glasswallsolutions/policy-update-service
-    tag: main-f0e140d
+    tag: main-696b28b

@@ -19,6 +19,7 @@ spec:
           image: {{ .Values.imagestore.icapservice.repository }}:{{ .Values.imagestore.icapservice.tag }}
           ports:
             - containerPort: 1344
+            - containerPort: 1345
           envFrom:
           - configMapRef:
               name: icap-service-config
@@ -27,6 +28,9 @@ spec:
               mountPath: {{ .Values.volumemountpath.source }}
             - name: target-vol
               mountPath: {{ .Values.volumemountpath.target }}
+            - name: tls-config-vol
+              mountPath: /usr/local/c-icap/cert
+              readOnly: true
       volumes:
         - name: source-vol
           persistentVolumeClaim:
@@ -34,4 +38,8 @@ spec:
         - name: target-vol
           persistentVolumeClaim:
             claimName: glasswalltarget-pvc
+        - name: tls-config-vol
+          secret:
+            secretName: icap-service-tls-config
+
 

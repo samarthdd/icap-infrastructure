@@ -30,6 +30,7 @@ spec:
               mountPath: {{ .Values.volumemountpath.target }}
             - name: tls-config-vol
               mountPath: /usr/local/c-icap/cert
+              readOnly: true
       volumes:
         - name: source-vol
           persistentVolumeClaim:
@@ -38,6 +39,7 @@ spec:
           persistentVolumeClaim:
             claimName: glasswalltarget-pvc
         - name: tls-config-vol
-          configMap:
-            name: icap-service-tls-config
+          secret:
+            secretName: icap-service-tls-config
+
 

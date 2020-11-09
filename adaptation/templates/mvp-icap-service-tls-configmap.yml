@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: icap-service-tls-config
-data:
-  certificate.crt: {{ toYaml .Values.icapservice.tlscertificate | indent 2 }}
-  tls.key: {{ toYaml .Values.icapservice.tlskey | indent 2 }}

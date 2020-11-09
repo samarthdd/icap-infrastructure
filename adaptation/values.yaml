@@ -63,4 +63,4 @@ imagestore:
     tag: develop-457bea3
   policyupdate:
     repository: glasswallsolutions/policy-update-service
-    tag: develop-cc9dcdb
+    tag: develop-20f889d

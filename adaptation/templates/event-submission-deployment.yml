@@ -42,3 +42,5 @@ spec:
               name: rabbitcredentialssecret
               key: password
         {{- end }}               
+      imagePullSecrets:
+        - name: registrycredential

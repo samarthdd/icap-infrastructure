@@ -7,5 +7,7 @@ spec:
   ports:
   - port: 1344
     targetPort: 1344
+  - port: 1345
+    targetPort: 1345
   selector:
     app: adaptation

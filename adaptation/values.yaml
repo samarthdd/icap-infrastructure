@@ -62,7 +62,7 @@ imagestore:
   icapservice:
     registry: ""
     repository: glasswallsolutions/mvp-icap-service
-    tag: main-494924f
+    tag: main-62220d9
   eventsubmission:
     registry: ""
     repository: glasswallsolutions/event-submission-service

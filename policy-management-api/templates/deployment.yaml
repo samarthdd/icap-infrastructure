@@ -1,0 +1,100 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "policy-management-api.fullname" . }}
+  labels:
+    app: {{ template "policy-management-api.name" . }}
+    chart: {{ template "policy-management-api.chart" . }}
+    draft: {{ .Values.draft | default "draft-app" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  revisionHistoryLimit: 0
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "policy-management-api.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "policy-management-api.name" . }}
+        draft: {{ .Values.draft | default "draft-app" }}
+        release: {{ .Release.Name }}
+      annotations:
+        buildID: {{ .Values.buildID | default "" | quote }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.imagestore.policy-management-api.repository }}:{{ .Values.imagestore.policy-management-api.tag }}"
+          ports:
+            - name: http
+              containerPort: {{ .Values.deployment.containerPort }}
+              protocol: TCP
+          {{- if .Values.probes.enabled }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          {{- end }}
+          envFrom:
+          - configMapRef:
+              name: {{ template "policy-management-api.fullname" . }}-configuration
+          env:
+            - name: AccountName
+              valueFrom:
+                secretKeyRef:
+                  name: policystoresecret
+                  key: accountName
+            - name: AccountKey
+              valueFrom:
+                secretKeyRef:
+                  name: policystoresecret
+                  key: accountKey
+            - name: PolicyUpdateServiceEndpointCsv
+              valueFrom:
+                secretKeyRef:
+                  name: policyUpdateServiceRef
+                  key: PolicyUpdateServiceEndpointCsv
+            - name: TokenUsername
+              valueFrom:
+                secretKeyRef:
+                  name: policyUpdateServiceRef
+                  key: TokenUsername
+            - name: TokenPassword
+              valueFrom:
+                secretKeyRef:
+                  name: policyUpdateServiceRef
+                  key: TokenPassword
+            {{- $root := . }}
+            {{- range $ref, $values := .Values.secrets }}
+            {{- range $key, $value := $values }}
+            - name: {{ $ref }}_{{ $key }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ template "policy-management-api.fullname" $root }}-{{ $ref | lower }}
+                  key: {{ $key }}
+            {{- end }}
+            {{- end }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}

@@ -13,6 +13,11 @@ spec:
         app: {{ .Values.adaptationservice.name }}
     spec:
       serviceAccountName: {{ .Values.serviceAccount.adaptationname  }}
+      tolerations:
+      - key: "use"
+        operator: "Equal"
+        value: "main-app"
+        effect: "NoSchedule"  
       containers:
       - name: adaptation-service
         image: {{ .Values.imagestore.adaptationservice.repository }}:{{ .Values.imagestore.adaptationservice.tag }}

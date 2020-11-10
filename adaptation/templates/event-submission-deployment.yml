@@ -12,6 +12,11 @@ spec:
       labels:
         app: {{ .Values.eventsubmissionservice.name }}
     spec:
+      tolerations:
+      - key: "use"
+        operator: "Equal"
+        value: "main-app"
+        effect: "NoSchedule"  
       containers:
       - name: event-submission-service
         image: {{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}

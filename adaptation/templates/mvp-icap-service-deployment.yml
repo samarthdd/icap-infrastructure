@@ -14,6 +14,11 @@ spec:
       labels:
         app: {{ .Values.icapservice.applabel }}     
     spec:
+      tolerations:
+      - key: "use"
+        operator: "Equal"
+        value: "main-app"
+        effect: "NoSchedule"  
       containers:     
         - name: mvp-icap-service
           image: {{ .Values.imagestore.icapservice.repository }}:{{ .Values.imagestore.icapservice.tag }}

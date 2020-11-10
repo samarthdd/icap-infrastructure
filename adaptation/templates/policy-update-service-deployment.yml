@@ -12,6 +12,11 @@ spec:
       labels:
         app: {{ .Values.policyupdateservice.name }}     
     spec:
+      tolerations:
+      - key: "use"
+        operator: "Equal"
+        value: "main-app"
+        effect: "NoSchedule"
       containers:     
       - name: policy-update-service
         image: {{ .Values.imagestore.policyupdate.repository }}:{{ .Values.imagestore.policyupdate.tag }}

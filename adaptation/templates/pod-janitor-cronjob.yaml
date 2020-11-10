@@ -17,6 +17,11 @@ spec:
           labels:
             app: {{ .Values.podjanitor.name }}
         spec:
+          tolerations:
+          - key: "use"
+            operator: "Equal"
+            value: "main-app"
+            effect: "NoSchedule"  
           serviceAccountName: {{ .Values.serviceAccount.janitorname }}
           containers:
           - name: pod-janitor

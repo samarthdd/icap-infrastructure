@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 icap_host = os.getenv("ICAP_HOST" ,"54.155.107.189")
 cmd = ["c-icap-client", "-i", icap_host, "-s", "info?view=text", "-req", "any"]
 
-host = os.getenv("ELASTIC_HOST", "elastic.sahith.in")
+host = os.getenv("ELASTIC_HOST", "https://quickstart-es-http.monitoring.svc.cluster.local")
 port = os.getenv("ELASTIC_PORT" ,"9200")
 username = os.getenv("ELASTIC_USER", "elastic")
 password = os.getenv("ELASTIC_PASSWORD")

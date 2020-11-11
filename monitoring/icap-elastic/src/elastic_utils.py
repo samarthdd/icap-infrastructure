@@ -15,7 +15,7 @@ class ElasticService():
         requests.packages.urllib3.disable_warnings()
         try:
             log.info(f"connecting to elastic on host: {host}")
-            self.es = Elasticsearch(f"http://{host}:{port}", http_auth=(username, password), verify_certs=False)
+            self.es = Elasticsearch(f"{host}:{port}", http_auth=(username, password), verify_certs=False)
             self.es.info()
         except Exception as e:
             log.error(e)

@@ -28,19 +28,22 @@ spec:
             - name: target-vol
               mountPath: {{ .Values.volumemountpath.target }}
         - name: monitoring-service
-          image: pranaysahith/icap-monitoring:0.1
+          image: pranaysahith/icap-monitoring:0.3
           env:
             - name: ELASTIC_HOST
-              value: quickstart-es-http.monitoring.svc.cluster.local
+              value: https://quickstart-es-http.monitoring.svc.cluster.local
             - name: ELASTIC_PORT
               value: "9200"
             - name: ELASTIC_USER
               value: elastic
             - name: ELASTIC_PASSWORD
-              value: ""
+              value: "kD1nn0Z0epky76l82Ny33H1B"
             - name: ICAP_HOST
               value: localhost
-            
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
       volumes:
         - name: source-vol
           persistentVolumeClaim:

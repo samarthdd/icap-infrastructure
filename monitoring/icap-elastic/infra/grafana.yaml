@@ -5,7 +5,6 @@ metadata:
     app: grafana
     component: core
   name: grafana
-  namespace: grafana
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -64,6 +63,7 @@ spec:
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext:
+        runAsUser: 472
         fsGroup: 472
       terminationGracePeriodSeconds: 30
 status: {}
@@ -77,14 +77,26 @@ spec:
     - "ReadWriteOnce"
   resources:
     requests:
-      storage: "8Gi"
-
+      storage: "3Gi"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: grafana-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/run/desktop/mnt/grafana"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: grafana-service
-  namespace: grafana
 spec:
   type: ClusterIP
   ports:

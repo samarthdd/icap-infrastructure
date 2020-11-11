@@ -14,7 +14,8 @@ username = os.getenv("ELASTIC_USER", "elastic")
 password = os.getenv("ELASTIC_PASSWORD")
 es = ElasticService(host, port, username, password)
 
-index_name = "icap_monitor_test5"
+pod_name = os.getenv("POD_NAME", "test")
+index_name = f"icap_monitor_{pod_name}"
 es.create_index(index_name)
 
 while(True):

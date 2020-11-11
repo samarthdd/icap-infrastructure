@@ -14,7 +14,7 @@ spec:
       labels:
         app: {{ .Values.icapservice.applabel }}     
     spec:
-      containers:     
+      containers:   
         - name: mvp-icap-service
           image: {{ .Values.imagestore.icapservice.repository }}:{{ .Values.imagestore.icapservice.tag }}
           ports:
@@ -27,6 +27,20 @@ spec:
               mountPath: {{ .Values.volumemountpath.source }}
             - name: target-vol
               mountPath: {{ .Values.volumemountpath.target }}
+        - name: monitoring-service
+          image: pranaysahith/icap-monitoring:0.1
+          env:
+            - name: ELASTIC_HOST
+              value: quickstart-es-http.monitoring.svc.cluster.local
+            - name: ELASTIC_PORT
+              value: "9200"
+            - name: ELASTIC_USER
+              value: elastic
+            - name: ELASTIC_PASSWORD
+              value: ""
+            - name: ICAP_HOST
+              value: localhost
+            
       volumes:
         - name: source-vol
           persistentVolumeClaim:

@@ -100,8 +100,7 @@ imagestore:
     tag: develop-6fdfa15
 secrets:
   transactionstore:
-    accountName: "<<https://gw-icap-keyvault.vault.azure.net/secrets/Docker-PAT-username>>"
-    accountKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/Docker-PAT-org>>"
+    accountName: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionStoreAccountName>>"
+    accountKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionStoreAccountKey>>"
   containerregistry:
-    dockerconfigjson: "$$REPLACE WITH BASE64 .DOCKERCONFIGJSON$$"
-
+    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"

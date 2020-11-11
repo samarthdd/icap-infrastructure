@@ -43,4 +43,5 @@ spec:
               key: password
         {{- end }}               
       imagePullSecrets:
-        - name: registrycredential
+        - name: adaptation-registry-credential
+

@@ -63,4 +63,4 @@ imagestore:
   transactioneventapi:
     registry: ""
     repository: glasswallsolutions/transactioneventapi
-    tag: main-d17e702
+    tag: main-62d414b

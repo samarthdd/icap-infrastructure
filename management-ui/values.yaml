@@ -9,4 +9,4 @@ imagestore:
   icapmanagementui:
     registry: ""
     repository: glasswallsolutions/icap-management-ui
-    tag: main-f61cf7f
+    tag: main-46c5b07

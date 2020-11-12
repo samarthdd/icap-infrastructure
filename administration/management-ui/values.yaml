@@ -8,4 +8,4 @@ service:
 imagestore:
   icapmanagementui:
     repository: glasswallsolutions/icap-management-ui
-    tag: dev-latest
+    tag: dev-e3402d1

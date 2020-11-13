@@ -63,6 +63,6 @@ tolerations: []
 
 affinity: {}
 imagestore:
-  policy-management-api:
+  policymanagementapi:
     repository: glasswallsolutions/policy-management-api
     tag: develop-39f37cf

@@ -29,7 +29,7 @@ spec:
           value: {{ .Values.volumemountpath.target }}
         - name: REQUEST_PROCESSING_IMAGE
           value: {{ .Values.imagestore.requestprocessing.registry}}{{ .Values.imagestore.requestprocessing.repository }}:{{ .Values.imagestore.requestprocessing.tag }}
-          - name: REQUEST_PROCESSING_TIMEOUT
+        - name: REQUEST_PROCESSING_TIMEOUT
           value: {{ .Values.icapserviceconfig.processingtimeoutduration }}
         resources:
           limits:

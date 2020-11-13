@@ -7,8 +7,8 @@ apiVersion: v1
 metadata:
   name: glasswalltarget-pvc
 spec:
-  storageClassName: azurefile
-  accessModes: [ "ReadWriteMany" ]
+  storageClassName: azuredisk
+  accessModes: [ "ReadWriteOnce" ]
   resources:
     requests:
       storage: 3Gi

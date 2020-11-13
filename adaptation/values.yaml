@@ -55,7 +55,7 @@ imagestore:
     tag: develop-e346546
   podjanitor:
     repository: glasswallsolutions/pod-janitor
-    tag: develop-305e37e
+    tag: develop-dd4c0f8
   icapservice:
     repository: glasswallsolutions/mvp-icap-service
     tag: develop-a7942fd

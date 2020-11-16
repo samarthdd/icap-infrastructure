@@ -2,15 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.policyupdateservice.name }}
+  labels:
+    app: {{ .Values.policyupdateservice.applabel }}
 spec:
   replicas: {{ .Values.policyupdateservice.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.policyupdateservice.name }}
+      app: {{ .Values.policyupdateservice.applabel }}
   template:
     metadata:
       labels:
-        app: {{ .Values.policyupdateservice.name }}     
+        app: {{ .Values.policyupdateservice.applabel }}   
     spec:
       containers:     
       - name: policy-update-service

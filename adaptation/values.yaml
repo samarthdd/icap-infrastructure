@@ -42,6 +42,7 @@ eventsubmissionservice:
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
 policyupdateservice:
   name: policy-update-service
+  applabel: policyupdate
   replicas: 1
   port: 10000
 requestprocessingservice:

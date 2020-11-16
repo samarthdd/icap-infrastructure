@@ -1,6 +1,7 @@
 environment:
 serviceAccount:
   adaptationname: adaptation-service-sa
+  archiveadaptationname: archive-adaptation-service-sa
   janitorname: pod-janitor-sa
 volumemountpath:
   source: "/var/source"
@@ -22,6 +23,12 @@ adaptationservice:
   replicas: 1
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
   rolename: adaptation-service-role
+archiveadaptationservice:
+  name: archive-adaptation-service
+  namespace: icap-adaptation
+  replicas: 1
+  amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
+  rolename: archive-adaptation-service-role
 icapservice:
   name: mvp-icap-service
   applabel: adaptation
@@ -65,3 +72,9 @@ imagestore:
   policyupdate:
     repository: glasswallsolutions/policy-update-service
     tag: develop-20f889d
+  archiveadaptationservice:
+    repository: diggers/archive-adaptation-service
+    tag: latest
+  archiveprocessingservice:
+    repository: diggers/archive-processing-service
+    tag: latest

@@ -58,18 +58,23 @@ spec:
             - name: PolicyUpdateServiceEndpointCsv
               valueFrom:
                 secretKeyRef:
-                  name: policyUpdateServiceRef
+                  name: policyupdateserviceref
                   key: PolicyUpdateServiceEndpointCsv
             - name: TokenUsername
               valueFrom:
                 secretKeyRef:
-                  name: policyUpdateServiceRef
+                  name: policyupdateserviceref
                   key: TokenUsername
             - name: TokenPassword
               valueFrom:
                 secretKeyRef:
-                  name: policyUpdateServiceRef
+                  name: policyupdateserviceref
                   key: TokenPassword
+            - name: ncfspolicyupdateserviceendpointcsv
+              valueFrom:
+                secretKeyRef:
+                  name: ncfspolicyupdateserviceref
+                  key: NcfsPolicyUpdateServiceEndpointCsv
             {{- $root := . }}
             {{- range $ref, $values := .Values.secrets }}
             {{- range $key, $value := $values }}

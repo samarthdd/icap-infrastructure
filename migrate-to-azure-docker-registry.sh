@@ -56,6 +56,7 @@ find * -prune -type d | while IFS= read -r d; do
 done
 
 
+
 #script input param is acr registry url, glasswall registry username, password
 #
 #for each helm directory
@@ -65,9 +66,9 @@ done
 #    run docker pull image repo
 #    run docker tag to new acr registry
 #    run docker push to new acr registry
-=======
+
 #!/bin/bash
-=======
+
 
 
 loginToAcr () {
@@ -124,4 +125,17 @@ find * -prune -type d | while IFS= read -r d; do
 
     cd ..
 done
+
+cd adaptation
+IMAGE=$(yq read values.yaml 'imagestore.requestprocessing.repository')
+TAG=$(yq read values.yaml 'imagestore.requestprocessing.tag')
+docker pull $IMAGE:$TAG
+docker tag $IMAGE:$TAG gwicapcontainerregistry.azurecr.io/$IMAGE:$TAG
+docker push gwicapcontainerregistry.azurecr.io/$IMAGE:$TAG
+cd ..
+
+
+
+
+
 

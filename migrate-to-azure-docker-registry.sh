@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
-loginToAcr () {
+loginToDockerRegistries () {
   accessToken=$(az acr login --name gwicapcontainerregistry --expose-token | jq -r '.accessToken')
   docker login gwicapcontainerregistry.azurecr.io --username 00000000-0000-0000-0000-000000000000	--password "$accessToken"
+  dockerHubToken=$(az keyvault secret show --vault-name gw-icap-keyvault --name Docker-PAT | jq -r '.value')
+  dockerHubUsername=$(az keyvault secret show --vault-name gw-icap-keyvault --name Docker-PAT-username | jq -r '.value')
+  docker login --username "$dockerHubUsername"	--password "$dockerHubToken"
 }
 
-loginToAcr
+loginToDockerRegistries
 
 shopt -s dotglob
 

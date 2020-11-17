@@ -10,15 +10,10 @@ volumemountpath:
 queue:
   messagebrokersecret: "rabbitcredentialssecret"
   host:
-<<<<<<< HEAD
-    url: "rabbitmq-service" # this should be deprecated in preference to queue specific hostname
-    port: "\"5672\"" # this should be deprecated in preference to queue specific port
-=======
     url: "rabbitmq-service.icap-rabbitmq.svc.cluster.local"
     port: "\"5672\""
     #rabbitUserName is the name of the secret where the RabbitMQ user name is stored for conntecting with the message broker.
     #rabbitPassword is the name of the secret where the RabbitMQ password is stored for conntecting with the message broker.
->>>>>>> 1472e1f... Update rabbitmq endpoint
   adaptationRequest:
     exchangename: "adaptation-exchange"
     requestqueuename: "adaptation-request-queue"

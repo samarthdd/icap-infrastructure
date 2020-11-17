@@ -70,7 +70,7 @@ spec:
                 secretKeyRef:
                   name: policyupdateserviceref
                   key: TokenPassword
-            - name: ncfspolicyupdateserviceendpointcsv
+            - name: NcfsPolicyUpdateServiceEndpointCsv
               valueFrom:
                 secretKeyRef:
                   name: ncfspolicyupdateserviceref

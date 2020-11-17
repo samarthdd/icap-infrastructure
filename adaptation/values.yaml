@@ -81,7 +81,7 @@ imagestore:
     tag: main-696b28b
   archiveadaptationservice:
     repository: glasswallsolutions/archive-adaptation-service
-    tag: latest
+    tag: main-c464b14
   archiveprocessingservice:
     repository: glasswallsolutions/archive-processing-service
     tag: latest

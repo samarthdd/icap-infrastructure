@@ -13,15 +13,11 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Values.fullnameOverride }}
+      app: {{ .Values.name }}
   template:
     metadata:
       labels:
-        app: {{ template "transactioneventapi.name" . }}
-        draft: {{ .Values.draft | default "draft-app" }}
-        release: {{ .Release.Name }}
-      annotations:
-        buildID: {{ .Values.buildID | default "" | quote }}
+        app: {{ .Values.name }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

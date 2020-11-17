@@ -53,7 +53,6 @@ Lastly make the argocld CLI executable:
 ```bash
 chmod +x /usr/local/bin/argocd
 ```
-
 #### Mac
 
 Use homebrew to install:
@@ -124,6 +123,8 @@ Once logged in you will need to change the password
 ```bash
 argocd account update-password
 ```
+
+Once you're logged in you have full access to all the Argocd CLI commands and can deploy new charts or sync existing charts.
 
 #### GUI Login
 

@@ -15,7 +15,7 @@ spec:
       serviceAccountName: {{ .Values.serviceAccount.archiveadaptationname  }}
       containers:
       - name: adaptation-service
-        image: {{ .Values.imagestore.archiveadaptationservice.repository }}:{{ .Values.imagestore.adaptationservice.tag }}
+        image: {{ .Values.imagestore.archiveadaptationservice.repository }}:{{ .Values.imagestore.archiveadaptationservice.tag }}
         env:
         - name: POD_NAMESPACE
           valueFrom:

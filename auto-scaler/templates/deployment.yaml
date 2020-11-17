@@ -32,8 +32,8 @@ spec:
           env:
             - name: CLUSTERNAME
               valueFrom:
-                configmapKeyRef:
-                  name: cluster-autoscaler-clustername
+                configMapKeyRef:
+                  name: clusternamemap
                   key: clustername
             - name: ARM_SUBSCRIPTION_ID
               valueFrom:
@@ -42,8 +42,8 @@ spec:
                   name: {{.Values.metadataName}}
             - name: ARM_RESOURCE_GROUP
               valueFrom:
-                configmapKeyRef:
-                  name: cluster-autoscaler-clustername
+                configMapKeyRef:
+                  name: clusternamemap
                   key: resourcegroup
             - name: ARM_TENANT_ID
               valueFrom:

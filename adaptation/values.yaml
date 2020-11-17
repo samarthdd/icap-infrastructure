@@ -58,7 +58,7 @@ requestprocessingservice:
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
-    tag: develop-9761737
+    tag: develop-b03297f
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
     tag: develop-da57f2d

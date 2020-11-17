@@ -73,8 +73,8 @@ imagestore:
     repository: glasswallsolutions/policy-update-service
     tag: develop-20f889d
   archiveadaptationservice:
-    repository: diggers/archive-adaptation-service
+    repository: glasswallsolutions/archive-adaptation-service
     tag: latest
   archiveprocessingservice:
-    repository: diggers/archive-processing-service
+    repository: glasswallsolutions/archive-processing-service
     tag: latest

@@ -23,6 +23,8 @@ spec:
               fieldPath: metadata.namespace
         - name: AMQP_URL
           value: {{ .Values.archiveadaptationservice.amqpurl }}
+        - name: EXCHANGE
+          value: {{ .Values.archiveadaptationservice.exchange }}   
         - name: INPUT_MOUNT
           value: {{ .Values.volumemountpath.source }}
         - name: OUTPUT_MOUNT

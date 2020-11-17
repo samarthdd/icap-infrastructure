@@ -76,7 +76,7 @@ imagestore:
     tag: develop-20f889d
   archiveadaptationservice:
     repository: glasswallsolutions/archive-adaptation-service
-    tag: latest
+    tag: develop-8255300
   archiveprocessingservice:
     repository: glasswallsolutions/archive-processing-service
     tag: latest

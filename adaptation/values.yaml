@@ -28,6 +28,7 @@ archiveadaptationservice:
   namespace: icap-adaptation
   replicas: 1
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
+  exchange: adaptation-exchange
   rolename: archive-adaptation-service-role
 icapservice:
   name: mvp-icap-service
@@ -73,7 +74,7 @@ imagestore:
     repository: glasswallsolutions/policy-update-service
     tag: develop-20f889d
   archiveadaptationservice:
-    repository: glasswallsolutions/archive-adaptation-service
+    repository: diggers/archive-adaptation-service
     tag: latest
   archiveprocessingservice:
     repository: glasswallsolutions/archive-processing-service

@@ -78,7 +78,7 @@ imagestore:
     tag: main-e243149
   policyupdate:
     repository: glasswallsolutions/policy-update-service
-    tag: main-696b28b
+    tag: main-697495a
   archiveadaptationservice:
     repository: glasswallsolutions/archive-adaptation-service
     tag: main-c464b14

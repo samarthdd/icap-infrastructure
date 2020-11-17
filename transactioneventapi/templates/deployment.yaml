@@ -13,8 +13,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "transactioneventapi.name" . }}
-      release: {{ .Release.Name }}
+      app: {{ .Values.fullnameOverride }}
   template:
     metadata:
       labels:

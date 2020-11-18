@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 checkPrereqs () {
-    declare -a tools=("az yq findd docker")
+    declare -a tools=("az yq find docker")
     for tool in ${tools[@]}; do
       printf "Checking for $tool..."
       toolpath=$(which $tool)

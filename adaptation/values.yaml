@@ -3,8 +3,8 @@ serviceAccount:
   adaptationname: adaptation-service-sa
   janitorname: pod-janitor-sa
 volumemountpath:
-  source: "/var/source"
-  target: "/var/target"
+  source: "/var/azure"
+  target: "/mnt/azure"
 queue:
   host:
     url: "rabbitmq-service"
@@ -39,19 +39,28 @@ eventsubmissionservice:
   name: event-submission-service
   replicas: 1
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
+policyupdateservice:
+  name: policy-update-service
+  replicas: 1
+  port: 10000
+requestprocessingservice:
+  configmapname: request-processing-config
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
-    tag: develop-81a7f9f
+    tag: develop-ee9b4e3
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
-    tag: develop-330790c
+    tag: develop-d3f308b
   podjanitor:
     repository: glasswallsolutions/pod-janitor
-    tag: develop-305e37e
+    tag: main-5ce5e69
   icapservice:
     repository: glasswallsolutions/mvp-icap-service
-    tag: develop-65b8e04
+    tag: develop-4423be0
   eventsubmission:
     repository: glasswallsolutions/event-submission-service
     tag: develop-457bea3
+  policyupdate:
+    repository: glasswallsolutions/policy-update-service
+    tag: develop-34b4267

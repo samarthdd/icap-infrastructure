@@ -88,6 +88,12 @@ kubectl create -n icap-adaptation secret docker-registry regcred	\
 	--docker-email=<email address>
 ```
 
+Create secret with rabbitmq username and password
+
+```
+kubectl create -n icap-adaptation secret generic transactionstoresecret --from-literal=accountName=guest --from-literal=accountKey=guest
+```
+
 Install the cluster components
 ```
 helm install . --namespace icap-adaptation --generate-name

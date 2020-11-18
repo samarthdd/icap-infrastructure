@@ -31,6 +31,26 @@ spec:
           value: {{ .Values.imagestore.requestprocessing.repository }}:{{ .Values.imagestore.requestprocessing.tag }}
         - name: REQUEST_PROCESSING_TIMEOUT
           value: {{ .Values.icapserviceconfig.processingtimeoutduration }}
+        {{- if .Values.queue.messagebrokeruser }}
+        - name: MESSAGE_BROKER_USER
+          value: {{ .Values.queue.messagebrokeruser }}
+        {{- end }}
+        {{- if .Values.queue.messagebrokerpassword }}
+        - name: MESSAGE_BROKER_PASSWORD
+          value: {{ .Values.queue.messagebrokerpassword }}
+        {{- end }}          
+        - name: ADAPTATION_REQUEST_QUEUE_HOSTNAME
+          value: {{ .Values.queue.adaptationRequest.hostname }}
+        - name: ADAPTATION_REQUEST_QUEUE_PORT
+          value: {{ .Values.queue.adaptationRequest.port }}
+        - name: ARCHIVE_ADAPTATION_QUEUE_REQUEST_HOSTNAME
+          value: {{ .Values.queue.archiveadaptationrequest.hostname }}
+        - name: ARCHIVE_ADAPTATION_REQUEST_QUEUE_PORT
+          value: {{ .Values.queue.archiveadaptationrequest.port }}
+        - name: TRANSACTION_EVENT_QUEUE_HOSTNAME
+          value: {{ .Values.queue.transactionevent.hostname}}
+        - name: TRANSACTION_EVENT_QUEUE_PORT
+          value: {{ .Values.queue.transactionevent.port }}
         resources:
           limits:
             cpu: 1

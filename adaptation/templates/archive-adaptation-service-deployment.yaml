@@ -21,8 +21,6 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        - name: AMQP_URL
-          value: {{ .Values.archiveadaptationservice.amqpurl }}
         - name: EXCHANGE
           value: {{ .Values.archiveadaptationservice.exchange }}          
         - name: INPUT_MOUNT
@@ -33,6 +31,22 @@ spec:
           value: {{ .Values.imagestore.archiveprocessingservice.repository }}:{{ .Values.imagestore.archiveprocessingservice.tag }}
         - name: ARCHIVE_PROCESSING_TIMEOUT
           value: {{ .Values.icapserviceconfig.processingtimeoutduration }}
+        - name: ARCHIVE_ADAPTATION_REQUEST_QUEUE_HOSTNAME
+          value: {{ .Values.queue.archiveadaptationrequest.hostname}}
+        - name: ARCHIVE_ADAPTATION_REQUEST_QUEUE_PORT
+          value: {{ .Values.queue.archiveadaptationrequest.port}}
+        - name: ADAPTATION_REQUEST_QUEUE_HOSTNAME
+          value: {{ .Values.queue.adaptationRequest.hostname}}
+        - name: ADAPTATION_REQUEST_QUEUE_PORT
+          value: {{ .Values.queue.adaptationRequest.port}}
+        {{- if .Values.queue.messagebrokeruser }}
+        - name: MESSAGE_BROKER_USER
+          value: {{ .Values.queue.messagebrokeruser }}
+        {{- end }}
+        {{- if .Values.queue.messagebrokerpassword }}
+        - name: MESSAGE_BROKER_PASSWORD
+          value: {{ .Values.queue.messagebrokerpassword }}
+        {{- end }}  
         resources:
           limits:
             cpu: 1

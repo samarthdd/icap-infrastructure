@@ -65,26 +65,34 @@ requestprocessingservice:
   configmapname: request-processing-config
 imagestore:
   requestprocessing:
+    registry: ""
     repository: glasswallsolutions/icap-request-processing
     tag: develop-6331982
   adaptationservice:
+    registry: ""
     repository: glasswallsolutions/icap-adaptation-service
     tag: develop-1de38ed
   podjanitor:
+    registry: ""
     repository: glasswallsolutions/pod-janitor
     tag: develop-dd4c0f8
   icapservice:
+    registry: ""
     repository: glasswallsolutions/mvp-icap-service
     tag: develop-a7942fd
   eventsubmission:
+    registry: ""
     repository: glasswallsolutions/event-submission-service
     tag: develop-eab7932
   policyupdate:
+    registry: ""
     repository: glasswallsolutions/policy-update-service
     tag: develop-20f889d
   archiveadaptationservice:
+    registry: ""
     repository: glasswallsolutions/archive-adaptation-service
     tag: develop-8255300
   archiveprocessingservice:
+    registry: ""
     repository: glasswallsolutions/archive-processing-service
     tag: latest

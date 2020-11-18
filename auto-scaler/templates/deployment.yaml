@@ -71,6 +71,6 @@ spec:
         - name: autoscaler-registry-credential
       volumes:
         - hostPath:
-            path: /etc/ssl/certs/ca-certificates.crt
+            path: /etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
             type: ""
           name: ssl-certs

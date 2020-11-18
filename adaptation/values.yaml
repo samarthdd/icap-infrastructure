@@ -61,7 +61,7 @@ imagestore:
     tag: develop-b03297f
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
-    tag: develop-da57f2d
+    tag: develop-1de38ed
   podjanitor:
     repository: glasswallsolutions/pod-janitor
     tag: develop-dd4c0f8

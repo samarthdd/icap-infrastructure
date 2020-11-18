@@ -85,11 +85,14 @@ imagestore:
     repository: glasswallsolutions/event-submission-service
     tag: main-e243149
   policyupdate:
+    registry: ""
     repository: glasswallsolutions/policy-update-service
     tag: main-697495a
   archiveadaptationservice:
+    registry: ""
     repository: glasswallsolutions/archive-adaptation-service
     tag: main-928c171
   archiveprocessingservice:
+    registry: ""
     repository: glasswallsolutions/archive-processing-service
     tag: main-a7b7430

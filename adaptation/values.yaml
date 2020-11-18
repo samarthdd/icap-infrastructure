@@ -12,20 +12,18 @@ queue:
   host:
     url: "rabbitmq-service.icap-rabbitmq.svc.cluster.local"
     port: "\"5672\""
-    #rabbitUserName is the name of the secret where the RabbitMQ user name is stored for conntecting with the message broker.
-    #rabbitPassword is the name of the secret where the RabbitMQ password is stored for conntecting with the message broker.
   adaptationRequest:
     exchangename: "adaptation-exchange"
     requestqueuename: "adaptation-request-queue"
     replyqueuename: "amq.rabbitmq.reply-to"
     messagename: "adaptation-request"
-    hostname: "rabbitmq-service"
+    hostname: "rabbitmq-service.icap-rabbitmq.svc.cluster.local"
     port: "\"5672\""
   archiveadaptationrequest:
-    hostname: "rabbitmq-service"
+    hostname: "rabbitmq-service.icap-rabbitmq.svc.cluster.local"
     port: "\"5672\""
   transactionevent:
-    hostname: "rabbitmq-service"
+    hostname: "rabbitmq-service.icap-rabbitmq.svc.cluster.local"
     port: "\"5672\""
 adaptationservice:
   name: adaptation-service

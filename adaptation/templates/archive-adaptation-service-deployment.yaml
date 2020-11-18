@@ -22,7 +22,7 @@ spec:
             fieldRef:
               fieldPath: metadata.namespace
         - name: EXCHANGE
-          value: {{ .Values.archiveadaptationservice.exchange }}          
+          value: {{ .Values.archiveadaptationservice.exchange }}
         - name: INPUT_MOUNT
           value: {{ .Values.volumemountpath.source }}
         - name: OUTPUT_MOUNT

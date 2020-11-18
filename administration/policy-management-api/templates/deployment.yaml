@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.imagestore.policymanagementapi.repository }}:{{ .Values.imagestore.policymanagementapi.tag }}"
+          image: "{{ .Values.imagestore.policymanagementapi.registry }}{{ .Values.imagestore.policymanagementapi.repository }}:{{ .Values.imagestore.policymanagementapi.tag }}"
           ports:
             - name: http
               containerPort: {{ .Values.deployment.containerPort }}

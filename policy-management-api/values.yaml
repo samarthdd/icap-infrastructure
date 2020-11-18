@@ -58,5 +58,6 @@ tolerations: []
 affinity: {}
 imagestore:
   policymanagementapi:
+    registry: ""
     repository: glasswallsolutions/policy-management-api
     tag: main-2c25bc1

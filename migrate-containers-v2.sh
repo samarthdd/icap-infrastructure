@@ -1,21 +1,16 @@
 #!/usr/bin/env bash
 
-set -e
-set -o pipefail
-
 checkPrereqs () {
-    if ! which az > /dev/null; then
-      printf "ERROR: az not found in path\n"
-    fi
-    if ! which yq > /dev/null; then
-      printf "ERROR: yq not found in path\n"
-    fi
-    if ! which find > /dev/null; then
-      printf "ERROR: find not found in path\n"
-    fi
-    if ! which docker > /dev/null; then
-      printf "ERROR: docker not found in path\n"
-    fi
+    declare -a tools=("az yq findd docker")
+    for tool in ${tools[@]}; do
+      printf "Checking for $tool..."
+      toolpath=$(which $tool)
+      if [[ $? != 0 ]]; then
+        printf "%b" "\e[1;31m not found\e[0m\n"
+      else
+        printf "%b" "\e[1;36m $toolpath\e[0m\n"
+      fi
+    done
 }
 
 registriesLogin () {
@@ -42,6 +37,9 @@ migrateChartImages () {
 }
 
 checkPrereqs
+
+set -e
+set -o pipefail
 
 registriesLogin
 

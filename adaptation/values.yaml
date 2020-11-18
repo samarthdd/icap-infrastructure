@@ -11,7 +11,7 @@ queue:
   messagebrokerpassword: ""
   host:
     url: "rabbitmq-service" # this should be deprecated in preference to queue specific hostname
-    port: "\"5672\""  # this should be deprecated in preference to queue specific port
+    port: "\"5672\"" # this should be deprecated in preference to queue specific port
   adaptationRequest:
     exchangename: "adaptation-exchange"
     requestqueuename: "adaptation-request-queue"
@@ -66,7 +66,7 @@ requestprocessingservice:
 imagestore:
   requestprocessing:
     repository: glasswallsolutions/icap-request-processing
-    tag: develop-b03297f
+    tag: develop-6331982
   adaptationservice:
     repository: glasswallsolutions/icap-adaptation-service
     tag: develop-1de38ed

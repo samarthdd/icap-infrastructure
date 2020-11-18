@@ -92,4 +92,4 @@ imagestore:
     tag: main-928c171
   archiveprocessingservice:
     repository: glasswallsolutions/archive-processing-service
-    tag: latest
+    tag: main-a7b7430

@@ -3,6 +3,21 @@
 set -e
 set -o pipefail
 
+checkPrereqs () {
+    if ! which az > /dev/null; then
+      printf "ERROR: az not found in path\n"
+    fi
+    if ! which yq > /dev/null; then
+      printf "ERROR: yq not found in path\n"
+    fi
+    if ! which find > /dev/null; then
+      printf "ERROR: find not found in path\n"
+    fi
+    if ! which docker > /dev/null; then
+      printf "ERROR: docker not found in path\n"
+    fi
+}
+
 registriesLogin () {
     printf "Logging into registries\n"
     accessToken=$(az acr login --name gwicapcontainerregistry --expose-token 2>/dev/null | jq -r '.accessToken')
@@ -25,6 +40,8 @@ migrateChartImages () {
         docker rmi "$registry$repository:$tag" > /dev/null
     done
 }
+
+checkPrereqs
 
 registriesLogin
 

@@ -87,4 +87,4 @@ imagestore:
     tag: develop-8255300
   archiveprocessingservice:
     repository: glasswallsolutions/archive-processing-service
-    tag: latest
+    tag: develop-175365c

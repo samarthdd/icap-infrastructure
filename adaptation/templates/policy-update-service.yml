@@ -16,7 +16,7 @@ spec:
     spec:
       containers:     
       - name: policy-update-service
-        image: {{ .Values.imagestore.policyupdate.repository }}:{{ .Values.imagestore.policyupdate.tag }}
+        image: {{ .Values.imagestore.policyupdate.registry }}{{ .Values.imagestore.policyupdate.repository }}:{{ .Values.imagestore.policyupdate.tag }}
         ports:
         - containerPort: {{ .Values.policyupdateservice.port }}
         env:

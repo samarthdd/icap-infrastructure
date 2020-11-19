@@ -95,4 +95,4 @@ imagestore:
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
-    tag: develop-175365c
+    tag: develop-37b3f4e

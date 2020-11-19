@@ -11,4 +11,3 @@ spec:
   ports:
   - port: {{ .Values.policyupdateservice.port }}
     targetPort:  {{ .Values.policyupdateservice.port }}
-

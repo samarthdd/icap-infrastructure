@@ -42,10 +42,15 @@ ncfspolicyupdateservice:
   applabel: ncfspolicyupdate
   replicas: 1
   port: 10001
+  rolename: ncfs-role
   
 referencencfsservice:
   configmapname: reference-ncfs-service-config
   namespace: reference-ncfs-service
+
+serviceAccount:
+  ncfspolicyupdatename: policy-update-service-sa
+  namespace: ncfs-policy-update-service
 
 resources: {}
 # We usually recommend not to specify default resources and to leave this as a conscious

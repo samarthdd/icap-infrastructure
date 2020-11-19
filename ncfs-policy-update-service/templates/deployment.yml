@@ -14,7 +14,8 @@ spec:
       labels:
         app: {{ .Values.ncfspolicyupdateservice.applabel }}   
     spec:
-      containers:     
+      serviceAccountName: {{ .Values.serviceAccount.ncfspolicyupdatename }} 
+      containers:    
       - name: ncfs-policy-update-service
         image: {{ .Values.imagestore.ncfspolicyupdateservice.registry}}{{ .Values.imagestore.ncfspolicyupdateservice.repository }}:{{ .Values.imagestore.ncfspolicyupdateservice.tag }}
         ports:

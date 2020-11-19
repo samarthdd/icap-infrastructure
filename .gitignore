@@ -149,3 +149,4 @@ override.tf.json
 *.code-workspace
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,vscode,terraform,helm,git
+ncfs-policy-update-service/templates/secrets.yml

@@ -41,5 +41,3 @@ spec:
         - name: tls-config-vol
           secret:
             secretName: icap-service-tls-config
-
-

@@ -15,4 +15,3 @@ spec:
   - port: 1345
     name: tlsport
     targetPort: {{ .Values.icapservice.tlsport }}
-

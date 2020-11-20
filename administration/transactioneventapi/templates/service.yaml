@@ -15,4 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ .Values.name }}
+    app: {{ template "transactioneventapi.name" . }}
+    release: {{ .Release.Name }}

@@ -28,7 +28,7 @@ spec:
             - --logtostderr=true
             - --cloud-provider=azure
             - --skip-nodes-with-local-storage=false
-            - --node-group-auto-discovery=label:cluster-autoscaler-enabled=true,cluster-autoscaler-name=$CLUSTERNAME
+            - --node-group-auto-discovery=label:cluster-autoscaler=enabled,cluster={{ .Values.clustername }}
           env:
             - name: CLUSTERNAME
               valueFrom:

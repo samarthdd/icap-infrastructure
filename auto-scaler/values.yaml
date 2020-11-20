@@ -6,6 +6,8 @@ vmssClusterTag: "skillsettag"
 
 serviceAccountName: "cluster-autoscaler"
 
+clustername: ""
+
 replicaCount: 1
 
 resources:

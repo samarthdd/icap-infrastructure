@@ -5,8 +5,8 @@ serviceAccount:
   policyupdatename: policy-update-service-sa
   janitorname: pod-janitor-sa
 volumemountpath:
-  source: "/var/azure"
-  target: "/mnt/azure"
+  source: "/var/source"
+  target: "/var/target"
 queue:
   messagebrokeruser: ""
   messagebrokerpassword: ""

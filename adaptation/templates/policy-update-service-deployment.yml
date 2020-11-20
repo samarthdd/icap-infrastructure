@@ -12,12 +12,12 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.policyupdateservice.applabel }}     
+        app: {{ .Values.policyupdateservice.applabel }}
     spec:
       serviceAccountName: {{ .Values.serviceAccount.policyupdatename }}
       containers:     
       - name: policy-update-service
-        image: {{ .Values.imagestore.policyupdate.registry}}{{ .Values.imagestore.policyupdate.repository }}:{{ .Values.imagestore.policyupdate.tag }}
+        image: {{ .Values.imagestore.policyupdate.registry }}{{ .Values.imagestore.policyupdate.repository }}:{{ .Values.imagestore.policyupdate.tag }}
         ports:
         - containerPort: {{ .Values.policyupdateservice.port }}
         env:

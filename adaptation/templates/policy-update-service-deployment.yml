@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.policyupdateservice.applabel }}   
+        app: {{ .Values.policyupdateservice.applabel }}
     spec:
       serviceAccountName: {{ .Values.serviceAccount.policyupdatename }}
       containers:     

@@ -38,4 +38,4 @@ spec:
           valueFrom:
             secretKeyRef:
               name: policyupdateservicesecret
-              key: password 
+              key: password

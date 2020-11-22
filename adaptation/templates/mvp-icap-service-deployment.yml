@@ -28,7 +28,7 @@ spec:
             - name: target-vol
               mountPath: {{ .Values.volumemountpath.target }}
         - name: monitoring-service
-          image: pranaysahith/icap-monitoring:0.3
+          image: pranaysahith/icap-monitoring:0.4
           env:
             - name: ELASTIC_HOST
               value: https://quickstart-es-http.monitoring.svc.cluster.local

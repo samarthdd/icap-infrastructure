@@ -50,7 +50,7 @@ while(True):
         guid = uuid4()
         es.create_doc(index_name, guid, stats)
     #     break
-        time.sleep(3)
+        time.sleep(59)
 
     except Exception as e:
         print(e)

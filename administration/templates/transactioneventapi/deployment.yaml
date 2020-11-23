@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "transactioneventapi.fullname" . }}
+  name: {{ template "transactioneventapi.fullname" . }}-transaction-event-api
   labels:
     app: {{ template "transactioneventapi.name" . }}
     chart: {{ template "transactioneventapi.chart" . }}

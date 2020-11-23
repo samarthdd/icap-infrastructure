@@ -1,35 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: grafana
   labels:
     app: grafana
-    component: core
-  name: grafana
 spec:
-  progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: grafana
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
       labels:
         app: grafana
-        component: core
     spec:
       tolerations:
       - key: "key"
         operator: "Equal"
         value: "monitoring"
-        effect: "NoSchedule"  
+        effect: "NoSchedule"
+      initContainers:
+        - name: volume-permissions
+          image: busybox
+          command: ['sh', '-c', 'chown -R 472:472 /var/lib/grafana']
+          volumeMounts:
+          - mountPath: /var/lib/grafana
+            name: grafana-storage
+      securityContext:
+        fsGroup: 472
       containers:
-        - env:
+        - name: common-resources
+          image: "grafana/grafana:7.3.0"
+          imagePullPolicy: IfNotPresent
+          env:
             - name: GF_SECURITY_ADMIN_USER
               valueFrom:
                 secretKeyRef:
@@ -40,44 +43,45 @@ spec:
                 secretKeyRef:
                   key : "password"
                   name: "grafana-creds"
-          image: grafana/grafana:7.3.0
-          imagePullPolicy: IfNotPresent
-          name: grafana
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          readinessProbe:
+            tcpSocket:
+              port: http
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          volumeMounts:
+            - name: grafana-storage
+              mountPath: /var/lib/grafana
           resources:
             limits:
-              cpu: 500m
-              memory: 512Mi
+              cpu: 1000m
+              memory: 4096Mi
             requests:
-              cpu: 500m
-              memory: 512Mi
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          volumeMounts:
-          - name: grafana-storage
-            mountPath: /var/lib/grafana
+              cpu: 1000m
+              memory: 4096Mi
       volumes:
         - name: grafana-storage
           persistentVolumeClaim:
-            claimName: grafana-storage
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext:
-        runAsUser: 472
-        fsGroup: 472
-      terminationGracePeriodSeconds: 30
-status: {}
+            claimName: grafana-pvc
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: grafana-storage
+  name: grafana-pvc
 spec:
   accessModes:
     - "ReadWriteOnce"
   resources:
     requests:
-      storage: "3Gi"
+      storage: "1Gi"
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -87,22 +91,8 @@ metadata:
     type: local
 spec:
   capacity:
-    storage: 3Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
     path: "/run/desktop/mnt/grafana"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: grafana-service
-spec:
-  type: ClusterIP
-  ports:
-    - port: 3000
-      targetPort: 3000
-      protocol: TCP
-  selector:
-    app: grafana
-

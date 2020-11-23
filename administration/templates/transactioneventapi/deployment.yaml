@@ -10,7 +10,7 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   revisionHistoryLimit: 0
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.transactioneventapi.replicaCount }}
   selector:
     matchLabels:
       app: {{ template "transactioneventapi.name" . }}
@@ -29,9 +29,9 @@ spec:
           image: "{{ .Values.imagestore.transactioneventapi.registry }}{{ .Values.imagestore.transactioneventapi.repository }}:{{ .Values.imagestore.transactioneventapi.tag }}"
           ports:
             - name: http
-              containerPort: {{ .Values.deployment.containerPort }}
+              containerPort: {{ .Values.transactioneventapi.deployment.containerPort }}
               protocol: TCP
-          {{- if .Values.probes.enabled }}
+          {{- if .Values.transactioneventapi.probes.enabled }}
           livenessProbe:
             httpGet:
               path: /
@@ -51,7 +51,7 @@ spec:
                   name: transactionstoresecret
                   key: TransactionStoreConnectionStringCsv
             {{- $root := . }}
-            {{- range $ref, $values := .Values.secrets }}
+            {{- range $ref, $values := .Values.transactioneventapi.secrets }}
             {{- range $key, $value := $values }}
             - name: {{ $ref }}_{{ $key }}
               valueFrom:
@@ -61,20 +61,20 @@ spec:
             {{- end }}
             {{- end }}
           resources:
-{{ toYaml .Values.resources | indent 12 }}
-    {{- with .Values.imagePullSecrets }}
+{{ toYaml .Values.transactioneventapi.resources | indent 12 }}
+    {{- with .Values.transactioneventapi.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml . | indent 8 }}
     {{- end }}
-    {{- with .Values.nodeSelector }}
+    {{- with .Values.transactioneventapi.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
     {{- end }}
-    {{- with .Values.affinity }}
+    {{- with .Values.transactioneventapi.affinity }}
       affinity:
 {{ toYaml . | indent 8 }}
     {{- end }}
-    {{- with .Values.tolerations }}
+    {{- with .Values.transactioneventapi.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}

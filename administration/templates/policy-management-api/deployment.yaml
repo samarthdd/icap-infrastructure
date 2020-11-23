@@ -10,7 +10,7 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   revisionHistoryLimit: 0
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.policymanagementapi.replicaCount }}
   selector:
     matchLabels:
       app: {{ template "policy-management-api.name" . }}
@@ -29,9 +29,9 @@ spec:
           image: "{{ .Values.imagestore.policymanagementapi.registry }}{{ .Values.imagestore.policymanagementapi.repository }}:{{ .Values.imagestore.policymanagementapi.tag }}"
           ports:
             - name: http
-              containerPort: {{ .Values.deployment.containerPort }}
+              containerPort: {{ .Values.policymanagementapi.deployment.containerPort }}
               protocol: TCP
-          {{- if .Values.probes.enabled }}
+          {{- if .Values.policymanagementapi.probes.enabled }}
           livenessProbe:
             httpGet:
               path: /
@@ -76,7 +76,7 @@ spec:
                   name: ncfspolicyupdateserviceref
                   key: NcfsPolicyUpdateServiceEndpointCsv
             {{- $root := . }}
-            {{- range $ref, $values := .Values.secrets }}
+            {{- range $ref, $values := .Values.policymanagementapi.secrets }}
             {{- range $key, $value := $values }}
             - name: {{ $ref }}_{{ $key }}
               valueFrom:
@@ -86,20 +86,20 @@ spec:
             {{- end }}
             {{- end }}
           resources:
-{{ toYaml .Values.resources | indent 12 }}
+{{ toYaml .Values.policymanagementapi.resources | indent 12 }}
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml . | indent 8 }}
     {{- end }}
-    {{- with .Values.nodeSelector }}
+    {{- with .Values.policymanagementapi.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
     {{- end }}
-    {{- with .Values.affinity }}
+    {{- with .Values.policymanagementapi.affinity }}
       affinity:
 {{ toYaml . | indent 8 }}
     {{- end }}
-    {{- with .Values.tolerations }}
+    {{- with .Values.policymanagementapi.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}

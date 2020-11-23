@@ -43,7 +43,7 @@ spec:
           {{- end }}
           envFrom:
           - configMapRef:
-              name: {{ template "policy-management-api.fullname" . }}-configuration
+              name: {{ template "policy-management-api.fullname" . }}-policy-configuration
           env:
             - name: AccountName
               valueFrom:

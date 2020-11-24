@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.deployment.name }}
+  name: {{ .Values.managementui.deployment.name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.deployment.name }}
+      app: {{ .Values.managementui.deployment.name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.deployment.name }}
+        app: {{ .Values.managementui.deployment.name }}
     spec:
       containers:
-        - name: icap-management-ui
+        - name: icap-managementui
           image: {{ .Values.imagestore.icapmanagementui.registry }}{{ .Values.imagestore.icapmanagementui.repository }}:{{ .Values.imagestore.icapmanagementui.tag }}
           imagePullPolicy: IfNotPresent
           env:
             - name: TRANSACTION_EVENT_API_URL
-              value: {{ .Values.config.transactionEventApiUrl }}
+              value: {{ .Values.managementui.config.transactionEventApiUrl }}
             - name: POLICY_MANAGEMENT_API_URL
-              value: {{ .Values.config.policyManagementApiUrl }}
+              value: {{ .Values.managementui.config.policyManagementApiUrl }}          
           ports:
-            - containerPort: {{ .Values.deployment.port }}
+            - containerPort: {{ .Values.managementui.deployment.port }}
           resources:
             limits:
               memory: "128Mi"

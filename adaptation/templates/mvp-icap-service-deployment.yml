@@ -23,6 +23,8 @@ spec:
           envFrom:
           - configMapRef:
               name: icap-service-config
+          - configMapRef:
+              name: icap-proxy-app-config
           volumeMounts:
             - name: source-vol
               mountPath: {{ .Values.volumemountpath.source }}

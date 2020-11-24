@@ -16,6 +16,11 @@ spec:
         - name: icap-management-ui
           image: {{ .Values.imagestore.icapmanagementui.registry }}{{ .Values.imagestore.icapmanagementui.repository }}:{{ .Values.imagestore.icapmanagementui.tag }}
           imagePullPolicy: IfNotPresent
+          env:
+            - name: TRANSACTION_EVENT_API_URL
+              value: {{ .Values.config.transactionEventApiUrl }}
+            - name: POLICY_MANAGEMENT_API_URL
+              value: {{ .Values.config.policyManagementApiUrl }}
           ports:
             - containerPort: {{ .Values.deployment.port }}
           resources:

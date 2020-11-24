@@ -1,6 +1,6 @@
 ## ICAP Infrastructure
 
-A collection of helm charts to stand up a working ICAP Service within Azure AKS, using Terraform for the infrastructure, and ArgoCD or Helm for the deployments.
+A collection of Helm charts to stand up a working ICAP Service within Azure AKS, using Terraform for the infrastructure, and ArgoCD or Helm for the deployments.
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ A collection of helm charts to stand up a working ICAP Service within Azure AKS,
 - [Create Terraform Principal](#create-terraform-principal)
 - [Add Service Principle to Azure Key Vault](#add-service-principle-to-azure-key-vault)
 - [Initialise Terraform and deploy to Azure](#initialise-terraform-and-deploy-to-azure)
-- [Deploy Helm Charts to the cluster](#deploy-helm-charts-to-the-cluster)
+	- [Create Secrets & Namespaces](#create-secrets--namespaces)
 	- [Deploy services](#deploy-services)
 
 ## icap-terraform-aks-deployment
@@ -186,7 +186,7 @@ Enter "yes" and wait for it to complete
 
 Once this completes you should see all the infrastructure for the AKS deployed and working.
 
-## Deploy Helm Charts to the cluster
+### Create Secrets & Namespaces
 
 Before we begin you will need to run the following command to get the details of the cluster that has just been deployed.
 
@@ -199,7 +199,7 @@ In this stage we will be deploying the helm charts to the newly created cluster.
 - Access File Share in an Azure Storage account
 - Pull private images from DockerHub
 
-We can achieve this with the script *create-ns-docker-secrets-<region>.sh* which will be in the scripts folder and do the following:
+We can achieve this by using the script within **./scripts/k8_scripts/** *create-ns-docker-secrets-<region>.sh* which will be in the scripts folder and do the following:
 
 - Creates all namespaces for ICAP services
 - Add secrets for the following
@@ -214,7 +214,7 @@ openssl req -newkey rsa:2048 -nodes -keyout tls.key -x509 -days 365 -out certifi
 ```
 Next run the script:
 
-```
+```bash
 ./create-ns-docker-secrets-<region>.sh
 ```
 

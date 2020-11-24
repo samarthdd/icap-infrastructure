@@ -2,9 +2,9 @@ apiVersion: rabbitmq.com/v1beta1
 kind: RabbitmqCluster
 metadata:
   labels: 
-    app: taskQueue
-    compenent: rabbitmq
-  name: rabbitmq-service
+    app: {{ .Values.rabbitmqService.app }}
+    compenent: {{ .Values.rabbitmqService.component }}
+  name: {{ .Values.rabbitmqService.name }}
 spec:
  affinity:
   podAntiAffinity:
@@ -13,7 +13,7 @@ spec:
       podAffinityTerm:
         labelSelector:
          matchExpressions:
-         - key: rabbitmq-cluster-operator
+         - key: {{ .Values.rabbitmqService.key }}
            operator: In
            values:
            - store

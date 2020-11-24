@@ -8,7 +8,7 @@ managementui:
     port: 80
   config:
     transactionEventApiUrl: http://transaction-event-api/api/v1
-    policyManagementApiUrl: http://policymanagementapi/api/v1
+    policyManagementApiUrl: http://policy-management-api/api/v1
     
 policymanagementapi:
   fullnameOverride: policy-management-api
@@ -68,7 +68,7 @@ policymanagementapi:
   affinity: {}
 
 transactioneventapi:
-  fullnameOverride: transactioneventapi
+  fullnameOverride: transaction-event-api
   replicaCount: 1
   imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "policy-management-api.fullname" . }}--policy-api
+  name: {{ template "policy-management-api.fullname" . }}-policy-api
   labels:
     app: {{ template "policy-management-api.name" . }}
     chart: {{ template "policy-management-api.chart" . }}

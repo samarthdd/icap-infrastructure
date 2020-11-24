@@ -1,7 +1,7 @@
-{{- if .Values.ingress.enabled -}}
-{{- $fullName := include "transactioneventapi.fullname" . -}}
-{{- $servicePort := .Values.service.port -}}
-{{- $ingressPath := .Values.ingress.path -}}
+{{- if .Values.policymanagementapi.ingress.enabled -}}
+{{- $fullName := include "policy-management-api.fullname" . -}}
+{{- $servicePort := .Values.policymanagementapi.service.port -}}
+{{- $ingressPath := .Values.policymanagementapi.ingress.path -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
 {{- else -}}
@@ -11,18 +11,18 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app: {{ template "transactioneventapi.name" . }}
-    chart: {{ template "transactioneventapi.chart" . }}
+    app: {{ template "policy-management-api.name" . }}
+    chart: {{ template "policy-management-api.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-{{- with .Values.ingress.annotations }}
+{{- with .Values.policymanagementapi.ingress.annotations }}
   annotations:
 {{ toYaml . | indent 4 }}
 {{- end }}
 spec:
-{{- if .Values.ingress.tls }}
+{{- if .Values.policymanagementapi.ingress.tls }}
   tls:
-  {{- range .Values.ingress.tls }}
+  {{- range .Values.policymanagementapi.ingress.tls }}
     - hosts:
       {{- range .hosts }}
         - {{ . }}
@@ -31,7 +31,7 @@ spec:
   {{- end }}
 {{- end }}
   rules:
-  {{- range .Values.ingress.hosts }}
+  {{- range .Values.policymanagementapi.ingress.hosts }}
     - host: {{ . }}
       http:
         paths:

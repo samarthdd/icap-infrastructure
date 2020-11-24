@@ -1,201 +1,231 @@
 ## ICAP Infrastructure
 
-Each of the cluster types that form the Glasswall ICAP System are defined through the Helm charts in the subfolders.
+A collection of helm charts to stand up a working ICAP Service within Azure AKS, using Terraform for the infrastructure, and ArgoCD or Helm for the deployments.
 
-### Adaptation Cluster
-Deploying to local cluster (Docker Desktop).
+## Table of Contents
 
-Reset the Kubernetes cluster.
+- [ICAP Infrastructure](#icap-infrastructure)
+- [Table of Contents](#table-of-contents)
+- [icap-terraform-aks-deployment](#icap-terraform-aks-deployment)
+- [Pre-requisites](#pre-requisites)
+- [Create Azure storage account, blob storage, File share and Azure Key Vault](#create-azure-storage-account-blob-storage-file-share-and-azure-key-vault)
+- [Create Terraform Principal](#create-terraform-principal)
+- [Add Service Principle to Azure Key Vault](#add-service-principle-to-azure-key-vault)
+- [Initialise Terraform and deploy to Azure](#initialise-terraform-and-deploy-to-azure)
+- [Deploy Helm Charts to the cluster](#deploy-helm-charts-to-the-cluster)
+	- [Deploy services](#deploy-services)
 
-```
-cd .\adaptation
-```
+## icap-terraform-aks-deployment
 
-Create the Kubernetes namespace
-```
-kubectl create ns icap-adaptation
-```
+The steps below are what is required to stand up a working cluster running the latest ICAP stack.
 
-Create container registry secret
-```
-kubectl create -n icap-adaptation secret docker-registry regcred	\ 
-	--docker-server=https://index.docker.io/v1/ 	\
-	--docker-username=<username>	\
-	--docker-password=<password>	\
-	--docker-email=<email address>
-```
+Before you begin, please make sure you're logged into Azure-CLI with a valid Azure subscription and permissions create and destroy resources. 
 
-Create Self-signed TLS Certificate
-```
-openssl req -newkey rsa:2048 -nodes -keyout  tls.key -x509 -days 365 -out certificate.crt
-```
+You will also need the terrafor code from the repository below:
 
-Create TLS Certificate Secret
-```
-kubectl create secret tls icap-service-tls-config --namespace icap-adaptation --key tls.key --cert certificate.crt
-```
+[Terraform AKS IaC](https://github.com/filetrust/aks-deployment-icap)
 
-Create Transaction Store Secret
-```
-$resource_group=<resource name to create and use>
-$storage_account=<sttorage account to create and use>
-$location="uksouth"
+## Pre-requisites 
 
-az group create --name $resource_group --location $location
+In order to follow along with this guide you will need the following:
 
-az storage account create --name $storage_account --resource-group $resource_group --location $location --sku Standard_ZRS
+- Helm
+- Terraform
+- Kubectl
+- AZ CLI
+- OpenSSL
+- Bash (or similar) terminal
 
-$sa_key=$(az storage account keys list -g $resource_group -n $storage_account  --query [0].value)
+## Create Azure storage account, blob storage, File share and Azure Key Vault
 
-kubectl create -n icap-adaptation secret generic transactionstoresecret \
-   --from-literal=accountName=$storage_account \
-   --from-literal=accountKey=$sa_key
-   
-```
+So within the **./scripts/k8_scripts/** folder you will find the script ***create-az-storage-account-<region>.sh*** - run the script to create the Azure storage account and blob storage. The script creates the following resources:
 
-Create Policy Update Service Secret
-```
-kubectl create -n icap-adaptation secret generic policyupdateservicesecret \
-   --from-literal=username=policy-management \
-   --from-literal=password='long-password'
-```
-
-
-Install the cluster components
-```
-helm install . --namespace icap-adaptation --generate-name
-```
-
-The cluster's services should now be deployed
-```
-> kubectl get pods -n icap-adaptation
-NAME                                           READY   STATUS      RESTARTS   AGE
-adaptation-service-79b84ccf89-cfgsf            1/1     Running     4          16m
-event-submission-service-546547997-znh8q       1/1     Running     0          16m
-mvp-icap-service-56767d8984-xcd6g              1/1     Running     0          16m
-policy-update-service-8f5f9d756-t8rj9          1/1     Running     0          16m
-rabbitmq-controller-btmtj                      1/1     Running     0          16m
-```
-
-If required, the following steps provide access to the RabbitMQ Management Console
-
-Open a command prompt into the RabbitMQ Pod
-```
-kubectl exec --stdin --tty -n icap-adaptation rabbitmq-controller-747n4 -- /bin/bash
-```
-
-Enable the Management Plugin, this step takes a couple of minutes
-```
-rabbitmq-plugins enable rabbitmq_management
-```
-
-Exit from the RabbitMQ Pod.
-Setup of port forwarding from a local port (e.g. 8080) to the RabbitMQ Management Port
-```
-kubectl port-forward -n icap-adaptation rabbitmq-controller-747n4 8080:15672
-```
-The management console now accessible through the browser
-```
-http://localhost:8080/
-```
-
-## Standing up the Adaptation Service
-
-After you have deployed the AKS Cluster to Azure you will then need to follow the steps below to stand up the Adaptation service.
-
-### Deploying Adaptation Cluster - using helm
-
-Deploying to AKS
-
-In order to get the credentials for the AKS cluster you must run the command below:
+- Resource group
+- Storage account
+- Blob container
+- File share
+- Key Vault
 
 ```
+./scripts/create-az-storage-account-<region>.sh
+```
+
+You should see the following output once the script completes
+
+```bash
+storage_account_name: tfstate
+container_name: gw-icap-tfstate-test
+access_key: <access key>
+vault_name: gw-tfstate-vault-test
+```
+
+Use the below environment variables for the following commands
+
+```
+export VAULT_NAME=gw-tfstate-vault-test
+export SECRET_NAME=terraform-backend-key
+export STORAGE_ACCOUNT_NAME=tfstate
+```
+
+Create a new secret called "terraform-backend-key" in the key vault and add the value of the storage access key created previously
+
+```bash
+az keyvault secret set --vault-name $VAULT_NAME --name $SECRET_NAME --value <the value of the access_key key>
+```
+
+Now verify you can read the value of the created secret
+
+```bash
+az keyvault secret show --name $SECRET_NAME --vault-name $VAULT_NAME --query value -o tsv
+```
+
+Next export the environment variable "ARM_ACCESS_KEY" to be able to initialise terraform
+
+```bash
+export ARM_ACCESS_KEY=$(az keyvault secret show --name $SECRET_NAME --vault-name $VAULT_NAME --query value -o tsv)
+
+# now check to see if you can access it through variable
+
+echo $ARM_ACCESS_KEY
+```
+
+Whilst we are adding secrets to the keyvault, it is probably best to add the file share access, which will allow the pods that are created later on to access the file share.
+
+Add the following environment variables
+```bash
+export SECRET_NAME2=<file-share-account>
+export SECRET_NAME3=<file-share-key>
+export FILE_SHARE_ACCESS_KEY=(az storage account keys list --resource-group <resource-group> --account-name <account-name> --query "[0].value" | tr -d '"')
+```
+
+Now use the following commands to add the secrets:
+
+```bash
+az keyvault secret set --vault-name $VAULT_NAME --name $SECRET_NAME2 --value $STORAGE_ACCOUNT_NAME
+
+az keyvault secret set --vault-name $VAULT_NAME --name $SECRET_NAME3 --value $FILE_SHARE_ACCESS_KEYY
+```
+
+## Create Terraform Principal
+
+Next we will need to create a service principle that Terraform will use to authenticate to Azure RBAC. You will not need to log in as the service principle but you will need to add the details that get created into the Azure Vault we created earlier on. Terraform will then use these credentials to authenticate to Azure.
+
+The script can be found in the **./scripts/terraform_scripts/** folder and is called *createTerraformServicePrinciple.sh*. Running the script will create the following:
+
+- Service Principle
+- Update or create *provider.tf* file
+
+When the script runs you will be prompted with 
+
+```bash
+The provider.tf file exists.  Do you want to overwrite? [Y/n]:
+```
+
+Answer "yes" and then it will create the terraform principel.
+
+Once the script has run take note of the Username and password for the service account, and add them to the following environment variables:
+
+```
+export CLIENT_ID_SECRET=<insert secret>
+export CLIENT_SECRET=<insert secret>
+```
+
+## Add Service Principle to Azure Key Vault
+
+The below commands will add the service principle credentials into the Azure Key Vault. Please note that the names need to match exactly otherwise the Terraform code will not be able to retrieve them.
+
+Set the following environment variables before running the next commands:
+
+```
+export SP_USERNAME=spusername
+export SP_PASSWORD=sppassword
+```
+
+Use the following to add the secrets:
+
+```bash
+az keyvault secret set --vault-name $VAULT_NAME --name $SP_USERNAME --value $CLIENT_ID_SECRET
+
+az keyvault secret set --vault-name $VAULT_NAME --name $SP_PASSWORD --value $CLIENT_SECRET
+```
+
+## Initialise Terraform and deploy to Azure
+
+We will next be initialising Terraform and making sure everything is ready to be deployed.
+
+All of the below commands are run in the root folder:
+
+```bash
+terraform init
+```
+
+Next run terraform validate/refresh to check for changes within the state, and also to make sure there aren't any issues.
+
+```bash
+terraform validate
+Success! The configuration is valid.
+
+terraform refresh
+```
+
+Now you're ready to run apply and it should give you the following output
+
+```bash
+terraform apply
+
+Plan: 1 to add, 2 to change, 1 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value:
+```
+
+Enter "yes" and wait for it to complete
+
+Once this completes you should see all the infrastructure for the AKS deployed and working.
+
+## Deploy Helm Charts to the cluster
+
+Before we begin you will need to run the following command to get the details of the cluster that has just been deployed.
+
+```bash
 az aks get-credentials --name gw-icap-aks --resource-group gw-icap-aks-deploy
 ```
 
-*all commands below should be run from the root directory of the repo "aks-deployment-icap"*
+In this stage we will be deploying the helm charts to the newly created cluster. Before we jump right into deploying the charts, there is some house keeping that needs to be done. We will need to add some secrets the Kubernetes in order for some of the services to do the following:
 
-Create the Kubernetes namespace
-```
-kubectl create ns icap-adaptation
-```
+- Access File Share in an Azure Storage account
+- Pull private images from DockerHub
 
-Create container registry secret - this requires a service account created within Dockerhub
+We can achieve this with the script *create-ns-docker-secrets-<region>.sh* which will be in the scripts folder and do the following:
 
-***The command below should only be run on a fresh deployment, if you're deploying to a cluster that has already been deployed to, then this will already be within the secret store***
+- Creates all namespaces for ICAP services
+- Add secrets for the following
+  - Dockerhub Service Account
+  - File Share account name and account key
+  - Certs for TLS
 
-```
-kubectl create -n icap-adaptation secret docker-registry regcred	\ 
-	--docker-server=https://index.docker.io/v1/ 	\
-	--docker-username=<username>	\
-	--docker-password="<password>"	\ # Please ensure you add quotes to password
-	--docker-email=<email address>
-```
+Before running this script you need run the below command to create the TLS certs.
 
-Install the cluster components
+```bash
+openssl req -newkey rsa:2048 -nodes -keyout tls.key -x509 -days 365 -out certificate.crt
 ```
-helm install ./adaptation --namespace icap-adaptation --generate-name
-```
-
-The cluster's services should now be deployed (Please note the adaptation service can restart several times before it is "running")
-```
-> kubectl get pods -n icap-adaptation
-NAME                                 READY   STATUS    RESTARTS   AGE
-adaptation-service-64cc49f99-kwfp6   1/1     Running   0          3m22s
-mvp-icap-service-b7ddccb9-gf4z6      1/1     Running   0          3m22s
-rabbitmq-controller-747n4            1/1     Running   0          3m22s
-```
-
-If required, the following steps provide access to the RabbitMQ Management Console
-
-Run the below command to enable the Management Plugin, this step takes a couple of minutes
-```
-kubectl exec -it rabbitmq-controller-747n4 -- /bin/bash -c "rabbitmq-plugins enable rabbitmq_management"
-```
-
-Setup of port forwarding from a local port (e.g. 8080) to the RabbitMQ Management Port
-```
-kubectl port-forward -n icap-adaptation rabbitmq-controller-747n4 8080:15672
-```
-The management console now accessible through the browser
-```
-http://localhost:8080/
-```
-
-### Standing up Management UI
-
-All of these commands are run in the root folder. Firstly create the namespace
+Next run the script:
 
 ```
-kubectl create ns management-ui
+./create-ns-docker-secrets-<region>.sh
 ```
 
-Next use Helm to deploy the chart
+Once this script has completed, we can move onto deploying the services to the cluster.
 
-```
-helm install ./administration/management-ui/ --namespace management-ui --generate-name
-```
+### Deploy services
 
-Services should start on their own and the management UI will be available from the public IP that is attached to the load balancer.
+Next we will deploy the services using either Helm or Argocd. Both of the Readme's for each can be found below:
 
-To see this use the following command
+[ArgoCD Readme](/argocd/README.md)
 
-```
-❯ kubectl get service -n management-ui
-NAME                             TYPE           CLUSTER-IP    EXTERNAL-IP     PORT(S)        AGE
-icap-management-portal-service   LoadBalancer   xxx.xxx.xxx.xxx   xxx.xxx.xxx.xxx   80:32231/TCP   24h
-```
+[Helm Readme](/helm/README.md)
 
-### Standing up Transaction-Event-API
-
-All of these commands are run in the root folder. Firstly create the namespace
-
-```
-kubectl create ns transaction-event-api
-```
-
-Next use Helm to deploy the chart
-
-```
-helm install ./administration/transactioneventapi --namespace transaction-event-api --generate-name
-```
+***All commands need to be run from the root directory for the paths to be correct***

@@ -45,6 +45,7 @@ icapservice:
   replicas: 1
   port: 1344
   tlsport: 1345
+  enableFileId: false
 icapserviceconfig:
   processingtimeoutduration: 00:01:00
 podjanitor:

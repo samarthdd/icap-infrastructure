@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.adaptationservice.name }}
+  namespace: {{.Values.adaptationservice.namespace}}
 spec:
   replicas: {{ .Values.adaptationservice.replicas }}
   selector:

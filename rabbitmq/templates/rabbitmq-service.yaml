@@ -4,6 +4,7 @@ metadata:
   labels:
     component: {{ .Values.rabbitmqService.component }}
   name: {{ .Values.rabbitmqService.name }}
+  namespace: {{.Values.namespace}}
 spec:
   ports:
   - port: {{ .Values.rabbitmqService.port }}

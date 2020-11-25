@@ -1,4 +1,5 @@
 metadataName: "rabbitmq-controller"
+namespace: "icap-rabbitmq"
 environment:
 rabbitmqService:
   name: rabbitmq-service

@@ -98,4 +98,4 @@ imagestore:
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
-    tag: main-2160757
+    tag: main-77832a9

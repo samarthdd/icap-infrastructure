@@ -70,7 +70,7 @@ imagestore:
   requestprocessing:
     registry: ""
     repository: glasswallsolutions/icap-request-processing
-    tag: main-4b1997b
+    tag: main-0c9d946
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service

@@ -9,7 +9,6 @@ managementui:
   config:
     transactionEventApiUrl: http://transaction-event-api/api/v1
     policyManagementApiUrl: http://policy-management-api/api/v1
-    
 policymanagementapi:
   fullnameOverride: policy-management-api
   replicaCount: 1
@@ -66,7 +65,6 @@ policymanagementapi:
   nodeSelector: {}
   tolerations: []
   affinity: {}
-
 transactioneventapi:
   fullnameOverride: transaction-event-api
   replicaCount: 1
@@ -123,7 +121,6 @@ transactioneventapi:
   nodeSelector: {}
   tolerations: []
   affinity: {}
-
 imagestore:
   icapmanagementui:
     registry: ""
@@ -132,8 +129,8 @@ imagestore:
   policymanagementapi:
     registry: ""
     repository: glasswallsolutions/policy-management-api
-    tag: develop-d6ade41
+    tag: develop-8039e2a
   transactioneventapi:
     registry: ""
     repository: glasswallsolutions/transactioneventapi
-    tag: develop-cd50c79    
+    tag: develop-cd50c79

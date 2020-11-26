@@ -129,7 +129,7 @@ imagestore:
   policymanagementapi:
     registry: ""
     repository: glasswallsolutions/policy-management-api
-    tag: main-9e75a1f
+    tag: main-5067628
   transactioneventapi:
     registry: ""
     repository: glasswallsolutions/transactioneventapi

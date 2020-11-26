@@ -39,14 +39,18 @@ spec:
           value: {{ .Values.queue.adaptationRequest.hostname}}
         - name: ADAPTATION_REQUEST_QUEUE_PORT
           value: {{ .Values.queue.adaptationRequest.port}}
-        {{- if .Values.queue.messagebrokeruser }}
+        {{- if .Values.queue.messagebrokersecret }}
         - name: MESSAGE_BROKER_USER
-          value: {{ .Values.queue.messagebrokeruser }}
-        {{- end }}
-        {{- if .Values.queue.messagebrokerpassword }}
+          valueFrom:
+            secretKeyRef:
+              name: rabbitcredentialssecret
+              key: username
         - name: MESSAGE_BROKER_PASSWORD
-          value: {{ .Values.queue.messagebrokerpassword }}
-        {{- end }}  
+          valueFrom:
+            secretKeyRef:
+              name: rabbitcredentialssecret
+              key: password
+        {{- end }}     
         resources:
           limits:
             cpu: 1

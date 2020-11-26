@@ -125,7 +125,7 @@ imagestore:
   icapmanagementui:
     registry: ""
     repository: glasswallsolutions/icap-management-ui
-    tag: main-d70f74a
+    tag: main-9c28422
   policymanagementapi:
     registry: ""
     repository: glasswallsolutions/policy-management-api

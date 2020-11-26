@@ -1,4 +1,4 @@
-environment:    
+environment:
 referencencfs:
   fullNameOverride: reference-ncfs
   applabel: reference-ncfs
@@ -60,7 +60,6 @@ referencencfs:
   nodeSelector: {}
   tolerations: []
   affinity: {}
-
 ncfspolicyupdateservice:
   fullNameOverride: ncfs-policy-update-service
   applabel: ncfspolicyupdate
@@ -121,12 +120,11 @@ ncfspolicyupdateservice:
   nodeSelector: {}
   tolerations: []
   affinity: {}
-
 imagestore:
   ncfspolicyupdateservice:
     registry: ""
     repository: glasswallsolutions/ncfs-policy-update-service
-    tag: develop-aec2ad3
+    tag: develop-8cddd21
   referencencfs:
     registry: ""
     repository: glasswallsolutions/reference-ncfs

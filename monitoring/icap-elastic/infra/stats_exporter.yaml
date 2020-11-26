@@ -1,0 +1,42 @@
+# Source: icap-adaptation/templates/mvp-icap-service-deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stats-exporter
+  labels:
+    app: stats-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stats-exporter
+  template:
+    metadata:
+      labels:
+        app: stats-exporter
+    spec:
+      containers:
+        - name: stats-exporter
+          image: pranaysahith/icap-monitoring:0.4
+          env:
+            - name: ELASTIC_HOST
+              value: https://quickstart-es-http.monitoring.svc.cluster.local
+            - name: ELASTIC_PORT
+              value: "9200"
+            - name: ELASTIC_USER
+              value: elastic
+            - name: ELASTIC_PASSWORD
+              value: "29rfk27rn0hb9n9K280lJcmY"
+            - name: ICAP_HOST
+              value: eu.icap.glasswall-icap.com
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 4096Mi
+            requests:
+              cpu: 200m
+              memory: 200Mi

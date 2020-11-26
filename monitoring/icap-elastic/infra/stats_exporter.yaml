@@ -26,7 +26,9 @@ spec:
             - name: ELASTIC_USER
               value: elastic
             - name: ELASTIC_PASSWORD
-              value: "29rfk27rn0hb9n9K280lJcmY"
+              secretref:
+                name: quickstart-es-elastic-user
+                key: elastic
             - name: ICAP_HOST
               value: eu.icap.glasswall-icap.com
             - name: POD_NAME

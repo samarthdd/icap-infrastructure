@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Values.referencencfsservice.configmapname }}
+  name: {{ .Values.referencencfs.configmapname }}
 data:
   appsettings.json: |-
     {

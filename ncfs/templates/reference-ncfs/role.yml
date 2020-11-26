@@ -1,7 +1,7 @@
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: {{ .Values.ncfspolicyupdateservice.rolename }}
+  name: {{ template "reference-ncfs.fullname" . }}-role
 rules:
 - apiGroups: [""]
   resources: ["configmaps"]

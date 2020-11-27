@@ -25,6 +25,19 @@ spec:
               name: icap-service-config
           - configMapRef:
               name: icap-proxy-app-config
+          {{- if .Values.queue.messagebrokersecret }}
+          env:
+            - name: MBUsername
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitcredentialssecret
+                  key: username
+            - name: MBPassword
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitcredentialssecret
+                  key: password
+          {{- end }}
           volumeMounts:
             - name: source-vol
               mountPath: {{ .Values.volumemountpath.source }}

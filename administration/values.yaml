@@ -133,4 +133,4 @@ imagestore:
   transactioneventapi:
     registry: ""
     repository: glasswallsolutions/transactioneventapi
-    tag: develop-6248394
+    tag: develop-37133f8

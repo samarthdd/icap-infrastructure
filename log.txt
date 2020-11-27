@@ -1,0 +1,1132 @@
+LAST SEEN   TYPE      REASON                          OBJECT                                             MESSAGE
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-26nqh             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-26nqh to aks-icaptestnode-10971123-vmss00000b
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-26nqh             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-26nqh             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-26nqh             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-26nqh             Started container adaptation-service
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-26nqh             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-29h7r             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-29h7r to aks-icaptestnode-10971123-vmss000022
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-29h7r             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-29h7r             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-29h7r             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-29h7r             Started container adaptation-service
+6m11s       Warning   FailedMount                     pod/adaptation-service-fc5f75457-29h7r             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-29h7r             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-2b7pl             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-2b7pl to aks-icaptestnode-10971123-vmss00000z
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-2b7pl             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-2b7pl             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-2b7pl             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-2b7pl             Started container adaptation-service
+6m10s       Warning   FailedMount                     pod/adaptation-service-fc5f75457-2b7pl             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m8s        Normal    Killing                         pod/adaptation-service-fc5f75457-2b7pl             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-2vwzh             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-2vwzh to aks-icaptestnode-10971123-vmss00001y
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-2vwzh             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-2vwzh             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-2vwzh             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-2vwzh             Started container adaptation-service
+6m12s       Normal    Killing                         pod/adaptation-service-fc5f75457-2vwzh             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-5fl9w             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-5fl9w to aks-icaptestnode-10971123-vmss000008
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-5fl9w             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-5fl9w             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-5fl9w             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-5fl9w             Started container adaptation-service
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-5fl9w             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-5q4p2             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-5q4p2 to aks-icaptestnode-10971123-vmss00001m
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-5q4p2             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-5q4p2             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-5q4p2             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-5q4p2             Started container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-5q4p2             Stopping container adaptation-service
+3m54s       Normal    Scheduled                       pod/adaptation-service-fc5f75457-746cz             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-746cz to aks-icaptestnode-10971123-vmss000028
+3m53s       Normal    Pulled                          pod/adaptation-service-fc5f75457-746cz             Container image "glasswallsolutions/icap-adaptation-service:main-1d8a40a" already present on machine
+3m53s       Normal    Created                         pod/adaptation-service-fc5f75457-746cz             Created container adaptation-service
+3m53s       Normal    Started                         pod/adaptation-service-fc5f75457-746cz             Started container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-756h8             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-756h8 to aks-icaptestnode-10971123-vmss00002r
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-756h8             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-756h8             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-756h8             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-756h8             Started container adaptation-service
+6m12s       Normal    Killing                         pod/adaptation-service-fc5f75457-756h8             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-7z8pk             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-7z8pk to aks-icaptestnode-10971123-vmss000013
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-7z8pk             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-7z8pk             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-7z8pk             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-7z8pk             Started container adaptation-service
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-7z8pk             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-8vtzg             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-8vtzg to aks-icaptestnode-10971123-vmss00001j
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-8vtzg             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-8vtzg             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-8vtzg             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-8vtzg             Started container adaptation-service
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-8vtzg             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-8w7j5             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-8w7j5 to aks-icaptestnode-10971123-vmss000028
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-8w7j5             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-8w7j5             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-8w7j5             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-8w7j5             Started container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-8w7j5             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-bn2c4             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-bn2c4 to aks-icaptestnode-10971123-vmss00000k
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-bn2c4             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-bn2c4             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-bn2c4             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-bn2c4             Started container adaptation-service
+6m9s        Normal    Killing                         pod/adaptation-service-fc5f75457-bn2c4             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-bvrj4             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-bvrj4 to aks-icaptestnode-10971123-vmss00001o
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-bvrj4             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-bvrj4             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-bvrj4             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-bvrj4             Started container adaptation-service
+6m9s        Normal    Killing                         pod/adaptation-service-fc5f75457-bvrj4             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-c9dqd             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-c9dqd to aks-icaptestnode-10971123-vmss000026
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-c9dqd             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-c9dqd             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-c9dqd             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-c9dqd             Started container adaptation-service
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-c9dqd             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-d48cd             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-d48cd to aks-icaptestnode-10971123-vmss00001t
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-d48cd             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-d48cd             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-d48cd             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-d48cd             Started container adaptation-service
+6m8s        Warning   FailedMount                     pod/adaptation-service-fc5f75457-d48cd             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-d48cd             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-ddtdr             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-ddtdr to aks-icaptestnode-10971123-vmss00002a
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-ddtdr             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-ddtdr             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-ddtdr             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-ddtdr             Started container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-ddtdr             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-dwjqs             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-dwjqs to aks-icaptestnode-10971123-vmss00002k
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-dwjqs             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-dwjqs             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-dwjqs             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-dwjqs             Started container adaptation-service
+6m12s       Normal    Killing                         pod/adaptation-service-fc5f75457-dwjqs             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-fxl9b             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-fxl9b to aks-icaptestnode-10971123-vmss00002l
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-fxl9b             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-fxl9b             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-fxl9b             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-fxl9b             Started container adaptation-service
+6m11s       Normal    Killing                         pod/adaptation-service-fc5f75457-fxl9b             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-g867t             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-g867t to aks-icaptestnode-10971123-vmss00002d
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-g867t             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-g867t             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-g867t             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-g867t             Started container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-g867t             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-h2rh5             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-h2rh5 to aks-icaptestnode-10971123-vmss000020
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-h2rh5             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-h2rh5             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-h2rh5             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-h2rh5             Started container adaptation-service
+6m12s       Normal    Killing                         pod/adaptation-service-fc5f75457-h2rh5             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-hpbkd             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-hpbkd to aks-icaptestnode-10971123-vmss00002b
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-hpbkd             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-hpbkd             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-hpbkd             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-hpbkd             Started container adaptation-service
+6m9s        Warning   FailedMount                     pod/adaptation-service-fc5f75457-hpbkd             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-hpbkd             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-j8tr2             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-j8tr2 to aks-icaptestnode-10971123-vmss00001f
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-j8tr2             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-j8tr2             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-j8tr2             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-j8tr2             Started container adaptation-service
+6m6s        Warning   FailedMount                     pod/adaptation-service-fc5f75457-j8tr2             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-j8tr2             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-jjpzc             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-jjpzc to aks-icaptestnode-10971123-vmss00002o
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-jjpzc             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-jjpzc             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-jjpzc             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-jjpzc             Started container adaptation-service
+6m7s        Warning   FailedMount                     pod/adaptation-service-fc5f75457-jjpzc             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-jjpzc             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-jvspm             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-jvspm to aks-icaptestnode-10971123-vmss00001s
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-jvspm             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-jvspm             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-jvspm             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-jvspm             Started container adaptation-service
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-jvspm             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-khdvn             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-khdvn to aks-icaptestnode-10971123-vmss00000y
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-khdvn             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-khdvn             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-khdvn             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-khdvn             Started container adaptation-service
+6m6s        Warning   FailedMount                     pod/adaptation-service-fc5f75457-khdvn             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-khdvn             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-kjf97             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-kjf97 to aks-icaptestnode-10971123-vmss00002h
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-kjf97             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-kjf97             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-kjf97             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-kjf97             Started container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-kjf97             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-klpkt             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-klpkt to aks-icaptestnode-10971123-vmss000019
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-klpkt             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-klpkt             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-klpkt             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-klpkt             Started container adaptation-service
+6m11s       Normal    Killing                         pod/adaptation-service-fc5f75457-klpkt             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-l92hv             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-l92hv to aks-icaptestnode-10971123-vmss00000f
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-l92hv             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-l92hv             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-l92hv             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-l92hv             Started container adaptation-service
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-l92hv             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-n72zk             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-n72zk to aks-icaptestnode-10971123-vmss00001v
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-n72zk             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-n72zk             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-n72zk             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-n72zk             Started container adaptation-service
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-n72zk             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-ncllj             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-ncllj to aks-icaptestnode-10971123-vmss00002m
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-ncllj             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-ncllj             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-ncllj             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-ncllj             Started container adaptation-service
+6m9s        Normal    Killing                         pod/adaptation-service-fc5f75457-ncllj             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-nfn29             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-nfn29 to aks-icaptestnode-10971123-vmss000011
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-nfn29             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-nfn29             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-nfn29             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-nfn29             Started container adaptation-service
+6m11s       Normal    Killing                         pod/adaptation-service-fc5f75457-nfn29             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-ntg66             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-ntg66 to aks-icaptestnode-10971123-vmss00001q
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-ntg66             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-ntg66             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-ntg66             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-ntg66             Started container adaptation-service
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-ntg66             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-p5sdp             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-p5sdp to aks-icaptestnode-10971123-vmss000004
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-p5sdp             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-p5sdp             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-p5sdp             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-p5sdp             Started container adaptation-service
+6m8s        Normal    Killing                         pod/adaptation-service-fc5f75457-p5sdp             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-pqpqb             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-pqpqb to aks-icaptestnode-10971123-vmss00000v
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-pqpqb             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-pqpqb             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-pqpqb             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-pqpqb             Started container adaptation-service
+6m12s       Normal    Killing                         pod/adaptation-service-fc5f75457-pqpqb             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-q97gm             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-q97gm to aks-icaptestnode-10971123-vmss00001i
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-q97gm             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-q97gm             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-q97gm             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-q97gm             Started container adaptation-service
+6m11s       Normal    Killing                         pod/adaptation-service-fc5f75457-q97gm             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-r4r59             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-r4r59 to aks-icaptestnode-10971123-vmss00000q
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-r4r59             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-r4r59             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-r4r59             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-r4r59             Started container adaptation-service
+6m9s        Warning   FailedMount                     pod/adaptation-service-fc5f75457-r4r59             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-r4r59             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-r7gwp             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-r7gwp to aks-icaptestnode-10971123-vmss00000x
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-r7gwp             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-r7gwp             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-r7gwp             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-r7gwp             Started container adaptation-service
+6m5s        Warning   FailedMount                     pod/adaptation-service-fc5f75457-r7gwp             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-r7gwp             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-rkwb9             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-rkwb9 to aks-icaptestnode-10971123-vmss00001d
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-rkwb9             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-rkwb9             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-rkwb9             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-rkwb9             Started container adaptation-service
+6m10s       Warning   FailedMount                     pod/adaptation-service-fc5f75457-rkwb9             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-rkwb9             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-sb9b4             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-sb9b4 to aks-icaptestnode-10971123-vmss00001r
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-sb9b4             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-sb9b4             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-sb9b4             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-sb9b4             Started container adaptation-service
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-sb9b4             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-sl8m5             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-sl8m5 to aks-icaptestnode-10971123-vmss00001p
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-sl8m5             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-sl8m5             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-sl8m5             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-sl8m5             Started container adaptation-service
+6m9s        Normal    Killing                         pod/adaptation-service-fc5f75457-sl8m5             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-svxrn             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-svxrn to aks-icaptestnode-10971123-vmss00001n
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-svxrn             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-svxrn             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-svxrn             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-svxrn             Started container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-svxrn             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-tw7z4             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-tw7z4 to aks-icaptestnode-10971123-vmss000025
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-tw7z4             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-tw7z4             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-tw7z4             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-tw7z4             Started container adaptation-service
+6m8s        Normal    Killing                         pod/adaptation-service-fc5f75457-tw7z4             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-vh894             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-vh894 to aks-icaptestnode-10971123-vmss00002i
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-vh894             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-vh894             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-vh894             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-vh894             Started container adaptation-service
+6m9s        Normal    Killing                         pod/adaptation-service-fc5f75457-vh894             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-xg9b8             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-xg9b8 to aks-icaptestnode-10971123-vmss000029
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-xg9b8             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-xg9b8             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-xg9b8             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-xg9b8             Started container adaptation-service
+6m11s       Warning   FailedMount                     pod/adaptation-service-fc5f75457-xg9b8             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-xg9b8             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-xhtw6             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-xhtw6 to aks-icaptestnode-10971123-vmss00002n
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-xhtw6             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-xhtw6             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-xhtw6             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-xhtw6             Started container adaptation-service
+6m5s        Warning   FailedMount                     pod/adaptation-service-fc5f75457-xhtw6             MountVolume.SetUp failed for volume "adaptation-service-sa-token-vhhsk" : secret "adaptation-service-sa-token-vhhsk" not found
+6m5s        Normal    Killing                         pod/adaptation-service-fc5f75457-xhtw6             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-xjjgr             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-xjjgr to aks-icaptestnode-10971123-vmss00000h
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-xjjgr             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-xjjgr             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-xjjgr             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-xjjgr             Started container adaptation-service
+6m6s        Normal    Killing                         pod/adaptation-service-fc5f75457-xjjgr             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-xkqrc             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-xkqrc to aks-icaptestnode-10971123-vmss000005
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-xkqrc             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-xkqrc             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-xkqrc             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-xkqrc             Started container adaptation-service
+6m7s        Normal    Killing                         pod/adaptation-service-fc5f75457-xkqrc             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-xnshj             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-xnshj to aks-icaptestnode-10971123-vmss00000i
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-xnshj             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-xnshj             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-xnshj             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-xnshj             Started container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-xnshj             Stopping container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-z8qdt             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-zmh87             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-zmh87 to aks-icaptestnode-10971123-vmss000023
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-zmh87             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-zmh87             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-zmh87             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-zmh87             Started container adaptation-service
+6m10s       Normal    Killing                         pod/adaptation-service-fc5f75457-zmh87             Stopping container adaptation-service
+21m         Normal    Scheduled                       pod/adaptation-service-fc5f75457-zskbp             Successfully assigned icap-adaptation/adaptation-service-fc5f75457-zskbp to aks-icaptestnode-10971123-vmss00000m
+21m         Normal    Pulling                         pod/adaptation-service-fc5f75457-zskbp             Pulling image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Pulled                          pod/adaptation-service-fc5f75457-zskbp             Successfully pulled image "glasswallsolutions/icap-adaptation-service:main-1d8a40a"
+21m         Normal    Created                         pod/adaptation-service-fc5f75457-zskbp             Created container adaptation-service
+21m         Normal    Started                         pod/adaptation-service-fc5f75457-zskbp             Started container adaptation-service
+6m8s        Normal    Killing                         pod/adaptation-service-fc5f75457-zskbp             Stopping container adaptation-service
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-hpbkd
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-xkqrc
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-klpkt
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-pqpqb
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-r4r59
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-ddtdr
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-2vwzh
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-jjpzc
+21m         Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            (combined from similar events): Created pod: adaptation-service-fc5f75457-khdvn
+3m54s       Normal    SuccessfulCreate                replicaset/adaptation-service-fc5f75457            Created pod: adaptation-service-fc5f75457-746cz
+21m         Normal    ScalingReplicaSet               deployment/adaptation-service                      Scaled up replica set adaptation-service-fc5f75457 to 50
+3m54s       Normal    ScalingReplicaSet               deployment/adaptation-service                      Scaled up replica set adaptation-service-fc5f75457 to 1
+3m54s       Normal    Scheduled                       pod/archive-adaptation-service-7577fdf4d7-99wgh    Successfully assigned icap-adaptation/archive-adaptation-service-7577fdf4d7-99wgh to aks-icaptestnode-10971123-vmss000014
+3m53s       Normal    Pulling                         pod/archive-adaptation-service-7577fdf4d7-99wgh    Pulling image "glasswallsolutions/archive-adaptation-service:main-928c171"
+3m51s       Normal    Pulled                          pod/archive-adaptation-service-7577fdf4d7-99wgh    Successfully pulled image "glasswallsolutions/archive-adaptation-service:main-928c171"
+3m51s       Normal    Created                         pod/archive-adaptation-service-7577fdf4d7-99wgh    Created container adaptation-service
+3m51s       Normal    Started                         pod/archive-adaptation-service-7577fdf4d7-99wgh    Started container adaptation-service
+6m21s       Normal    Killing                         pod/archive-adaptation-service-7577fdf4d7-mbd9k    Stopping container adaptation-service
+3m54s       Normal    SuccessfulCreate                replicaset/archive-adaptation-service-7577fdf4d7   Created pod: archive-adaptation-service-7577fdf4d7-99wgh
+3m54s       Normal    ScalingReplicaSet               deployment/archive-adaptation-service              Scaled up replica set archive-adaptation-service-7577fdf4d7 to 1
+6m20s       Normal    Killing                         pod/event-submission-service-566746cddd-fl29z      Stopping container event-submission-service
+3m54s       Normal    Scheduled                       pod/event-submission-service-566746cddd-jg9t2      Successfully assigned icap-adaptation/event-submission-service-566746cddd-jg9t2 to aks-icaptestnode-10971123-vmss000025
+3m53s       Normal    Pulling                         pod/event-submission-service-566746cddd-jg9t2      Pulling image "glasswallsolutions/event-submission-service:main-685fa96"
+3m52s       Normal    Pulled                          pod/event-submission-service-566746cddd-jg9t2      Successfully pulled image "glasswallsolutions/event-submission-service:main-685fa96"
+3m51s       Normal    Created                         pod/event-submission-service-566746cddd-jg9t2      Created container event-submission-service
+3m51s       Normal    Started                         pod/event-submission-service-566746cddd-jg9t2      Started container event-submission-service
+3m54s       Normal    SuccessfulCreate                replicaset/event-submission-service-566746cddd     Created pod: event-submission-service-566746cddd-jg9t2
+3m54s       Normal    ScalingReplicaSet               deployment/event-submission-service                Scaled up replica set event-submission-service-566746cddd to 1
+10m         Normal    EnsuringLoadBalancer            service/frontend-icap-lb                           Ensuring load balancer
+10m         Warning   CreateOrUpdatePublicIPAddress   service/frontend-icap-lb                           Retriable: false, RetryAfter: 0s, HTTPStatusCode: 400, RawError: Retriable: false, RetryAfter: 0s, HTTPStatusCode: 400, RawError: {
+  "error": {
+    "code": "DnsRecordInUse",
+    "message": "DNS record icap-client.northeurope.cloudapp.azure.com is already used by another public IP.",
+    "details": []
+  }
+}
+40m         Warning   SyncLoadBalancerFailed          service/frontend-icap-lb                           Error syncing load balancer: failed to ensure load balancer: Retriable: false, RetryAfter: 0s, HTTPStatusCode: 400, RawError: Retriable: false, RetryAfter: 0s, HTTPStatusCode: 400, RawError: {
+  "error": {
+    "code": "DnsRecordInUse",
+    "message": "DNS record icap-client.northeurope.cloudapp.azure.com is already used by another public IP.",
+    "details": []
+  }
+}
+21m         Warning   FailedToUpdateEndpointSlices    service/frontend-icap-lb                           Error updating Endpoint Slices for Service icap-adaptation/frontend-icap-lb: failed to update frontend-icap-lb-wd8qt EndpointSlice for Service icap-adaptation/frontend-icap-lb: Operation cannot be fulfilled on endpointslices.discovery.k8s.io "frontend-icap-lb-wd8qt": the object has been modified; please apply your changes to the latest version and try again
+21m         Warning   FailedToUpdateEndpoint          endpoints/frontend-icap-lb                         Failed to update endpoint icap-adaptation/frontend-icap-lb: Operation cannot be fulfilled on endpoints "frontend-icap-lb": the object has been modified; please apply your changes to the latest version and try again
+75s         Normal    EnsuringLoadBalancer            service/frontend-icap-lb                           Ensuring load balancer
+75s         Warning   CreateOrUpdatePublicIPAddress   service/frontend-icap-lb                           Retriable: false, RetryAfter: 0s, HTTPStatusCode: 400, RawError: Retriable: false, RetryAfter: 0s, HTTPStatusCode: 400, RawError: {
+  "error": {
+    "code": "DnsRecordInUse",
+    "message": "DNS record icap-client.northeurope.cloudapp.azure.com is already used by another public IP.",
+    "details": []
+  }
+}
+75s         Warning   SyncLoadBalancerFailed          service/frontend-icap-lb                           Error syncing load balancer: failed to ensure load balancer: Retriable: false, RetryAfter: 0s, HTTPStatusCode: 400, RawError: Retriable: false, RetryAfter: 0s, HTTPStatusCode: 400, RawError: {
+  "error": {
+    "code": "DnsRecordInUse",
+    "message": "DNS record icap-client.northeurope.cloudapp.azure.com is already used by another public IP.",
+    "details": []
+  }
+}
+3m56s       Normal    ProvisioningSucceeded           persistentvolumeclaim/glasswallsource-pvc          Successfully provisioned volume pvc-cff2e110-d774-43be-80cc-a470e1eb5124 using kubernetes.io/azure-file
+3m56s       Normal    ProvisioningSucceeded           persistentvolumeclaim/glasswalltarget-pvc          Successfully provisioned volume pvc-67b4b686-8d2a-4837-b7f9-2505c808c254 using kubernetes.io/azure-file
+21m         Warning   FailedToUpdateEndpointSlices    service/icap-service                               Error updating Endpoint Slices for Service icap-adaptation/icap-service: failed to update icap-service-766kc EndpointSlice for Service icap-adaptation/icap-service: Operation cannot be fulfilled on endpointslices.discovery.k8s.io "icap-service-766kc": the object has been modified; please apply your changes to the latest version and try again
+21m         Warning   FailedToUpdateEndpoint          endpoints/icap-service                             Failed to update endpoint icap-adaptation/icap-service: Operation cannot be fulfilled on endpoints "icap-service": the object has been modified; please apply your changes to the latest version and try again
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-27zff              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-27zff to aks-icaptestnode-10971123-vmss00000n
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-27zff              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-27zff              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-27zff              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-27zff              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-27zff              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-29htq              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-29htq to aks-icaptestnode-10971123-vmss000015
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-29htq              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-29htq              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-29htq              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-29htq              Started container mvp-icap-service
+6m17s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-29htq              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-2qdkx              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-2qdkx to aks-icaptestnode-10971123-vmss00000r
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-2qdkx              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-2qdkx              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-2qdkx              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-2qdkx              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-2qdkx              Stopping container mvp-icap-service
+37m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-2qfpz              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-2qfpz to aks-icaptestnode-10971123-vmss000000
+35m         Warning   FailedMount                     pod/mvp-icap-service-5587bcd485-2qfpz              Unable to attach or mount volumes: unmounted volumes=[default-token-pnl56 source-vol target-vol tls-config-vol], unattached volumes=[default-token-pnl56 source-vol target-vol tls-config-vol]: timed out waiting for the condition
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-2v4n8              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-2v4n8 to aks-icaptestnode-10971123-vmss00002g
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-2v4n8              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-2v4n8              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-2v4n8              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-2v4n8              Started container mvp-icap-service
+6m15s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-2v4n8              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-47k6f              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-47k6f to aks-icaptestnode-10971123-vmss00001h
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-47k6f              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-47k6f              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-47k6f              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-47k6f              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-47k6f              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-4d2b2              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-4d2b2 to aks-icaptestnode-10971123-vmss000010
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-4d2b2              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-4d2b2              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-4d2b2              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-4d2b2              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-4d2b2              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-4njbx              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-4njbx to aks-icaptestnode-10971123-vmss00001z
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-4njbx              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-4njbx              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-4njbx              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-4njbx              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-4njbx              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-4vzb5              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-4vzb5 to aks-icaptestnode-10971123-vmss00002e
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-4vzb5              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-4vzb5              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-4vzb5              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-4vzb5              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-4vzb5              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-5cb9z              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-5cb9z to aks-icaptestnode-10971123-vmss000014
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-5cb9z              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-5cb9z              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-5cb9z              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-5cb9z              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-5cb9z              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-5mfx2              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-5mfx2 to aks-icaptestnode-10971123-vmss00000p
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-5mfx2              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-5mfx2              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-5mfx2              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-5mfx2              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-5mfx2              Stopping container mvp-icap-service
+33m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-5vw6j              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-5vw6j to aks-icaptestnode-10971123-vmss000000
+33m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-5vw6j              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+33m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-5vw6j              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+33m         Normal    Created                         pod/mvp-icap-service-5587bcd485-5vw6j              Created container mvp-icap-service
+33m         Normal    Started                         pod/mvp-icap-service-5587bcd485-5vw6j              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-5vw6j              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-6878z              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-6878z to aks-icaptestnode-10971123-vmss00001a
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-6878z              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-6878z              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-6878z              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-6878z              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-6878z              Stopping container mvp-icap-service
+3m54s       Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-69n4p              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-69n4p to aks-icaptestnode-10971123-vmss00001b
+3m53s       Normal    Pulled                          pod/mvp-icap-service-5587bcd485-69n4p              Container image "glasswallsolutions/mvp-icap-service:main-5e3bd61" already present on machine
+3m53s       Normal    Created                         pod/mvp-icap-service-5587bcd485-69n4p              Created container mvp-icap-service
+3m52s       Normal    Started                         pod/mvp-icap-service-5587bcd485-69n4p              Started container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-6v79j              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-6v79j to aks-icaptestnode-10971123-vmss000021
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-6v79j              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-6v79j              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-6v79j              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-6v79j              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-6v79j              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-95bww              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-95bww to aks-icaptestnode-10971123-vmss00001c
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-95bww              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-95bww              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-95bww              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-95bww              Started container mvp-icap-service
+6m18s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-95bww              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-99c6l              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-99c6l to aks-icaptestnode-10971123-vmss00002j
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-99c6l              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-99c6l              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-99c6l              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-99c6l              Started container mvp-icap-service
+6m18s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-99c6l              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-99dsj              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-99dsj to aks-icaptestnode-10971123-vmss00001e
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-99dsj              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-99dsj              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-99dsj              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-99dsj              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-99dsj              Stopping container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-b4nkp              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-bf5gk              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-bf5gk to aks-icaptestnode-10971123-vmss000007
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-bf5gk              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-bf5gk              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-bf5gk              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-bf5gk              Started container mvp-icap-service
+6m18s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-bf5gk              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-cdflb              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-cdflb to aks-icaptestnode-10971123-vmss00002q
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-cdflb              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-cdflb              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-cdflb              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-cdflb              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-cdflb              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-cg68j              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-cg68j to aks-icaptestnode-10971123-vmss00002r
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-cg68j              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-cg68j              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-cg68j              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-cg68j              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-cg68j              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-chvpd              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-chvpd to aks-icaptestnode-10971123-vmss000024
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-chvpd              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-chvpd              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-chvpd              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-chvpd              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-chvpd              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-dtjwh              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-dtjwh to aks-icaptestnode-10971123-vmss00000e
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-dtjwh              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-dtjwh              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-dtjwh              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-dtjwh              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-dtjwh              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-dxpth              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-dxpth to aks-icaptestnode-10971123-vmss00000j
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-dxpth              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-dxpth              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-dxpth              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-dxpth              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-dxpth              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-frzrh              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-frzrh to aks-icaptestnode-10971123-vmss00002f
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-frzrh              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-frzrh              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-frzrh              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-frzrh              Started container mvp-icap-service
+6m18s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-frzrh              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-gd8k5              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-gd8k5 to aks-icaptestnode-10971123-vmss00001g
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-gd8k5              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-gd8k5              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-gd8k5              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-gd8k5              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-gd8k5              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-gjqgv              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-gjqgv to aks-icaptestnode-10971123-vmss000027
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-gjqgv              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-gjqgv              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-gjqgv              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-gjqgv              Started container mvp-icap-service
+6m17s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-gjqgv              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-gmks4              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-gmks4 to aks-icaptestnode-10971123-vmss00000u
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-gmks4              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-gmks4              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-gmks4              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-gmks4              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-gmks4              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-hk8k5              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-hk8k5 to aks-icaptestnode-10971123-vmss00001b
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-hk8k5              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-hk8k5              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-hk8k5              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-hk8k5              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-hk8k5              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-htg2b              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-htg2b to aks-icaptestnode-10971123-vmss00001x
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-htg2b              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-htg2b              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-htg2b              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-htg2b              Started container mvp-icap-service
+6m15s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-htg2b              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-hv8bv              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-hv8bv to aks-icaptestnode-10971123-vmss00000g
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-hv8bv              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-hv8bv              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-hv8bv              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-hv8bv              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-hv8bv              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-kmh4w              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-kmh4w to aks-icaptestnode-10971123-vmss00000s
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-kmh4w              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-kmh4w              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-kmh4w              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-kmh4w              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-kmh4w              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-n9xsc              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-n9xsc to aks-icaptestnode-10971123-vmss00001l
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-n9xsc              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-n9xsc              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-n9xsc              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-n9xsc              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-n9xsc              Stopping container mvp-icap-service
+33m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-ng6xg              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-ng6xg to aks-icaptestnode-10971123-vmss000001
+33m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-ng6xg              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+33m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-ng6xg              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+33m         Normal    Created                         pod/mvp-icap-service-5587bcd485-ng6xg              Created container mvp-icap-service
+33m         Normal    Started                         pod/mvp-icap-service-5587bcd485-ng6xg              Started container mvp-icap-service
+6m18s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-ng6xg              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-njvbl              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-njvbl to aks-icaptestnode-10971123-vmss00000c
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-njvbl              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-njvbl              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-njvbl              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-njvbl              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-njvbl              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-phx9s              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-phx9s to aks-icaptestnode-10971123-vmss000016
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-phx9s              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-phx9s              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-phx9s              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-phx9s              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-phx9s              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-pqs6q              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-pqs6q to aks-icaptestnode-10971123-vmss00000o
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-pqs6q              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-pqs6q              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-pqs6q              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-pqs6q              Started container mvp-icap-service
+6m14s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-pqs6q              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-q2cpb              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-q2cpb to aks-icaptestnode-10971123-vmss000006
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-q2cpb              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-q2cpb              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-q2cpb              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-q2cpb              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-q2cpb              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-qjxmd              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-qjxmd to aks-icaptestnode-10971123-vmss00002p
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-qjxmd              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-qjxmd              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-qjxmd              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-qjxmd              Started container mvp-icap-service
+6m15s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-qjxmd              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-r7lhr              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-r7lhr to aks-icaptestnode-10971123-vmss00000w
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-r7lhr              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-r7lhr              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-r7lhr              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-r7lhr              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-r7lhr              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-rc5m5              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-rc5m5 to aks-icaptestnode-10971123-vmss00000h
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-rc5m5              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-rc5m5              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-rc5m5              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-rc5m5              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-rc5m5              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-rkfs7              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-rkfs7 to aks-icaptestnode-10971123-vmss00001w
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-rkfs7              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-rkfs7              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-rkfs7              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-rkfs7              Started container mvp-icap-service
+6m13s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-rkfs7              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-rzqwm              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-rzqwm to aks-icaptestnode-10971123-vmss00000l
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-rzqwm              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-rzqwm              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-rzqwm              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-rzqwm              Started container mvp-icap-service
+6m17s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-rzqwm              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-sjcbx              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-sjcbx to aks-icaptestnode-10971123-vmss00000d
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-sjcbx              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-sjcbx              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-sjcbx              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-sjcbx              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-sjcbx              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-sprhx              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-sprhx to aks-icaptestnode-10971123-vmss00000t
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-sprhx              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-sprhx              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-sprhx              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-sprhx              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-sprhx              Stopping container mvp-icap-service
+37m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-td9jk              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-td9jk to aks-icaptestnode-10971123-vmss000001
+35m         Warning   FailedMount                     pod/mvp-icap-service-5587bcd485-td9jk              Unable to attach or mount volumes: unmounted volumes=[tls-config-vol default-token-pnl56 source-vol target-vol], unattached volumes=[tls-config-vol default-token-pnl56 source-vol target-vol]: timed out waiting for the condition
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-vj6xt              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-vj6xt to aks-icaptestnode-10971123-vmss00001k
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-vj6xt              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-vj6xt              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-vj6xt              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-vj6xt              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-vj6xt              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-vkb5z              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-vkb5z to aks-icaptestnode-10971123-vmss000012
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-vkb5z              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-vkb5z              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-vkb5z              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-vkb5z              Started container mvp-icap-service
+6m19s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-vkb5z              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-vsqk4              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-vsqk4 to aks-icaptestnode-10971123-vmss00001u
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-vsqk4              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-vsqk4              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-vsqk4              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-vsqk4              Started container mvp-icap-service
+6m14s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-vsqk4              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-w65tl              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-w65tl to aks-icaptestnode-10971123-vmss000017
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-w65tl              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-w65tl              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-w65tl              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-w65tl              Started container mvp-icap-service
+6m14s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-w65tl              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-w7hsv              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-w7hsv to aks-icaptestnode-10971123-vmss000018
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-w7hsv              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-w7hsv              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-w7hsv              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-w7hsv              Started container mvp-icap-service
+6m14s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-w7hsv              Stopping container mvp-icap-service
+21m         Normal    Scheduled                       pod/mvp-icap-service-5587bcd485-xd65s              Successfully assigned icap-adaptation/mvp-icap-service-5587bcd485-xd65s to aks-icaptestnode-10971123-vmss00002c
+21m         Normal    Pulling                         pod/mvp-icap-service-5587bcd485-xd65s              Pulling image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Pulled                          pod/mvp-icap-service-5587bcd485-xd65s              Successfully pulled image "glasswallsolutions/mvp-icap-service:main-5e3bd61"
+21m         Normal    Created                         pod/mvp-icap-service-5587bcd485-xd65s              Created container mvp-icap-service
+21m         Normal    Started                         pod/mvp-icap-service-5587bcd485-xd65s              Started container mvp-icap-service
+6m16s       Normal    Killing                         pod/mvp-icap-service-5587bcd485-xd65s              Stopping container mvp-icap-service
+37m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-td9jk
+37m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-2qfpz
+37m         Normal    SuccessfulDelete                replicaset/mvp-icap-service-5587bcd485             Deleted pod: mvp-icap-service-5587bcd485-td9jk
+37m         Normal    SuccessfulDelete                replicaset/mvp-icap-service-5587bcd485             Deleted pod: mvp-icap-service-5587bcd485-2qfpz
+33m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-ng6xg
+33m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-5vw6j
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-xd65s
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-5mfx2
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-phx9s
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-4njbx
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-q2cpb
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-rc5m5
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-r7lhr
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-2v4n8
+21m         Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             (combined from similar events): Created pod: mvp-icap-service-5587bcd485-2qdkx
+3m54s       Normal    SuccessfulCreate                replicaset/mvp-icap-service-5587bcd485             Created pod: mvp-icap-service-5587bcd485-69n4p
+37m         Normal    ScalingReplicaSet               deployment/mvp-icap-service                        Scaled down replica set mvp-icap-service-5587bcd485 to 1
+33m         Normal    ScalingReplicaSet               deployment/mvp-icap-service                        Scaled up replica set mvp-icap-service-5587bcd485 to 3
+21m         Normal    ScalingReplicaSet               deployment/mvp-icap-service                        Scaled up replica set mvp-icap-service-5587bcd485 to 50
+3m54s       Normal    ScalingReplicaSet               deployment/mvp-icap-service                        Scaled up replica set mvp-icap-service-5587bcd485 to 1
+60m         Normal    Scheduled                       pod/pod-janitor-1606496040-66hpj                   Successfully assigned icap-adaptation/pod-janitor-1606496040-66hpj to aks-icaptestnode-10971123-vmss000000
+60m         Normal    Pulled                          pod/pod-janitor-1606496040-66hpj                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+60m         Normal    Created                         pod/pod-janitor-1606496040-66hpj                   Created container pod-janitor
+60m         Normal    Started                         pod/pod-janitor-1606496040-66hpj                   Started container pod-janitor
+60m         Normal    SandboxChanged                  pod/pod-janitor-1606496040-66hpj                   Pod sandbox changed, it will be killed and re-created.
+60m         Normal    SuccessfulCreate                job/pod-janitor-1606496040                         Created pod: pod-janitor-1606496040-66hpj
+60m         Normal    Completed                       job/pod-janitor-1606496040                         Job completed
+59m         Normal    Scheduled                       pod/pod-janitor-1606496100-r6sb7                   Successfully assigned icap-adaptation/pod-janitor-1606496100-r6sb7 to aks-icaptestnode-10971123-vmss000000
+59m         Normal    Pulled                          pod/pod-janitor-1606496100-r6sb7                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+59m         Normal    Created                         pod/pod-janitor-1606496100-r6sb7                   Created container pod-janitor
+59m         Normal    Started                         pod/pod-janitor-1606496100-r6sb7                   Started container pod-janitor
+59m         Normal    SandboxChanged                  pod/pod-janitor-1606496100-r6sb7                   Pod sandbox changed, it will be killed and re-created.
+59m         Normal    SuccessfulCreate                job/pod-janitor-1606496100                         Created pod: pod-janitor-1606496100-r6sb7
+59m         Normal    Completed                       job/pod-janitor-1606496100                         Job completed
+58m         Normal    Scheduled                       pod/pod-janitor-1606496160-9vwpv                   Successfully assigned icap-adaptation/pod-janitor-1606496160-9vwpv to aks-icaptestnode-10971123-vmss000000
+58m         Normal    Pulled                          pod/pod-janitor-1606496160-9vwpv                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+58m         Normal    Created                         pod/pod-janitor-1606496160-9vwpv                   Created container pod-janitor
+58m         Normal    Started                         pod/pod-janitor-1606496160-9vwpv                   Started container pod-janitor
+58m         Normal    SandboxChanged                  pod/pod-janitor-1606496160-9vwpv                   Pod sandbox changed, it will be killed and re-created.
+58m         Normal    SuccessfulCreate                job/pod-janitor-1606496160                         Created pod: pod-janitor-1606496160-9vwpv
+58m         Normal    Completed                       job/pod-janitor-1606496160                         Job completed
+57m         Normal    Scheduled                       pod/pod-janitor-1606496220-bpn8n                   Successfully assigned icap-adaptation/pod-janitor-1606496220-bpn8n to aks-icaptestnode-10971123-vmss000000
+57m         Normal    Pulled                          pod/pod-janitor-1606496220-bpn8n                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+57m         Normal    Created                         pod/pod-janitor-1606496220-bpn8n                   Created container pod-janitor
+57m         Normal    Started                         pod/pod-janitor-1606496220-bpn8n                   Started container pod-janitor
+57m         Normal    SuccessfulCreate                job/pod-janitor-1606496220                         Created pod: pod-janitor-1606496220-bpn8n
+57m         Normal    Completed                       job/pod-janitor-1606496220                         Job completed
+56m         Normal    Scheduled                       pod/pod-janitor-1606496280-w7pb4                   Successfully assigned icap-adaptation/pod-janitor-1606496280-w7pb4 to aks-icaptestnode-10971123-vmss000000
+56m         Normal    Pulled                          pod/pod-janitor-1606496280-w7pb4                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+56m         Normal    Created                         pod/pod-janitor-1606496280-w7pb4                   Created container pod-janitor
+56m         Normal    Started                         pod/pod-janitor-1606496280-w7pb4                   Started container pod-janitor
+56m         Normal    SandboxChanged                  pod/pod-janitor-1606496280-w7pb4                   Pod sandbox changed, it will be killed and re-created.
+56m         Normal    SuccessfulCreate                job/pod-janitor-1606496280                         Created pod: pod-janitor-1606496280-w7pb4
+56m         Normal    Completed                       job/pod-janitor-1606496280                         Job completed
+55m         Normal    Scheduled                       pod/pod-janitor-1606496340-rlp5f                   Successfully assigned icap-adaptation/pod-janitor-1606496340-rlp5f to aks-icaptestnode-10971123-vmss000000
+55m         Normal    Pulled                          pod/pod-janitor-1606496340-rlp5f                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+55m         Normal    Created                         pod/pod-janitor-1606496340-rlp5f                   Created container pod-janitor
+55m         Normal    Started                         pod/pod-janitor-1606496340-rlp5f                   Started container pod-janitor
+55m         Normal    SuccessfulCreate                job/pod-janitor-1606496340                         Created pod: pod-janitor-1606496340-rlp5f
+55m         Normal    Completed                       job/pod-janitor-1606496340                         Job completed
+54m         Normal    Scheduled                       pod/pod-janitor-1606496400-zzcr4                   Successfully assigned icap-adaptation/pod-janitor-1606496400-zzcr4 to aks-icaptestnode-10971123-vmss000000
+54m         Normal    Pulled                          pod/pod-janitor-1606496400-zzcr4                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+54m         Normal    Created                         pod/pod-janitor-1606496400-zzcr4                   Created container pod-janitor
+54m         Normal    Started                         pod/pod-janitor-1606496400-zzcr4                   Started container pod-janitor
+54m         Normal    SuccessfulCreate                job/pod-janitor-1606496400                         Created pod: pod-janitor-1606496400-zzcr4
+54m         Normal    Completed                       job/pod-janitor-1606496400                         Job completed
+53m         Normal    Scheduled                       pod/pod-janitor-1606496460-w26x4                   Successfully assigned icap-adaptation/pod-janitor-1606496460-w26x4 to aks-icaptestnode-10971123-vmss000000
+53m         Normal    Pulled                          pod/pod-janitor-1606496460-w26x4                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+53m         Normal    Created                         pod/pod-janitor-1606496460-w26x4                   Created container pod-janitor
+53m         Normal    Started                         pod/pod-janitor-1606496460-w26x4                   Started container pod-janitor
+53m         Normal    SandboxChanged                  pod/pod-janitor-1606496460-w26x4                   Pod sandbox changed, it will be killed and re-created.
+53m         Normal    SuccessfulCreate                job/pod-janitor-1606496460                         Created pod: pod-janitor-1606496460-w26x4
+53m         Normal    Completed                       job/pod-janitor-1606496460                         Job completed
+52m         Normal    Scheduled                       pod/pod-janitor-1606496520-hg4dk                   Successfully assigned icap-adaptation/pod-janitor-1606496520-hg4dk to aks-icaptestnode-10971123-vmss000000
+52m         Normal    Pulled                          pod/pod-janitor-1606496520-hg4dk                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+52m         Normal    Created                         pod/pod-janitor-1606496520-hg4dk                   Created container pod-janitor
+52m         Normal    Started                         pod/pod-janitor-1606496520-hg4dk                   Started container pod-janitor
+52m         Normal    SandboxChanged                  pod/pod-janitor-1606496520-hg4dk                   Pod sandbox changed, it will be killed and re-created.
+52m         Warning   FailedCreatePodSandBox          pod/pod-janitor-1606496520-hg4dk                   Failed to create pod sandbox: rpc error: code = Unknown desc = failed to start sandbox container for pod "pod-janitor-1606496520-hg4dk": Error response from daemon: OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:459: container init caused: process_linux.go:448: writing syncT 'resume' caused: write init-p: broken pipe: unknown
+52m         Normal    SuccessfulCreate                job/pod-janitor-1606496520                         Created pod: pod-janitor-1606496520-hg4dk
+52m         Normal    Completed                       job/pod-janitor-1606496520                         Job completed
+51m         Normal    Scheduled                       pod/pod-janitor-1606496580-87skk                   Successfully assigned icap-adaptation/pod-janitor-1606496580-87skk to aks-icaptestnode-10971123-vmss000000
+51m         Normal    Pulled                          pod/pod-janitor-1606496580-87skk                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+51m         Normal    Created                         pod/pod-janitor-1606496580-87skk                   Created container pod-janitor
+51m         Normal    Started                         pod/pod-janitor-1606496580-87skk                   Started container pod-janitor
+51m         Normal    SandboxChanged                  pod/pod-janitor-1606496580-87skk                   Pod sandbox changed, it will be killed and re-created.
+51m         Normal    SuccessfulCreate                job/pod-janitor-1606496580                         Created pod: pod-janitor-1606496580-87skk
+51m         Normal    Completed                       job/pod-janitor-1606496580                         Job completed
+50m         Normal    Scheduled                       pod/pod-janitor-1606496640-5z5xw                   Successfully assigned icap-adaptation/pod-janitor-1606496640-5z5xw to aks-icaptestnode-10971123-vmss000000
+50m         Normal    Pulled                          pod/pod-janitor-1606496640-5z5xw                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+50m         Normal    Created                         pod/pod-janitor-1606496640-5z5xw                   Created container pod-janitor
+50m         Normal    Started                         pod/pod-janitor-1606496640-5z5xw                   Started container pod-janitor
+50m         Normal    SandboxChanged                  pod/pod-janitor-1606496640-5z5xw                   Pod sandbox changed, it will be killed and re-created.
+50m         Normal    SuccessfulCreate                job/pod-janitor-1606496640                         Created pod: pod-janitor-1606496640-5z5xw
+50m         Normal    Completed                       job/pod-janitor-1606496640                         Job completed
+49m         Normal    Scheduled                       pod/pod-janitor-1606496700-jxm7j                   Successfully assigned icap-adaptation/pod-janitor-1606496700-jxm7j to aks-icaptestnode-10971123-vmss000000
+49m         Normal    Pulled                          pod/pod-janitor-1606496700-jxm7j                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+49m         Normal    Created                         pod/pod-janitor-1606496700-jxm7j                   Created container pod-janitor
+49m         Normal    Started                         pod/pod-janitor-1606496700-jxm7j                   Started container pod-janitor
+49m         Normal    SandboxChanged                  pod/pod-janitor-1606496700-jxm7j                   Pod sandbox changed, it will be killed and re-created.
+49m         Normal    SuccessfulCreate                job/pod-janitor-1606496700                         Created pod: pod-janitor-1606496700-jxm7j
+49m         Normal    Completed                       job/pod-janitor-1606496700                         Job completed
+48m         Normal    Scheduled                       pod/pod-janitor-1606496760-pc79t                   Successfully assigned icap-adaptation/pod-janitor-1606496760-pc79t to aks-icaptestnode-10971123-vmss000000
+48m         Normal    Pulled                          pod/pod-janitor-1606496760-pc79t                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+48m         Normal    Created                         pod/pod-janitor-1606496760-pc79t                   Created container pod-janitor
+48m         Normal    Started                         pod/pod-janitor-1606496760-pc79t                   Started container pod-janitor
+48m         Normal    SandboxChanged                  pod/pod-janitor-1606496760-pc79t                   Pod sandbox changed, it will be killed and re-created.
+48m         Normal    SuccessfulCreate                job/pod-janitor-1606496760                         Created pod: pod-janitor-1606496760-pc79t
+48m         Normal    Completed                       job/pod-janitor-1606496760                         Job completed
+47m         Normal    Scheduled                       pod/pod-janitor-1606496820-8qf4d                   Successfully assigned icap-adaptation/pod-janitor-1606496820-8qf4d to aks-icaptestnode-10971123-vmss000000
+47m         Normal    Pulled                          pod/pod-janitor-1606496820-8qf4d                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+47m         Normal    Created                         pod/pod-janitor-1606496820-8qf4d                   Created container pod-janitor
+47m         Normal    Started                         pod/pod-janitor-1606496820-8qf4d                   Started container pod-janitor
+47m         Normal    SandboxChanged                  pod/pod-janitor-1606496820-8qf4d                   Pod sandbox changed, it will be killed and re-created.
+47m         Normal    SuccessfulCreate                job/pod-janitor-1606496820                         Created pod: pod-janitor-1606496820-8qf4d
+47m         Normal    Completed                       job/pod-janitor-1606496820                         Job completed
+46m         Normal    Scheduled                       pod/pod-janitor-1606496880-fpvds                   Successfully assigned icap-adaptation/pod-janitor-1606496880-fpvds to aks-icaptestnode-10971123-vmss000000
+46m         Normal    Pulled                          pod/pod-janitor-1606496880-fpvds                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+46m         Normal    Created                         pod/pod-janitor-1606496880-fpvds                   Created container pod-janitor
+46m         Normal    Started                         pod/pod-janitor-1606496880-fpvds                   Started container pod-janitor
+46m         Normal    SandboxChanged                  pod/pod-janitor-1606496880-fpvds                   Pod sandbox changed, it will be killed and re-created.
+46m         Normal    SuccessfulCreate                job/pod-janitor-1606496880                         Created pod: pod-janitor-1606496880-fpvds
+46m         Normal    Completed                       job/pod-janitor-1606496880                         Job completed
+45m         Normal    Scheduled                       pod/pod-janitor-1606496940-kwj8g                   Successfully assigned icap-adaptation/pod-janitor-1606496940-kwj8g to aks-icaptestnode-10971123-vmss000000
+45m         Normal    Pulled                          pod/pod-janitor-1606496940-kwj8g                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+45m         Normal    Created                         pod/pod-janitor-1606496940-kwj8g                   Created container pod-janitor
+45m         Normal    Started                         pod/pod-janitor-1606496940-kwj8g                   Started container pod-janitor
+45m         Normal    SuccessfulCreate                job/pod-janitor-1606496940                         Created pod: pod-janitor-1606496940-kwj8g
+45m         Normal    Completed                       job/pod-janitor-1606496940                         Job completed
+44m         Normal    Scheduled                       pod/pod-janitor-1606497000-wbjf7                   Successfully assigned icap-adaptation/pod-janitor-1606497000-wbjf7 to aks-icaptestnode-10971123-vmss000000
+44m         Normal    Pulled                          pod/pod-janitor-1606497000-wbjf7                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+44m         Normal    Created                         pod/pod-janitor-1606497000-wbjf7                   Created container pod-janitor
+44m         Normal    Started                         pod/pod-janitor-1606497000-wbjf7                   Started container pod-janitor
+44m         Normal    SandboxChanged                  pod/pod-janitor-1606497000-wbjf7                   Pod sandbox changed, it will be killed and re-created.
+44m         Normal    SuccessfulCreate                job/pod-janitor-1606497000                         Created pod: pod-janitor-1606497000-wbjf7
+44m         Normal    Completed                       job/pod-janitor-1606497000                         Job completed
+43m         Normal    Scheduled                       pod/pod-janitor-1606497060-dr5jt                   Successfully assigned icap-adaptation/pod-janitor-1606497060-dr5jt to aks-icaptestnode-10971123-vmss000000
+43m         Normal    Pulled                          pod/pod-janitor-1606497060-dr5jt                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+43m         Normal    Created                         pod/pod-janitor-1606497060-dr5jt                   Created container pod-janitor
+43m         Normal    Started                         pod/pod-janitor-1606497060-dr5jt                   Started container pod-janitor
+43m         Normal    SuccessfulCreate                job/pod-janitor-1606497060                         Created pod: pod-janitor-1606497060-dr5jt
+43m         Normal    Completed                       job/pod-janitor-1606497060                         Job completed
+42m         Normal    Scheduled                       pod/pod-janitor-1606497120-prk2g                   Successfully assigned icap-adaptation/pod-janitor-1606497120-prk2g to aks-icaptestnode-10971123-vmss000000
+42m         Normal    Pulled                          pod/pod-janitor-1606497120-prk2g                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+42m         Normal    Created                         pod/pod-janitor-1606497120-prk2g                   Created container pod-janitor
+42m         Normal    Started                         pod/pod-janitor-1606497120-prk2g                   Started container pod-janitor
+42m         Normal    SuccessfulCreate                job/pod-janitor-1606497120                         Created pod: pod-janitor-1606497120-prk2g
+42m         Normal    Completed                       job/pod-janitor-1606497120                         Job completed
+41m         Normal    Scheduled                       pod/pod-janitor-1606497180-n8jht                   Successfully assigned icap-adaptation/pod-janitor-1606497180-n8jht to aks-icaptestnode-10971123-vmss000000
+41m         Normal    Pulled                          pod/pod-janitor-1606497180-n8jht                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+41m         Normal    Created                         pod/pod-janitor-1606497180-n8jht                   Created container pod-janitor
+41m         Normal    Started                         pod/pod-janitor-1606497180-n8jht                   Started container pod-janitor
+41m         Normal    SandboxChanged                  pod/pod-janitor-1606497180-n8jht                   Pod sandbox changed, it will be killed and re-created.
+41m         Normal    SuccessfulCreate                job/pod-janitor-1606497180                         Created pod: pod-janitor-1606497180-n8jht
+41m         Normal    Completed                       job/pod-janitor-1606497180                         Job completed
+40m         Normal    Scheduled                       pod/pod-janitor-1606497240-clgcf                   Successfully assigned icap-adaptation/pod-janitor-1606497240-clgcf to aks-icaptestnode-10971123-vmss000000
+40m         Normal    Pulled                          pod/pod-janitor-1606497240-clgcf                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+40m         Normal    Created                         pod/pod-janitor-1606497240-clgcf                   Created container pod-janitor
+40m         Normal    Started                         pod/pod-janitor-1606497240-clgcf                   Started container pod-janitor
+40m         Normal    SandboxChanged                  pod/pod-janitor-1606497240-clgcf                   Pod sandbox changed, it will be killed and re-created.
+40m         Normal    SuccessfulCreate                job/pod-janitor-1606497240                         Created pod: pod-janitor-1606497240-clgcf
+40m         Normal    Completed                       job/pod-janitor-1606497240                         Job completed
+39m         Normal    Scheduled                       pod/pod-janitor-1606497300-2d2km                   Successfully assigned icap-adaptation/pod-janitor-1606497300-2d2km to aks-icaptestnode-10971123-vmss000000
+39m         Normal    Pulled                          pod/pod-janitor-1606497300-2d2km                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+39m         Normal    Created                         pod/pod-janitor-1606497300-2d2km                   Created container pod-janitor
+39m         Normal    Started                         pod/pod-janitor-1606497300-2d2km                   Started container pod-janitor
+39m         Normal    SandboxChanged                  pod/pod-janitor-1606497300-2d2km                   Pod sandbox changed, it will be killed and re-created.
+39m         Normal    SuccessfulCreate                job/pod-janitor-1606497300                         Created pod: pod-janitor-1606497300-2d2km
+39m         Normal    Completed                       job/pod-janitor-1606497300                         Job completed
+38m         Normal    Scheduled                       pod/pod-janitor-1606497360-dqhds                   Successfully assigned icap-adaptation/pod-janitor-1606497360-dqhds to aks-icaptestnode-10971123-vmss000000
+38m         Normal    Pulled                          pod/pod-janitor-1606497360-dqhds                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+38m         Normal    Created                         pod/pod-janitor-1606497360-dqhds                   Created container pod-janitor
+38m         Normal    Started                         pod/pod-janitor-1606497360-dqhds                   Started container pod-janitor
+38m         Normal    SandboxChanged                  pod/pod-janitor-1606497360-dqhds                   Pod sandbox changed, it will be killed and re-created.
+38m         Normal    SuccessfulCreate                job/pod-janitor-1606497360                         Created pod: pod-janitor-1606497360-dqhds
+38m         Normal    Completed                       job/pod-janitor-1606497360                         Job completed
+37m         Normal    Scheduled                       pod/pod-janitor-1606497420-z7cf8                   Successfully assigned icap-adaptation/pod-janitor-1606497420-z7cf8 to aks-icaptestnode-10971123-vmss000000
+37m         Normal    Pulled                          pod/pod-janitor-1606497420-z7cf8                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+37m         Normal    Created                         pod/pod-janitor-1606497420-z7cf8                   Created container pod-janitor
+37m         Normal    Started                         pod/pod-janitor-1606497420-z7cf8                   Started container pod-janitor
+37m         Normal    SuccessfulCreate                job/pod-janitor-1606497420                         Created pod: pod-janitor-1606497420-z7cf8
+37m         Normal    Completed                       job/pod-janitor-1606497420                         Job completed
+36m         Normal    Scheduled                       pod/pod-janitor-1606497480-tmk96                   Successfully assigned icap-adaptation/pod-janitor-1606497480-tmk96 to aks-icaptestnode-10971123-vmss000000
+36m         Normal    Pulled                          pod/pod-janitor-1606497480-tmk96                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+36m         Normal    Created                         pod/pod-janitor-1606497480-tmk96                   Created container pod-janitor
+36m         Normal    Started                         pod/pod-janitor-1606497480-tmk96                   Started container pod-janitor
+36m         Normal    SandboxChanged                  pod/pod-janitor-1606497480-tmk96                   Pod sandbox changed, it will be killed and re-created.
+36m         Normal    SuccessfulCreate                job/pod-janitor-1606497480                         Created pod: pod-janitor-1606497480-tmk96
+36m         Normal    Completed                       job/pod-janitor-1606497480                         Job completed
+35m         Normal    Scheduled                       pod/pod-janitor-1606497540-rb5m6                   Successfully assigned icap-adaptation/pod-janitor-1606497540-rb5m6 to aks-icaptestnode-10971123-vmss000000
+35m         Normal    Pulled                          pod/pod-janitor-1606497540-rb5m6                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+35m         Normal    Created                         pod/pod-janitor-1606497540-rb5m6                   Created container pod-janitor
+35m         Normal    Started                         pod/pod-janitor-1606497540-rb5m6                   Started container pod-janitor
+35m         Normal    SuccessfulCreate                job/pod-janitor-1606497540                         Created pod: pod-janitor-1606497540-rb5m6
+35m         Normal    Completed                       job/pod-janitor-1606497540                         Job completed
+34m         Normal    Scheduled                       pod/pod-janitor-1606497600-pdjhr                   Successfully assigned icap-adaptation/pod-janitor-1606497600-pdjhr to aks-icaptestnode-10971123-vmss000000
+34m         Normal    Pulled                          pod/pod-janitor-1606497600-pdjhr                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+34m         Normal    Created                         pod/pod-janitor-1606497600-pdjhr                   Created container pod-janitor
+34m         Normal    Started                         pod/pod-janitor-1606497600-pdjhr                   Started container pod-janitor
+34m         Normal    SandboxChanged                  pod/pod-janitor-1606497600-pdjhr                   Pod sandbox changed, it will be killed and re-created.
+34m         Normal    SuccessfulCreate                job/pod-janitor-1606497600                         Created pod: pod-janitor-1606497600-pdjhr
+34m         Normal    Completed                       job/pod-janitor-1606497600                         Job completed
+33m         Normal    Scheduled                       pod/pod-janitor-1606497660-4ljmv                   Successfully assigned icap-adaptation/pod-janitor-1606497660-4ljmv to aks-icaptestnode-10971123-vmss000001
+33m         Normal    Pulling                         pod/pod-janitor-1606497660-4ljmv                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+33m         Normal    Pulled                          pod/pod-janitor-1606497660-4ljmv                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+33m         Normal    Created                         pod/pod-janitor-1606497660-4ljmv                   Created container pod-janitor
+33m         Normal    Started                         pod/pod-janitor-1606497660-4ljmv                   Started container pod-janitor
+33m         Normal    SandboxChanged                  pod/pod-janitor-1606497660-4ljmv                   Pod sandbox changed, it will be killed and re-created.
+33m         Normal    SuccessfulCreate                job/pod-janitor-1606497660                         Created pod: pod-janitor-1606497660-4ljmv
+33m         Normal    Completed                       job/pod-janitor-1606497660                         Job completed
+32m         Normal    Scheduled                       pod/pod-janitor-1606497720-69qtv                   Successfully assigned icap-adaptation/pod-janitor-1606497720-69qtv to aks-icaptestnode-10971123-vmss000001
+32m         Normal    Pulled                          pod/pod-janitor-1606497720-69qtv                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+32m         Normal    Created                         pod/pod-janitor-1606497720-69qtv                   Created container pod-janitor
+32m         Normal    Started                         pod/pod-janitor-1606497720-69qtv                   Started container pod-janitor
+32m         Normal    SandboxChanged                  pod/pod-janitor-1606497720-69qtv                   Pod sandbox changed, it will be killed and re-created.
+32m         Normal    SuccessfulCreate                job/pod-janitor-1606497720                         Created pod: pod-janitor-1606497720-69qtv
+32m         Normal    Completed                       job/pod-janitor-1606497720                         Job completed
+31m         Normal    Scheduled                       pod/pod-janitor-1606497780-hdp9w                   Successfully assigned icap-adaptation/pod-janitor-1606497780-hdp9w to aks-icaptestnode-10971123-vmss000001
+31m         Normal    Pulled                          pod/pod-janitor-1606497780-hdp9w                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+31m         Normal    Created                         pod/pod-janitor-1606497780-hdp9w                   Created container pod-janitor
+31m         Normal    Started                         pod/pod-janitor-1606497780-hdp9w                   Started container pod-janitor
+31m         Normal    SandboxChanged                  pod/pod-janitor-1606497780-hdp9w                   Pod sandbox changed, it will be killed and re-created.
+31m         Normal    SuccessfulCreate                job/pod-janitor-1606497780                         Created pod: pod-janitor-1606497780-hdp9w
+31m         Normal    Completed                       job/pod-janitor-1606497780                         Job completed
+30m         Normal    Scheduled                       pod/pod-janitor-1606497840-px68d                   Successfully assigned icap-adaptation/pod-janitor-1606497840-px68d to aks-icaptestnode-10971123-vmss000001
+30m         Normal    Pulled                          pod/pod-janitor-1606497840-px68d                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+30m         Normal    Created                         pod/pod-janitor-1606497840-px68d                   Created container pod-janitor
+30m         Normal    Started                         pod/pod-janitor-1606497840-px68d                   Started container pod-janitor
+30m         Normal    SandboxChanged                  pod/pod-janitor-1606497840-px68d                   Pod sandbox changed, it will be killed and re-created.
+30m         Normal    SuccessfulCreate                job/pod-janitor-1606497840                         Created pod: pod-janitor-1606497840-px68d
+30m         Normal    Completed                       job/pod-janitor-1606497840                         Job completed
+29m         Normal    Scheduled                       pod/pod-janitor-1606497900-b58ww                   Successfully assigned icap-adaptation/pod-janitor-1606497900-b58ww to aks-icaptestnode-10971123-vmss000001
+29m         Normal    Pulled                          pod/pod-janitor-1606497900-b58ww                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+29m         Normal    Created                         pod/pod-janitor-1606497900-b58ww                   Created container pod-janitor
+29m         Normal    Started                         pod/pod-janitor-1606497900-b58ww                   Started container pod-janitor
+29m         Normal    SuccessfulCreate                job/pod-janitor-1606497900                         Created pod: pod-janitor-1606497900-b58ww
+29m         Normal    Completed                       job/pod-janitor-1606497900                         Job completed
+28m         Normal    Scheduled                       pod/pod-janitor-1606497960-f2p4z                   Successfully assigned icap-adaptation/pod-janitor-1606497960-f2p4z to aks-icaptestnode-10971123-vmss000001
+28m         Normal    Pulled                          pod/pod-janitor-1606497960-f2p4z                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+28m         Normal    Created                         pod/pod-janitor-1606497960-f2p4z                   Created container pod-janitor
+28m         Normal    Started                         pod/pod-janitor-1606497960-f2p4z                   Started container pod-janitor
+28m         Normal    SandboxChanged                  pod/pod-janitor-1606497960-f2p4z                   Pod sandbox changed, it will be killed and re-created.
+28m         Normal    SuccessfulCreate                job/pod-janitor-1606497960                         Created pod: pod-janitor-1606497960-f2p4z
+28m         Normal    Completed                       job/pod-janitor-1606497960                         Job completed
+27m         Normal    Scheduled                       pod/pod-janitor-1606498020-hf67x                   Successfully assigned icap-adaptation/pod-janitor-1606498020-hf67x to aks-icaptestnode-10971123-vmss000001
+27m         Normal    Pulled                          pod/pod-janitor-1606498020-hf67x                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+27m         Normal    Created                         pod/pod-janitor-1606498020-hf67x                   Created container pod-janitor
+27m         Normal    Started                         pod/pod-janitor-1606498020-hf67x                   Started container pod-janitor
+27m         Normal    SandboxChanged                  pod/pod-janitor-1606498020-hf67x                   Pod sandbox changed, it will be killed and re-created.
+27m         Normal    SuccessfulCreate                job/pod-janitor-1606498020                         Created pod: pod-janitor-1606498020-hf67x
+27m         Normal    Completed                       job/pod-janitor-1606498020                         Job completed
+26m         Normal    Scheduled                       pod/pod-janitor-1606498080-nq6nb                   Successfully assigned icap-adaptation/pod-janitor-1606498080-nq6nb to aks-icaptestnode-10971123-vmss000001
+26m         Normal    Pulled                          pod/pod-janitor-1606498080-nq6nb                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+26m         Normal    Created                         pod/pod-janitor-1606498080-nq6nb                   Created container pod-janitor
+26m         Normal    Started                         pod/pod-janitor-1606498080-nq6nb                   Started container pod-janitor
+26m         Normal    SandboxChanged                  pod/pod-janitor-1606498080-nq6nb                   Pod sandbox changed, it will be killed and re-created.
+26m         Normal    SuccessfulCreate                job/pod-janitor-1606498080                         Created pod: pod-janitor-1606498080-nq6nb
+26m         Normal    Completed                       job/pod-janitor-1606498080                         Job completed
+25m         Normal    Scheduled                       pod/pod-janitor-1606498140-wtr55                   Successfully assigned icap-adaptation/pod-janitor-1606498140-wtr55 to aks-icaptestnode-10971123-vmss000001
+25m         Normal    Pulled                          pod/pod-janitor-1606498140-wtr55                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+25m         Normal    Created                         pod/pod-janitor-1606498140-wtr55                   Created container pod-janitor
+25m         Normal    Started                         pod/pod-janitor-1606498140-wtr55                   Started container pod-janitor
+25m         Normal    SandboxChanged                  pod/pod-janitor-1606498140-wtr55                   Pod sandbox changed, it will be killed and re-created.
+25m         Normal    SuccessfulCreate                job/pod-janitor-1606498140                         Created pod: pod-janitor-1606498140-wtr55
+25m         Normal    Completed                       job/pod-janitor-1606498140                         Job completed
+24m         Normal    Scheduled                       pod/pod-janitor-1606498200-kbqgn                   Successfully assigned icap-adaptation/pod-janitor-1606498200-kbqgn to aks-icaptestnode-10971123-vmss000023
+24m         Normal    Pulling                         pod/pod-janitor-1606498200-kbqgn                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+24m         Normal    Pulled                          pod/pod-janitor-1606498200-kbqgn                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+23m         Normal    Created                         pod/pod-janitor-1606498200-kbqgn                   Created container pod-janitor
+23m         Normal    Started                         pod/pod-janitor-1606498200-kbqgn                   Started container pod-janitor
+23m         Normal    SandboxChanged                  pod/pod-janitor-1606498200-kbqgn                   Pod sandbox changed, it will be killed and re-created.
+24m         Normal    SuccessfulCreate                job/pod-janitor-1606498200                         Created pod: pod-janitor-1606498200-kbqgn
+23m         Normal    Completed                       job/pod-janitor-1606498200                         Job completed
+23m         Normal    Scheduled                       pod/pod-janitor-1606498260-c6845                   Successfully assigned icap-adaptation/pod-janitor-1606498260-c6845 to aks-icaptestnode-10971123-vmss00001z
+23m         Normal    Pulling                         pod/pod-janitor-1606498260-c6845                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+23m         Normal    Pulled                          pod/pod-janitor-1606498260-c6845                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+23m         Normal    Created                         pod/pod-janitor-1606498260-c6845                   Created container pod-janitor
+23m         Normal    Started                         pod/pod-janitor-1606498260-c6845                   Started container pod-janitor
+23m         Normal    SuccessfulCreate                job/pod-janitor-1606498260                         Created pod: pod-janitor-1606498260-c6845
+23m         Normal    Completed                       job/pod-janitor-1606498260                         Job completed
+22m         Normal    Scheduled                       pod/pod-janitor-1606498320-vxxkv                   Successfully assigned icap-adaptation/pod-janitor-1606498320-vxxkv to aks-icaptestnode-10971123-vmss000020
+22m         Normal    Pulling                         pod/pod-janitor-1606498320-vxxkv                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+22m         Normal    Pulled                          pod/pod-janitor-1606498320-vxxkv                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+22m         Normal    Created                         pod/pod-janitor-1606498320-vxxkv                   Created container pod-janitor
+22m         Normal    Started                         pod/pod-janitor-1606498320-vxxkv                   Started container pod-janitor
+22m         Normal    SandboxChanged                  pod/pod-janitor-1606498320-vxxkv                   Pod sandbox changed, it will be killed and re-created.
+22m         Warning   FailedCreatePodSandBox          pod/pod-janitor-1606498320-vxxkv                   Failed to create pod sandbox: rpc error: code = Unknown desc = failed to start sandbox container for pod "pod-janitor-1606498320-vxxkv": Error response from daemon: OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:459: container init caused: read init-p: connection reset by peer: unknown
+22m         Normal    SuccessfulCreate                job/pod-janitor-1606498320                         Created pod: pod-janitor-1606498320-vxxkv
+22m         Normal    Completed                       job/pod-janitor-1606498320                         Job completed
+21m         Normal    Scheduled                       pod/pod-janitor-1606498380-6xqlz                   Successfully assigned icap-adaptation/pod-janitor-1606498380-6xqlz to aks-icaptestnode-10971123-vmss000016
+21m         Normal    Pulling                         pod/pod-janitor-1606498380-6xqlz                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+21m         Normal    Pulled                          pod/pod-janitor-1606498380-6xqlz                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+21m         Normal    Created                         pod/pod-janitor-1606498380-6xqlz                   Created container pod-janitor
+21m         Normal    Started                         pod/pod-janitor-1606498380-6xqlz                   Started container pod-janitor
+21m         Normal    SandboxChanged                  pod/pod-janitor-1606498380-6xqlz                   Pod sandbox changed, it will be killed and re-created.
+21m         Normal    SuccessfulCreate                job/pod-janitor-1606498380                         Created pod: pod-janitor-1606498380-6xqlz
+21m         Normal    Completed                       job/pod-janitor-1606498380                         Job completed
+20m         Normal    Scheduled                       pod/pod-janitor-1606498440-cm8dp                   Successfully assigned icap-adaptation/pod-janitor-1606498440-cm8dp to aks-icaptestnode-10971123-vmss00001l
+20m         Normal    Pulling                         pod/pod-janitor-1606498440-cm8dp                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+20m         Normal    Pulled                          pod/pod-janitor-1606498440-cm8dp                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+20m         Normal    Created                         pod/pod-janitor-1606498440-cm8dp                   Created container pod-janitor
+20m         Normal    Started                         pod/pod-janitor-1606498440-cm8dp                   Started container pod-janitor
+20m         Normal    SandboxChanged                  pod/pod-janitor-1606498440-cm8dp                   Pod sandbox changed, it will be killed and re-created.
+20m         Normal    SuccessfulCreate                job/pod-janitor-1606498440                         Created pod: pod-janitor-1606498440-cm8dp
+20m         Normal    Completed                       job/pod-janitor-1606498440                         Job completed
+19m         Normal    Scheduled                       pod/pod-janitor-1606498500-2c7q4                   Successfully assigned icap-adaptation/pod-janitor-1606498500-2c7q4 to aks-icaptestnode-10971123-vmss00000w
+19m         Normal    Pulling                         pod/pod-janitor-1606498500-2c7q4                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+19m         Normal    Pulled                          pod/pod-janitor-1606498500-2c7q4                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+19m         Normal    Created                         pod/pod-janitor-1606498500-2c7q4                   Created container pod-janitor
+19m         Normal    Started                         pod/pod-janitor-1606498500-2c7q4                   Started container pod-janitor
+19m         Normal    SandboxChanged                  pod/pod-janitor-1606498500-2c7q4                   Pod sandbox changed, it will be killed and re-created.
+19m         Normal    SuccessfulCreate                job/pod-janitor-1606498500                         Created pod: pod-janitor-1606498500-2c7q4
+19m         Normal    Completed                       job/pod-janitor-1606498500                         Job completed
+18m         Normal    Scheduled                       pod/pod-janitor-1606498560-nhgtp                   Successfully assigned icap-adaptation/pod-janitor-1606498560-nhgtp to aks-icaptestnode-10971123-vmss00000p
+18m         Normal    Pulling                         pod/pod-janitor-1606498560-nhgtp                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+18m         Normal    Pulled                          pod/pod-janitor-1606498560-nhgtp                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+18m         Normal    Created                         pod/pod-janitor-1606498560-nhgtp                   Created container pod-janitor
+18m         Normal    Started                         pod/pod-janitor-1606498560-nhgtp                   Started container pod-janitor
+18m         Normal    SandboxChanged                  pod/pod-janitor-1606498560-nhgtp                   Pod sandbox changed, it will be killed and re-created.
+18m         Warning   FailedCreatePodSandBox          pod/pod-janitor-1606498560-nhgtp                   Failed to create pod sandbox: rpc error: code = Unknown desc = failed to start sandbox container for pod "pod-janitor-1606498560-nhgtp": Error response from daemon: OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:459: container init caused: read init-p: connection reset by peer: unknown
+18m         Normal    SuccessfulCreate                job/pod-janitor-1606498560                         Created pod: pod-janitor-1606498560-nhgtp
+18m         Normal    Completed                       job/pod-janitor-1606498560                         Job completed
+17m         Normal    Scheduled                       pod/pod-janitor-1606498620-kphtz                   Successfully assigned icap-adaptation/pod-janitor-1606498620-kphtz to aks-icaptestnode-10971123-vmss000018
+17m         Normal    Pulling                         pod/pod-janitor-1606498620-kphtz                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+17m         Normal    Pulled                          pod/pod-janitor-1606498620-kphtz                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+17m         Normal    Created                         pod/pod-janitor-1606498620-kphtz                   Created container pod-janitor
+17m         Normal    Started                         pod/pod-janitor-1606498620-kphtz                   Started container pod-janitor
+17m         Normal    SandboxChanged                  pod/pod-janitor-1606498620-kphtz                   Pod sandbox changed, it will be killed and re-created.
+17m         Normal    SuccessfulCreate                job/pod-janitor-1606498620                         Created pod: pod-janitor-1606498620-kphtz
+17m         Normal    Completed                       job/pod-janitor-1606498620                         Job completed
+16m         Normal    Scheduled                       pod/pod-janitor-1606498680-8lrvt                   Successfully assigned icap-adaptation/pod-janitor-1606498680-8lrvt to aks-icaptestnode-10971123-vmss00000g
+16m         Normal    Pulling                         pod/pod-janitor-1606498680-8lrvt                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+16m         Normal    Pulled                          pod/pod-janitor-1606498680-8lrvt                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+16m         Normal    Created                         pod/pod-janitor-1606498680-8lrvt                   Created container pod-janitor
+16m         Normal    Started                         pod/pod-janitor-1606498680-8lrvt                   Started container pod-janitor
+16m         Normal    SandboxChanged                  pod/pod-janitor-1606498680-8lrvt                   Pod sandbox changed, it will be killed and re-created.
+16m         Normal    SuccessfulCreate                job/pod-janitor-1606498680                         Created pod: pod-janitor-1606498680-8lrvt
+16m         Normal    Completed                       job/pod-janitor-1606498680                         Job completed
+15m         Normal    Scheduled                       pod/pod-janitor-1606498740-8xmbr                   Successfully assigned icap-adaptation/pod-janitor-1606498740-8xmbr to aks-icaptestnode-10971123-vmss000021
+15m         Normal    Pulling                         pod/pod-janitor-1606498740-8xmbr                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+15m         Normal    Pulled                          pod/pod-janitor-1606498740-8xmbr                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+15m         Normal    Created                         pod/pod-janitor-1606498740-8xmbr                   Created container pod-janitor
+15m         Normal    Started                         pod/pod-janitor-1606498740-8xmbr                   Started container pod-janitor
+15m         Normal    SuccessfulCreate                job/pod-janitor-1606498740                         Created pod: pod-janitor-1606498740-8xmbr
+15m         Normal    Completed                       job/pod-janitor-1606498740                         Job completed
+14m         Normal    Scheduled                       pod/pod-janitor-1606498800-s7vm5                   Successfully assigned icap-adaptation/pod-janitor-1606498800-s7vm5 to aks-icaptestnode-10971123-vmss00000p
+14m         Normal    Pulled                          pod/pod-janitor-1606498800-s7vm5                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+14m         Normal    Created                         pod/pod-janitor-1606498800-s7vm5                   Created container pod-janitor
+14m         Normal    Started                         pod/pod-janitor-1606498800-s7vm5                   Started container pod-janitor
+14m         Normal    SandboxChanged                  pod/pod-janitor-1606498800-s7vm5                   Pod sandbox changed, it will be killed and re-created.
+14m         Warning   FailedCreatePodSandBox          pod/pod-janitor-1606498800-s7vm5                   Failed to create pod sandbox: rpc error: code = Unknown desc = failed to start sandbox container for pod "pod-janitor-1606498800-s7vm5": Error response from daemon: OCI runtime create failed: container_linux.go:370: starting container process caused: process_linux.go:459: container init caused: Running hook #0:: error running hook: exit status 1, stdout: , stderr: time="2020-11-27T17:40:05Z" level=fatal msg="no such file or directory": unknown
+14m         Normal    SuccessfulCreate                job/pod-janitor-1606498800                         Created pod: pod-janitor-1606498800-s7vm5
+14m         Normal    Completed                       job/pod-janitor-1606498800                         Job completed
+13m         Normal    Scheduled                       pod/pod-janitor-1606498860-g9445                   Successfully assigned icap-adaptation/pod-janitor-1606498860-g9445 to aks-icaptestnode-10971123-vmss00002p
+13m         Normal    Pulling                         pod/pod-janitor-1606498860-g9445                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+13m         Normal    Pulled                          pod/pod-janitor-1606498860-g9445                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+13m         Normal    Created                         pod/pod-janitor-1606498860-g9445                   Created container pod-janitor
+13m         Normal    Started                         pod/pod-janitor-1606498860-g9445                   Started container pod-janitor
+13m         Normal    SuccessfulCreate                job/pod-janitor-1606498860                         Created pod: pod-janitor-1606498860-g9445
+13m         Normal    Completed                       job/pod-janitor-1606498860                         Job completed
+12m         Normal    Scheduled                       pod/pod-janitor-1606498920-nsp5d                   Successfully assigned icap-adaptation/pod-janitor-1606498920-nsp5d to aks-icaptestnode-10971123-vmss00001h
+12m         Normal    Pulling                         pod/pod-janitor-1606498920-nsp5d                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+12m         Normal    Pulled                          pod/pod-janitor-1606498920-nsp5d                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+12m         Normal    Created                         pod/pod-janitor-1606498920-nsp5d                   Created container pod-janitor
+12m         Normal    Started                         pod/pod-janitor-1606498920-nsp5d                   Started container pod-janitor
+12m         Normal    SandboxChanged                  pod/pod-janitor-1606498920-nsp5d                   Pod sandbox changed, it will be killed and re-created.
+12m         Normal    SuccessfulCreate                job/pod-janitor-1606498920                         Created pod: pod-janitor-1606498920-nsp5d
+12m         Normal    Completed                       job/pod-janitor-1606498920                         Job completed
+11m         Normal    Scheduled                       pod/pod-janitor-1606498980-m9l2t                   Successfully assigned icap-adaptation/pod-janitor-1606498980-m9l2t to aks-icaptestnode-10971123-vmss00000g
+11m         Normal    Pulled                          pod/pod-janitor-1606498980-m9l2t                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+11m         Normal    Created                         pod/pod-janitor-1606498980-m9l2t                   Created container pod-janitor
+11m         Normal    Started                         pod/pod-janitor-1606498980-m9l2t                   Started container pod-janitor
+11m         Normal    SandboxChanged                  pod/pod-janitor-1606498980-m9l2t                   Pod sandbox changed, it will be killed and re-created.
+11m         Normal    SuccessfulCreate                job/pod-janitor-1606498980                         Created pod: pod-janitor-1606498980-m9l2t
+11m         Normal    Completed                       job/pod-janitor-1606498980                         Job completed
+10m         Normal    Scheduled                       pod/pod-janitor-1606499040-v4pn2                   Successfully assigned icap-adaptation/pod-janitor-1606499040-v4pn2 to aks-icaptestnode-10971123-vmss00002j
+10m         Normal    Pulling                         pod/pod-janitor-1606499040-v4pn2                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+10m         Normal    Pulled                          pod/pod-janitor-1606499040-v4pn2                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+10m         Normal    Created                         pod/pod-janitor-1606499040-v4pn2                   Created container pod-janitor
+10m         Normal    Started                         pod/pod-janitor-1606499040-v4pn2                   Started container pod-janitor
+10m         Normal    SandboxChanged                  pod/pod-janitor-1606499040-v4pn2                   Pod sandbox changed, it will be killed and re-created.
+10m         Normal    SuccessfulCreate                job/pod-janitor-1606499040                         Created pod: pod-janitor-1606499040-v4pn2
+10m         Normal    Completed                       job/pod-janitor-1606499040                         Job completed
+9m12s       Normal    Scheduled                       pod/pod-janitor-1606499100-wrdkr                   Successfully assigned icap-adaptation/pod-janitor-1606499100-wrdkr to aks-icaptestnode-10971123-vmss00000u
+9m11s       Normal    Pulling                         pod/pod-janitor-1606499100-wrdkr                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+9m9s        Normal    Pulled                          pod/pod-janitor-1606499100-wrdkr                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+9m9s        Normal    Created                         pod/pod-janitor-1606499100-wrdkr                   Created container pod-janitor
+9m9s        Normal    Started                         pod/pod-janitor-1606499100-wrdkr                   Started container pod-janitor
+9m6s        Normal    SandboxChanged                  pod/pod-janitor-1606499100-wrdkr                   Pod sandbox changed, it will be killed and re-created.
+9m12s       Normal    SuccessfulCreate                job/pod-janitor-1606499100                         Created pod: pod-janitor-1606499100-wrdkr
+9m7s        Normal    Completed                       job/pod-janitor-1606499100                         Job completed
+8m12s       Normal    Scheduled                       pod/pod-janitor-1606499160-sp2bl                   Successfully assigned icap-adaptation/pod-janitor-1606499160-sp2bl to aks-icaptestnode-10971123-vmss00000d
+8m11s       Normal    Pulling                         pod/pod-janitor-1606499160-sp2bl                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+8m9s        Normal    Pulled                          pod/pod-janitor-1606499160-sp2bl                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+8m8s        Normal    Created                         pod/pod-janitor-1606499160-sp2bl                   Created container pod-janitor
+8m8s        Normal    Started                         pod/pod-janitor-1606499160-sp2bl                   Started container pod-janitor
+8m12s       Normal    SuccessfulCreate                job/pod-janitor-1606499160                         Created pod: pod-janitor-1606499160-sp2bl
+8m7s        Normal    Completed                       job/pod-janitor-1606499160                         Job completed
+7m11s       Normal    Scheduled                       pod/pod-janitor-1606499220-nbr5j                   Successfully assigned icap-adaptation/pod-janitor-1606499220-nbr5j to aks-icaptestnode-10971123-vmss000012
+7m10s       Normal    Pulling                         pod/pod-janitor-1606499220-nbr5j                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+7m9s        Normal    Pulled                          pod/pod-janitor-1606499220-nbr5j                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+7m8s        Normal    Created                         pod/pod-janitor-1606499220-nbr5j                   Created container pod-janitor
+7m8s        Normal    Started                         pod/pod-janitor-1606499220-nbr5j                   Started container pod-janitor
+7m6s        Normal    SandboxChanged                  pod/pod-janitor-1606499220-nbr5j                   Pod sandbox changed, it will be killed and re-created.
+7m11s       Normal    SuccessfulCreate                job/pod-janitor-1606499220                         Created pod: pod-janitor-1606499220-nbr5j
+7m7s        Normal    Completed                       job/pod-janitor-1606499220                         Job completed
+3m11s       Normal    Scheduled                       pod/pod-janitor-1606499460-5jl46                   Successfully assigned icap-adaptation/pod-janitor-1606499460-5jl46 to aks-icaptestnode-10971123-vmss000012
+3m10s       Normal    Pulled                          pod/pod-janitor-1606499460-5jl46                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+3m10s       Normal    Created                         pod/pod-janitor-1606499460-5jl46                   Created container pod-janitor
+3m10s       Normal    Started                         pod/pod-janitor-1606499460-5jl46                   Started container pod-janitor
+3m11s       Normal    SuccessfulCreate                job/pod-janitor-1606499460                         Created pod: pod-janitor-1606499460-5jl46
+3m9s        Normal    Completed                       job/pod-janitor-1606499460                         Job completed
+2m11s       Normal    Scheduled                       pod/pod-janitor-1606499520-6nv9s                   Successfully assigned icap-adaptation/pod-janitor-1606499520-6nv9s to aks-icaptestnode-10971123-vmss00002n
+2m10s       Normal    Pulling                         pod/pod-janitor-1606499520-6nv9s                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+2m8s        Normal    Pulled                          pod/pod-janitor-1606499520-6nv9s                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+2m8s        Normal    Created                         pod/pod-janitor-1606499520-6nv9s                   Created container pod-janitor
+2m8s        Normal    Started                         pod/pod-janitor-1606499520-6nv9s                   Started container pod-janitor
+2m11s       Normal    SuccessfulCreate                job/pod-janitor-1606499520                         Created pod: pod-janitor-1606499520-6nv9s
+2m7s        Normal    Completed                       job/pod-janitor-1606499520                         Job completed
+71s         Normal    Scheduled                       pod/pod-janitor-1606499580-g6tlh                   Successfully assigned icap-adaptation/pod-janitor-1606499580-g6tlh to aks-icaptestnode-10971123-vmss00000u
+70s         Normal    Pulled                          pod/pod-janitor-1606499580-g6tlh                   Container image "glasswallsolutions/pod-janitor:main-5ce5e69" already present on machine
+70s         Normal    Created                         pod/pod-janitor-1606499580-g6tlh                   Created container pod-janitor
+70s         Normal    Started                         pod/pod-janitor-1606499580-g6tlh                   Started container pod-janitor
+68s         Normal    SandboxChanged                  pod/pod-janitor-1606499580-g6tlh                   Pod sandbox changed, it will be killed and re-created.
+71s         Normal    SuccessfulCreate                job/pod-janitor-1606499580                         Created pod: pod-janitor-1606499580-g6tlh
+69s         Normal    Completed                       job/pod-janitor-1606499580                         Job completed
+11s         Normal    Scheduled                       pod/pod-janitor-1606499640-zmvtw                   Successfully assigned icap-adaptation/pod-janitor-1606499640-zmvtw to aks-icaptestnode-10971123-vmss000019
+10s         Normal    Pulling                         pod/pod-janitor-1606499640-zmvtw                   Pulling image "glasswallsolutions/pod-janitor:main-5ce5e69"
+8s          Normal    Pulled                          pod/pod-janitor-1606499640-zmvtw                   Successfully pulled image "glasswallsolutions/pod-janitor:main-5ce5e69"
+8s          Normal    Created                         pod/pod-janitor-1606499640-zmvtw                   Created container pod-janitor
+7s          Normal    Started                         pod/pod-janitor-1606499640-zmvtw                   Started container pod-janitor
+11s         Normal    SuccessfulCreate                job/pod-janitor-1606499640                         Created pod: pod-janitor-1606499640-zmvtw
+6s          Normal    Completed                       job/pod-janitor-1606499640                         Job completed
+25m         Normal    SuccessfulCreate                cronjob/pod-janitor                                (combined from similar events): Created job pod-janitor-1606498140
+10m         Normal    SawCompletedJob                 cronjob/pod-janitor                                (combined from similar events): Saw completed job: pod-janitor-1606499040, status: Complete
+3m11s       Normal    SuccessfulCreate                cronjob/pod-janitor                                Created job pod-janitor-1606499460
+3m1s        Normal    SawCompletedJob                 cronjob/pod-janitor                                Saw completed job: pod-janitor-1606499460, status: Complete
+2m11s       Normal    SuccessfulCreate                cronjob/pod-janitor                                Created job pod-janitor-1606499520
+2m1s        Normal    SawCompletedJob                 cronjob/pod-janitor                                Saw completed job: pod-janitor-1606499520, status: Complete
+71s         Normal    SuccessfulCreate                cronjob/pod-janitor                                Created job pod-janitor-1606499580
+61s         Normal    SawCompletedJob                 cronjob/pod-janitor                                Saw completed job: pod-janitor-1606499580, status: Complete
+11s         Normal    SuccessfulCreate                cronjob/pod-janitor                                Created job pod-janitor-1606499640
+1s          Normal    SawCompletedJob                 cronjob/pod-janitor                                Saw completed job: pod-janitor-1606499640, status: Complete
+1s          Normal    SuccessfulDelete                cronjob/pod-janitor                                Deleted job pod-janitor-1606499460
+6m14s       Warning   FailedMount                     pod/policy-update-service-7476ccf67b-hqmpg         MountVolume.SetUp failed for volume "policy-update-service-sa-token-7flsp" : secret "policy-update-service-sa-token-7flsp" not found
+6m13s       Normal    Killing                         pod/policy-update-service-7476ccf67b-hqmpg         Stopping container policy-update-service
+3m54s       Normal    Scheduled                       pod/policy-update-service-7476ccf67b-tb6rn         Successfully assigned icap-adaptation/policy-update-service-7476ccf67b-tb6rn to aks-icaptestnode-10971123-vmss00001t
+3m53s       Normal    Pulling                         pod/policy-update-service-7476ccf67b-tb6rn         Pulling image "glasswallsolutions/policy-update-service:main-697495a"
+3m51s       Normal    Pulled                          pod/policy-update-service-7476ccf67b-tb6rn         Successfully pulled image "glasswallsolutions/policy-update-service:main-697495a"
+3m51s       Normal    Created                         pod/policy-update-service-7476ccf67b-tb6rn         Created container policy-update-service
+3m50s       Normal    Started                         pod/policy-update-service-7476ccf67b-tb6rn         Started container policy-update-service
+3m54s       Normal    SuccessfulCreate                replicaset/policy-update-service-7476ccf67b        Created pod: policy-update-service-7476ccf67b-tb6rn
+3m54s       Normal    ScalingReplicaSet               deployment/policy-update-service                   Scaled up replica set policy-update-service-7476ccf67b to 1

@@ -16,8 +16,6 @@ spec:
       - name: event-submission-service
         image: {{ .Values.imagestore.eventsubmission.registry}}{{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}
         env:
-        - name: AMQP_URL
-          value: {{ .Values.eventsubmissionservice.amqpurl }}
         - name: ACCOUNT_NAME
           valueFrom:
             secretKeyRef:
@@ -28,6 +26,10 @@ spec:
             secretKeyRef:
               name: transactionstoresecret
               key: accountKey
+        - name: TRANSACTION_EVENT_QUEUE_HOSTNAME
+          value: {{ .Values.queue.transactionevent.hostname}}
+        - name: TRANSACTION_EVENT_QUEUE_PORT
+          value: {{ .Values.queue.transactionevent.port }}              
         {{- if .Values.queue.messagebrokersecret }}
         - name: MESSAGE_BROKER_USER
           valueFrom:

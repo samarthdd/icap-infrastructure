@@ -56,7 +56,7 @@ podjanitor:
 eventsubmissionservice:
   name: event-submission-service
   replicas: 1
-  amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
+  amqpurl: "amqp://ZSNtOaXvNTLTg4MRMH4uUfwINYVBgm-l:1dhtNtIqj_eec-Y4BO5RnnvpkSkPJl44@rabbitmq-service:5672/"
 policyupdateservice:
   name: policy-update-service
   applabel: policyupdate

@@ -8,8 +8,7 @@ volumemountpath:
   source: "/var/source"
   target: "/var/target"
 queue:
-  messagebrokeruser: "ZSNtOaXvNTLTg4MRMH4uUfwINYVBgm-l"
-  messagebrokerpassword: "1dhtNtIqj_eec-Y4BO5RnnvpkSkPJl44"
+  messagebrokersecret: ""
   host:
     url: "rabbitmq-service" # this should be deprecated in preference to queue specific hostname
     port: "\"5672\"" # this should be deprecated in preference to queue specific port

@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: {{ .Values.eventsubmissionservice.name }}
 spec:
   replicas: {{ .Values.eventsubmissionservice.replicas }}
@@ -19,10 +19,8 @@ spec:
         effect: "NoSchedule"  
       containers:
       - name: event-submission-service
-        image: {{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}
+        image: {{ .Values.imagestore.eventsubmission.registry}}{{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}
         env:
-        - name: AMQP_URL
-          value: {{ .Values.eventsubmissionservice.amqpurl }}
         - name: ACCOUNT_NAME
           valueFrom:
             secretKeyRef:
@@ -33,3 +31,19 @@ spec:
             secretKeyRef:
               name: transactionstoresecret
               key: accountKey
+        - name: TRANSACTION_EVENT_QUEUE_HOSTNAME
+          value: {{ .Values.queue.transactionevent.hostname}}
+        - name: TRANSACTION_EVENT_QUEUE_PORT
+          value: {{ .Values.queue.transactionevent.port }}              
+        {{- if .Values.queue.messagebrokersecret }}
+        - name: MESSAGE_BROKER_USER
+          valueFrom:
+            secretKeyRef:
+              name: rabbitcredentialssecret
+              key: username
+        - name: MESSAGE_BROKER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: rabbitcredentialssecret
+              key: password
+        {{- end }}               

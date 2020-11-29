@@ -2,24 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.policyupdateservice.name }}
+  labels:
+    app: {{ .Values.policyupdateservice.applabel }}
 spec:
   replicas: {{ .Values.policyupdateservice.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.policyupdateservice.name }}
+      app: {{ .Values.policyupdateservice.applabel }}
   template:
     metadata:
       labels:
-        app: {{ .Values.policyupdateservice.name }}     
+        app: {{ .Values.policyupdateservice.applabel }}
     spec:
-      tolerations:
-      - key: "use"
-        operator: "Equal"
-        value: "main-app"
-        effect: "NoSchedule"
+      serviceAccountName: {{ .Values.serviceAccount.policyupdatename }}
       containers:     
       - name: policy-update-service
-        image: {{ .Values.imagestore.policyupdate.repository }}:{{ .Values.imagestore.policyupdate.tag }}
+        image: {{ .Values.imagestore.policyupdate.registry }}{{ .Values.imagestore.policyupdate.repository }}:{{ .Values.imagestore.policyupdate.tag }}
         ports:
         - containerPort: {{ .Values.policyupdateservice.port }}
         env:
@@ -31,3 +29,13 @@ spec:
           value: "{{ .Values.policyupdateservice.port }}"
         - name: CONFIGMAP_NAME
           value: {{ .Values.requestprocessingservice.configmapname }}
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: policyupdateservicesecret
+              key: username
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: policyupdateservicesecret
+              key: password

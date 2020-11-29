@@ -1,0 +1,20 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  labels: 
+    app: {{ .Values.rabbitmqService.app }}
+    compenent: {{ .Values.rabbitmqService.component }}
+  name: {{ .Values.rabbitmqService.name }}
+spec:
+ affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution: 
+    - weight: 100  
+      podAffinityTerm:
+        labelSelector:
+         matchExpressions:
+         - key: {{ .Values.rabbitmqService.key }}
+           operator: In
+           values:
+           - store
+        topologyKey: kubernetes.io/hostname

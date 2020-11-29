@@ -12,26 +12,40 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.icapservice.applabel }}     
+        app: {{ .Values.icapservice.applabel }}
     spec:
-      tolerations:
-      - key: "use"
-        operator: "Equal"
-        value: "main-app"
-        effect: "NoSchedule"  
-      containers:     
+      containers:
         - name: mvp-icap-service
-          image: {{ .Values.imagestore.icapservice.repository }}:{{ .Values.imagestore.icapservice.tag }}
+          image: {{ .Values.imagestore.icapservice.registry}}{{ .Values.imagestore.icapservice.repository }}:{{ .Values.imagestore.icapservice.tag }}
           ports:
             - containerPort: 1344
+            - containerPort: 1345
           envFrom:
           - configMapRef:
               name: icap-service-config
+          - configMapRef:
+              name: icap-proxy-app-config
+          {{- if .Values.queue.messagebrokersecret }}
+          env:
+            - name: MBUsername
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitcredentialssecret
+                  key: username
+            - name: MBPassword
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitcredentialssecret
+                  key: password
+          {{- end }}
           volumeMounts:
             - name: source-vol
               mountPath: {{ .Values.volumemountpath.source }}
             - name: target-vol
               mountPath: {{ .Values.volumemountpath.target }}
+            - name: tls-config-vol
+              mountPath: /usr/local/c-icap/cert
+              readOnly: true
       volumes:
         - name: source-vol
           persistentVolumeClaim:
@@ -39,4 +53,6 @@ spec:
         - name: target-vol
           persistentVolumeClaim:
             claimName: glasswalltarget-pvc
-
+        - name: tls-config-vol
+          secret:
+            secretName: icap-service-tls-config

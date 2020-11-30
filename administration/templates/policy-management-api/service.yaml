@@ -11,9 +11,8 @@ spec:
   type: {{ .Values.policymanagementapi.service.type }}
   ports:
     - port: {{ .Values.policymanagementapi.service.port }}
-      targetPort: http
+      targetPort: {{ .Values.policymanagementapi.service.port }}
       protocol: TCP
-      name: http
   selector:
     app: {{ template "policy-management-api.name" . }}
     release: {{ .Release.Name }}

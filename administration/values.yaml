@@ -7,8 +7,8 @@ managementui:
     name: icap-management-ui-service
     port: 80
   config:
-    transactionEventApiUrl: http://transaction-event-api/api/v1
-    policyManagementApiUrl: http://policy-management-api/api/v1
+    transactionEventApiUrl: https://transaction-event-api/api/v1
+    policyManagementApiUrl: https://policy-management-api/api/v1
 policymanagementapi:
   fullnameOverride: policy-management-api
   replicaCount: 1
@@ -21,11 +21,11 @@ policymanagementapi:
   # - name: myRegistryKeySecretName
   service:
     type: ClusterIP
-    port: 80
+    port: 443
   configuration:
     ShareName: transactions
   deployment:
-    containerPort: 80
+    containerPort: 443
   probes:
     enabled: false
   ingress:
@@ -77,11 +77,11 @@ transactioneventapi:
   # - name: myRegistryKeySecretName
   service:
     type: ClusterIP
-    port: 80
+    port: 443
   configuration:
     ShareName: transactions
   deployment:
-    containerPort: 80
+    containerPort: 443
   probes:
     enabled: false
   ingress:

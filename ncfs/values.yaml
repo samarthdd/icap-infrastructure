@@ -13,14 +13,14 @@ referencencfs:
   # - name: myRegistryKeySecretName
   service:
     type: NodePort
-    port: 80
+    port: 443
   serviceAccount:
     name: reference-ncfs-sa
     rolename: reference-ncfs-role
   configuration:
     ShareName: transactions
   deployment:
-    containerPort: 80
+    containerPort: 443
   probes:
     enabled: false
   ingress:
@@ -128,4 +128,4 @@ imagestore:
   referencencfs:
     registry: ""
     repository: glasswallsolutions/reference-ncfs
-    tag: main-890e2a0
+    tag: main-8f7a96d

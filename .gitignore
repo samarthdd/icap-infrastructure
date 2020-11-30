@@ -152,3 +152,5 @@ override.tf.json
 ncfs-policy-update-service/templates/secrets.yml
 ncfs/templates/ncfs-policy-update-service/secrets.yml
 administration/templates/secrets.yaml
+ncfs/templates/ncfs-policy-update-service/secrets.yaml
+administration/templates/management-ui/secrets.yaml

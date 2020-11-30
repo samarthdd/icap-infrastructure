@@ -24,6 +24,10 @@ spec:
         image: {{ .Values.imagestore.referencencfs.registry}}{{ .Values.imagestore.referencencfs.repository }}:{{ .Values.imagestore.referencencfs.tag }}
         ports:
         - containerPort: {{ .Values.referencencfs.service.port }}
-        envFrom:
-        - configMapRef:
-            name: {{ .Values.referencencfs.configmapname }}
+        volumeMounts:
+        - name: config-volume
+          mountPath: /app/config
+      volumes:
+      - name: config-volume
+        configMap:
+          name: {{ .Values.referencencfs.configmapname }}

@@ -11,9 +11,8 @@ spec:
   type: {{ .Values.transactioneventapi.service.type }}
   ports:
     - port: {{ .Values.transactioneventapi.service.port }}
-      targetPort: http
+      targetPort: {{ .Values.transactioneventapi.service.port }}
       protocol: TCP
-      name: http
   selector:
     app: {{ template "transactioneventapi.name" . }}
     release: {{ .Release.Name }}

@@ -45,6 +45,8 @@ spec:
           - configMapRef:
               name: {{ template "policy-management-api.fullname" . }}-policy-configuration
           env:
+            - name: ASPNETCORE_URLS
+              value: "https://+:443"
             - name: AccountName
               valueFrom:
                 secretKeyRef:

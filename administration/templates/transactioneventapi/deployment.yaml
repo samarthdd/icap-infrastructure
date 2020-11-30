@@ -50,6 +50,8 @@ spec:
                 secretKeyRef:
                   name: transactionstoresecret
                   key: TransactionStoreConnectionStringCsv
+            - name: ASPNETCORE_URLS
+              value: "https://+:443"
             {{- $root := . }}
             {{- range $ref, $values := .Values.transactioneventapi.secrets }}
             {{- range $key, $value := $values }}

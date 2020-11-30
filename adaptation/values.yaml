@@ -44,7 +44,7 @@ icapservice:
   replicas: 1
   port: 1344
   tlsport: 1345
-  enableFileId: false
+  enableFileId: true
 icapserviceconfig:
   processingtimeoutduration: 00:01:00
 podjanitor:
@@ -97,4 +97,8 @@ imagestore:
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
+<<<<<<< HEAD
     tag: main-7e4adfd
+=======
+    tag: develop-6fdfa15
+>>>>>>> develop

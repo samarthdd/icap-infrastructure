@@ -6,15 +6,16 @@ metadata:
     compenent: {{ .Values.rabbitmqService.component }}
   name: {{ .Values.rabbitmqService.name }}
 spec:
+ replicas: 3
  affinity:
-  podAntiAffinity:
-    preferredDuringSchedulingIgnoredDuringExecution: 
-    - weight: 100  
-      podAffinityTerm:
-        labelSelector:
-         matchExpressions:
-         - key: {{ .Values.rabbitmqService.key }}
-           operator: In
-           values:
-           - store
-        topologyKey: kubernetes.io/hostname
+   podAntiAffinity:
+     preferredDuringSchedulingIgnoredDuringExecution: 
+     - weight: 100  
+       podAffinityTerm:
+         labelSelector:
+          matchExpressions:
+          - key: {{ .Values.rabbitmqService.key }}
+            operator: In
+            values:
+            - store
+         topologyKey: kubernetes.io/hostname

@@ -4113,7 +4113,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: rabbitmqoperator/cluster-operator:1.0.0
+        image: "{{ .Values.imagestore.rabbitmq.registry }}{{ .Values.imagestore.rabbitmq.repository }}:{{ .Values.imagestore.rabbitmq.tag }}"
         name: operator
         resources:
           limits:
@@ -4128,3 +4128,5 @@ spec:
         runAsUser: 1000
       serviceAccountName: rabbitmq-cluster-operator
       terminationGracePeriodSeconds: 10
+      imagePullSecrets:
+        - name: rabbitmq-operator-registry-credential

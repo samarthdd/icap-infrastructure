@@ -18,7 +18,7 @@ spec:
       labels:
         app: {{ template "ncfs-policy-update-service.name" . }}  
     spec:
-      serviceAccountName: {{ template "ncfs-policy-update-service.fullname" . }}-service-account
+      serviceAccountName: ncfs-policy-update-service-account
       containers:    
       - name: {{ .Chart.Name }}
         image: {{ .Values.imagestore.ncfspolicyupdateservice.registry}}{{ .Values.imagestore.ncfspolicyupdateservice.repository }}:{{ .Values.imagestore.ncfspolicyupdateservice.tag }}

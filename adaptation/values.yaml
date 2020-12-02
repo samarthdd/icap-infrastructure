@@ -61,7 +61,7 @@ policyupdateservice:
   name: policy-update-service
   applabel: policyupdate
   replicas: 1
-  port: 10000
+  port: 32324
   rolename: policy-update-service-role
 requestprocessingservice:
   configmapname: request-processing-config

@@ -3,7 +3,7 @@ kind: RabbitmqCluster
 metadata:
   labels: 
     app: {{ .Values.rabbitmqService.app }}
-    compenent: {{ .Values.rabbitmqService.component }}
+    component: {{ .Values.rabbitmqService.component }}
   name: {{ .Values.rabbitmqService.name }}
 spec:
  replicas: 3

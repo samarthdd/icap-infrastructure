@@ -99,9 +99,6 @@ imagestore:
     repository: glasswallsolutions/archive-processing-service
     tag: develop-6fdfa15
 secrets:
-  rabbitmq:
-    userName: "<<https://gw-icap-keyvault.vault.azure.net/secrets/rabbitUserName>>"
-    password: "<<https://gw-icap-keyvault.vault.azure.net/secrets/rabbitPassword>>"
   transactionstore:
     accountName: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionStoreAccountName>>"
     accountKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionStoreAccountKey>>"

@@ -93,7 +93,7 @@ imagestore:
   archiveadaptationservice:
     registry: ""
     repository: glasswallsolutions/archive-adaptation-service
-    tag: main-928c171
+    tag: main-018e4a4
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service

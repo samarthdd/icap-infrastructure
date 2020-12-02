@@ -24,6 +24,9 @@ policymanagementapi:
     port: 443
   configuration:
     ShareName: transactions
+    ASPNETCORE_URLS: "https://+:443"
+  PolicyUpdateServiceEndpointCsv: https://policy-update-service.icap-adaptation.svc.cluster.local:10000/
+  NcfsPolicyUpdateServiceEndpointCsv: https://ncfs-policy-update-service.icap-ncfs.svc.cluster.local:10001/
   deployment:
     containerPort: 443
   probes:

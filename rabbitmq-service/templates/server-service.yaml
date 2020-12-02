@@ -22,3 +22,6 @@ spec:
  persistence:
    storageClassName: azurefile
    storage: 10Gi
+ image: "{{ .Values.imagestore.rabbitmq.registry }}{{ .Values.imagestore.rabbitmq.repository }}:{{ .Values.imagestore.rabbitmq.tag }}"
+  imagePullSecrets:
+   - name: rabbitmq-service-registry-credential

@@ -1,3 +1,4 @@
+namespace: "icap-rabbitmq"
 environment:
 rabbitmqService:
   name: rabbitmq-service
@@ -11,3 +12,11 @@ rabbitmqService:
 #   cpu: 100m
 #   image: rabbitmq
 #   app: taskQueue
+imagestore:
+  rabbitmq:
+    registry: ""
+    repository: rabbitmq
+    tag: 3.8.9-management
+secrets:
+  containerregistry:
+    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"

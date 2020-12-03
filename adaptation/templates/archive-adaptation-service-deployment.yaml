@@ -44,12 +44,12 @@ spec:
         - name: MESSAGE_BROKER_USER
           valueFrom:
             secretKeyRef:
-              name: rabbitcredentialssecret
+              name: {{ .Values.queue.messagebrokersecret }}
               key: username
         - name: MESSAGE_BROKER_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: rabbitcredentialssecret
+              name: {{ .Values.queue.messagebrokersecret }}
               key: password
         {{- end }}     
         resources:

@@ -8,7 +8,7 @@ volumemountpath:
   source: "/var/azure"
   target: "/mnt/azure"
 queue:
-  messagebrokersecret: "rabbitcredentialssecret"
+  messagebrokersecret: "rabbitmq-service-default-user"
   host:
     url: "rabbitmq-service.icap-rabbitmq.svc.cluster.local"
     port: "\"5672\""

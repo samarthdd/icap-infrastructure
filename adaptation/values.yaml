@@ -1,4 +1,10 @@
 environment:
+rabbitmqService:
+  name: rabbitmq-service
+  port: 5672
+  component: rabbitmq
+  app: taskQueue
+  key: rabbitmq-cluster-operator
 serviceAccount:
   adaptationname: adaptation-service-sa
   archiveadaptationname: archive-adaptation-service-sa

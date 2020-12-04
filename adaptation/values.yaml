@@ -1,4 +1,10 @@
 environment:
+rabbitmqService:
+  name: rabbitmq-service
+  port: 5672
+  component: rabbitmq
+  app: taskQueue
+  key: rabbitmq-cluster-operator
 serviceAccount:
   adaptationname: adaptation-service-sa
   archiveadaptationname: archive-adaptation-service-sa
@@ -8,7 +14,7 @@ volumemountpath:
   source: "/var/source"
   target: "/var/target"
 queue:
-  messagebrokersecret: "rabbitcredentialssecret"
+  messagebrokersecret: "rabbitmq-service-default-user"
   host:
     url: "rabbitmq-service" # this should be deprecated in preference to queue specific hostname
     port: "\"5672\"" # this should be deprecated in preference to queue specific port

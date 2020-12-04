@@ -30,12 +30,12 @@ spec:
             - name: MBUsername
               valueFrom:
                 secretKeyRef:
-                  name: rabbitcredentialssecret
+                  name: {{ .Values.queue.messagebrokersecret }}
                   key: username
             - name: MBPassword
               valueFrom:
                 secretKeyRef:
-                  name: rabbitcredentialssecret
+                  name: {{ .Values.queue.messagebrokersecret }}
                   key: password
           {{- end }}
           volumeMounts:

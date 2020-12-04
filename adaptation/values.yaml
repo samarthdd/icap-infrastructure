@@ -103,6 +103,6 @@ imagestore:
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
-    tag: main-c651a2b
+    tag: main-56f36ab
   transactionqueryservice:
     tag: main-433fdbc

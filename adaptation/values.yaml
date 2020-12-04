@@ -103,6 +103,6 @@ imagestore:
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
-    tag: develop-8f2aab0
+    tag: develop-4f0b983
   transactionqueryservice:
     tag: develop-b2a4225

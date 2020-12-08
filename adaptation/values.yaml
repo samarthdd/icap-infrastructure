@@ -71,6 +71,40 @@ policyupdateservice:
   rolename: policy-update-service-role
 requestprocessingservice:
   configmapname: request-processing-config
+transactionqueryservice:
+  fullnameOverride: transaction-query-service
+  replicaCount: 1
+  imagePullSecrets: []
+  service:
+    type: ClusterIP
+    port: 443
+  deployment:
+    containerPort: 443
+  probes:
+    enabled: false
+  ingress:
+    enabled: false
+    annotations: {}
+    path: /
+    tls: []
+  volumes:
+    transactionstore:
+      shareName: transactions
+  secrets: 
+    transactionqueryservicepv:
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreStorageAccount>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+transactionstore:
+  resourceGroup: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreResourceGroup>>"
+  storageAccount: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreStorageAccount>>"
+  shareName: transactions
+  storage: 100Gi
+
 imagestore:
   requestprocessing:
     registry: ""
@@ -105,4 +139,6 @@ imagestore:
     repository: glasswallsolutions/archive-processing-service
     tag: develop-d868800
   transactionqueryservice:
+    registry: ""
+    repository: glasswallsolutions/transaction-query-service
     tag: develop-57d0adb

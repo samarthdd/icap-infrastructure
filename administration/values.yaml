@@ -137,3 +137,5 @@ imagestore:
     registry: ""
     repository: glasswallsolutions/transactioneventapi
     tag: main-8147406
+  transactionqueryaggregator:
+    tag: main-4b2151c

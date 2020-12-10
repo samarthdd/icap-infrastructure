@@ -6,6 +6,7 @@ metadata:
   name: {{ .Values.podjanitor.name }}
   namespace: {{ .Values.podjanitor.namespace }}
 spec:
+  startingDeadlineSeconds: 200
   schedule: "*/1 * * * *"
   jobTemplate:
      metadata:

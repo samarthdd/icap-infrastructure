@@ -163,4 +163,4 @@ imagestore:
   transactionqueryaggregator:
     registry: ""
     repository: glasswallsolutions/transaction-query-aggregator
-    tag: develop-ac91605
+    tag: develop-d246daf

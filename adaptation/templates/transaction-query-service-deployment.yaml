@@ -52,6 +52,16 @@ spec:
           env:
             - name: ASPNETCORE_URLS
               value: "https://+:443"
+            - name: username
+              valueFrom:
+                secretKeyRef:
+                  name: transactionqueryservicesecret
+                  key: username
+            - name: password
+              valueFrom:
+                secretKeyRef:
+                  name: transactionqueryservicesecret
+                  key: password
           resources:
 {{ toYaml .Values.transactionqueryservice.resources | indent 12 }}
     {{- with .Values.transactionqueryservice.imagePullSecrets }}

@@ -142,7 +142,10 @@ transactionqueryaggregator:
     annotations: {}
     path: /
     tls: []
-  secrets: {}
+  secrets: 
+    transactionqueryserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   resources: {}
   nodeSelector: {}
   tolerations: []

@@ -27,7 +27,7 @@ spec:
       volumes:
         - name: {{ .Values.transactionstore.shareName }}
           persistentVolumeClaim:
-            claimName: pvc-{{ .Values.transactionstore.shareName }}
+            claimName: pvc-transactions
       containers:
         - name: {{ .Chart.Name }}
           volumeMounts:

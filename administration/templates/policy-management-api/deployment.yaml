@@ -30,6 +30,9 @@ spec:
       - name: config-volume
         configMap:
           name: {{ template "policy-management-api.fullname" $root }}-policy-configuration
+      - name: policy-volume
+        persistentVolumeClaim:
+          claimName: pvc-policies        
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.imagestore.policymanagementapi.registry }}{{ .Values.imagestore.policymanagementapi.repository }}:{{ .Values.imagestore.policymanagementapi.tag }}"
@@ -50,31 +53,33 @@ spec:
           volumeMounts:
           - name: config-volume
             mountPath: /app/config
+          - name: policy-volume
+            mountPath: /mnt/policies
           env:
-  {{- range $key, $value := .Values.policymanagementapi.configuration }}
+            - name: PolicyUpdateServiceUsername
+              valueFrom:
+                secretKeyRef:
+                  name: policyupdateserviceref
+                  key: username
+            - name: PolicyUpdateServicePassword
+              valueFrom:
+                secretKeyRef:
+                  name: policyupdateserviceref
+                  key: password
+            - name: NcfsPolicyUpdateServiceUsername
+              valueFrom:
+                secretKeyRef:
+                  name: ncfsPolicyupdateserviceref
+                  key: username
+            - name: NcfsPolicyUpdateServicePassword
+              valueFrom:
+                secretKeyRef:
+                  name: ncfsPolicyupdateserviceref
+                  key: password
+            {{- range $key, $value := .Values.policymanagementapi.configuration }}
             - name: {{ $key }}
               value: {{ $value }}
-  {{- end }}
-            - name: AccountName
-              valueFrom:
-                secretKeyRef:
-                  name: policystoresecret
-                  key: accountName
-            - name: AccountKey
-              valueFrom:
-                secretKeyRef:
-                  name: policystoresecret
-                  key: accountKey
-            - name: TokenUsername
-              valueFrom:
-                secretKeyRef:
-                  name: policyupdateserviceref
-                  key: TokenUsername
-            - name: TokenPassword
-              valueFrom:
-                secretKeyRef:
-                  name: policyupdateserviceref
-                  key: TokenPassword
+            {{- end }}
             {{- $root := . }}
             {{- range $ref, $values := .Values.policymanagementapi.secrets }}
             {{- range $key, $value := $values }}

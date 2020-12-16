@@ -31,7 +31,7 @@ policymanagementapi:
     tls: []
   PolicyUpdateServiceEndpointCsv: https://policy-update-service.icap-adaptation.svc.cluster.local:10000/
   NcfsPolicyUpdateServiceEndpointCsv: https://ncfs-policy-update-service.icap-ncfs.svc.cluster.local:10001/
-  secrets: 
+  secrets:
     policymanagementapipv:
       azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountName>>"
       azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountKey>>"
@@ -40,7 +40,7 @@ policymanagementapi:
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
     ncfspolicyupdateserviceref:
       username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"        
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"
   # Optionally specify a set of secret objects whose values
   # will be injected as environment variables by default.
   # You should add this section to a file like secrets.yaml
@@ -140,7 +140,7 @@ transactionqueryaggregator:
     annotations: {}
     path: /
     tls: []
-  secrets: 
+  secrets:
     transactionqueryserviceref:
       username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
@@ -156,7 +156,7 @@ imagestore:
   policymanagementapi:
     registry: ""
     repository: glasswallsolutions/policy-management-api
-    tag: develop-1523a35
+    tag: develop-f08e0da
   transactioneventapi:
     registry: ""
     repository: glasswallsolutions/transactioneventapi

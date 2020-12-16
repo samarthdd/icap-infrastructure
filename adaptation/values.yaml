@@ -138,9 +138,10 @@ imagestore:
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
-  transactionqueryservicepv:
-    azurestorageaccountname: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstorestorageaccount>>"
-    azurestorageaccountkey: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstoreaccountkey>>"
-  transactionqueryservicesecret:
-    username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
-    password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"    
+  transactionqueryservice:
+    transactionqueryservicepv:
+      azurestorageaccountname: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstorestorageaccount>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstoreaccountkey>>"
+    transactionqueryservicesecret:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"    

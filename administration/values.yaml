@@ -13,20 +13,13 @@ policymanagementapi:
   fullnameOverride: policy-management-api
   replicaCount: 1
   imagePullSecrets: []
-  # Optionally specify an array of imagePullSecrets.
-  # Secrets must be manually created in the namespace.
-  # ref: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
-  #
-  # This uses credentials from secret "myRegistryKeySecretName".
-  # - name: myRegistryKeySecretName
   service:
     type: ClusterIP
     port: 443
+  shareName: transactions
+  storage: 100Gi
   configuration:
-    ShareName: transactions
     ASPNETCORE_URLS: "https://+:443"
-  PolicyUpdateServiceEndpointCsv: https://policy-update-service.icap-adaptation.svc.cluster.local:10000/
-  NcfsPolicyUpdateServiceEndpointCsv: https://ncfs-policy-update-service.icap-ncfs.svc.cluster.local:10001/
   deployment:
     containerPort: 443
   probes:
@@ -34,15 +27,20 @@ policymanagementapi:
   ingress:
     enabled: false
     annotations: {}
-    # kubernetes.io/tls-acme: "true"
     path: /
-    # hosts:
-    #   - chart-example.local
     tls: []
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - chart-example.local
-  secrets: {}
+  PolicyUpdateServiceEndpointCsv: https://policy-update-service.icap-adaptation.svc.cluster.local:10000/
+  NcfsPolicyUpdateServiceEndpointCsv: https://ncfs-policy-update-service.icap-ncfs.svc.cluster.local:10001/
+  secrets: 
+    policymanagementapipv:
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountKey>>"
+    policyupdateserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+    ncfspolicyupdateserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"        
   # Optionally specify a set of secret objects whose values
   # will be injected as environment variables by default.
   # You should add this section to a file like secrets.yaml
@@ -142,7 +140,10 @@ transactionqueryaggregator:
     annotations: {}
     path: /
     tls: []
-  secrets: {}
+  secrets: 
+    transactionqueryserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   resources: {}
   nodeSelector: {}
   tolerations: []

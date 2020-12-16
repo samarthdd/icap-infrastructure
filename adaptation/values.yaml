@@ -94,13 +94,14 @@ transactionqueryservice:
     transactionqueryservicepv:
       azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreStorageAccount>>"
       azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
+    transactionqueryservicesecret:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   resources: {}
   nodeSelector: {}
   tolerations: []
   affinity: {}
 transactionstore:
-  resourceGroup: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreResourceGroup>>"
-  storageAccount: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreStorageAccount>>"
   shareName: transactions
   storage: 100Gi
 imagestore:

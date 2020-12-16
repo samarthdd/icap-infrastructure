@@ -46,6 +46,16 @@ spec:
               value: {{ .Values.transactionqueryaggregator.configuration.TransactionQueryServiceEndpointCsv }}
             - name: ASPNETCORE_URLS
               value: "https://+:443"
+            - name: username
+              valueFrom:
+                secretKeyRef:
+                  name: transactionqueryserviceref
+                  key: username
+            - name: password
+              valueFrom:
+                secretKeyRef:
+                  name: transactionqueryserviceref
+                  key: password
           resources:
 {{ toYaml .Values.transactionqueryaggregator.resources | indent 12 }}
     {{- with .Values.transactionqueryaggregator.nodeSelector }}

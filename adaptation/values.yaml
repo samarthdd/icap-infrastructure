@@ -149,3 +149,7 @@ secrets:
     policyupdateservicesecret:
       username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+  transactionstore:
+    transactionstoresecret:
+      accountName: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
+      accountKey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"

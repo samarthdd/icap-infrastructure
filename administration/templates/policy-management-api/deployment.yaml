@@ -32,7 +32,7 @@ spec:
           name: {{ template "policy-management-api.fullname" $root }}-policy-configuration
       - name: policy-volume
         persistentVolumeClaim:
-          claimName: pvc-policies        
+          claimName: pvc-policystore        
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.imagestore.policymanagementapi.registry }}{{ .Values.imagestore.policymanagementapi.repository }}:{{ .Values.imagestore.policymanagementapi.tag }}"
@@ -69,26 +69,16 @@ spec:
             - name: NcfsPolicyUpdateServiceUsername
               valueFrom:
                 secretKeyRef:
-                  name: ncfsPolicyupdateserviceref
+                  name: ncfspolicyupdateserviceref
                   key: username
             - name: NcfsPolicyUpdateServicePassword
               valueFrom:
                 secretKeyRef:
-                  name: ncfsPolicyupdateserviceref
+                  name: ncfspolicyupdateserviceref
                   key: password
             {{- range $key, $value := .Values.policymanagementapi.configuration }}
             - name: {{ $key }}
               value: {{ $value }}
-            {{- end }}
-            {{- $root := . }}
-            {{- range $ref, $values := .Values.policymanagementapi.secrets }}
-            {{- range $key, $value := $values }}
-            - name: {{ $ref }}_{{ $key }}
-              valueFrom:
-                secretKeyRef:
-                  name: {{ template "policy-management-api.fullname" $root }}-{{ $ref | lower }}
-                  key: {{ $key }}
-            {{- end }}
             {{- end }}
           resources:
 {{ toYaml .Values.policymanagementapi.resources | indent 12 }}

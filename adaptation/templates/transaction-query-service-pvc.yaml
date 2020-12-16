@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: pvc-transactions
+  name: pvc-transactionstore
   annotations:
     volume.beta.kubernetes.io/storage-class: ""
 spec:
@@ -13,4 +13,4 @@ spec:
       storage: {{ .Values.transactionstore.storage }}
   selector:
     matchLabels:
-      usage: pv-transactions
+      usage: pv-transactionstore

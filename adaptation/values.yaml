@@ -102,8 +102,6 @@ transactionqueryservice:
   tolerations: []
   affinity: {}
 transactionstore:
-  resourceGroup: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreResourceGroup>>"
-  storageAccount: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreStorageAccount>>"
   shareName: transactions
   storage: 100Gi
 imagestore:

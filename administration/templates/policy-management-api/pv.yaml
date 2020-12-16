@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-policies
+  name: pv-policystore
   labels:
-    usage: pv-policies
+    usage: pv-policystore
 spec:
   capacity:
     storage: {{ .Values.policymanagementapi.storage }}

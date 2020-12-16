@@ -90,13 +90,6 @@ transactionqueryservice:
   volumes:
     transactionstore:
       shareName: transactions
-  secrets:
-    transactionqueryservicepv:
-      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreStorageAccount>>"
-      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
-    transactionqueryservicesecret:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   resources: {}
   nodeSelector: {}
   tolerations: []
@@ -141,6 +134,22 @@ imagestore:
     registry: ""
     repository: glasswallsolutions/transaction-query-service
     tag: develop-78a7e37
+
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
+  transactionqueryservice:
+    transactionqueryservicepv:
+      azurestorageaccountname: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstorestorageaccount>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstoreaccountkey>>"
+    transactionqueryservicesecret:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
+  policyupdateservice:
+    policyupdateservicesecret:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+  transactionstore:
+    transactionstoresecret:
+      accountName: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
+      accountKey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"

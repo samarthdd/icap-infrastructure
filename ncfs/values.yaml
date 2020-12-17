@@ -128,4 +128,4 @@ imagestore:
   referencencfs:
     registry: ""
     repository: glasswallsolutions/reference-ncfs
-    tag: develop-4d9f4ac
+    tag: develop-5461cc1

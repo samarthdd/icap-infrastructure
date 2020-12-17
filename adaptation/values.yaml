@@ -129,12 +129,11 @@ imagestore:
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
-    tag: develop-d868800
+    tag: develop-897191b
   transactionqueryservice:
     registry: ""
     repository: glasswallsolutions/transaction-query-service
     tag: develop-78a7e37
-
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"

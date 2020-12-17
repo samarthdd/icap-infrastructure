@@ -129,6 +129,8 @@ imagestore:
     repository: glasswallsolutions/transaction-query-aggregator
     tag: develop-d246daf
 secrets:
+  containerregistry:
+    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
   transactionqueryaggregator:
     transactionqueryserviceref:
       username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"

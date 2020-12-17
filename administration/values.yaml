@@ -140,10 +140,6 @@ transactionqueryaggregator:
     annotations: {}
     path: /
     tls: []
-  secrets:
-    transactionqueryserviceref:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   resources: {}
   nodeSelector: {}
   tolerations: []
@@ -165,3 +161,8 @@ imagestore:
     registry: ""
     repository: glasswallsolutions/transaction-query-aggregator
     tag: develop-d246daf
+secrets:
+  transactionqueryaggregator:
+    transactionqueryserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"

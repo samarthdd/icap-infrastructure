@@ -11,6 +11,6 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain  
   azureFile:
-    secretName: policymanagementapipv
+    secretName: policystoresecret
     shareName: {{ .Values.policymanagementapi.shareName }}
     readOnly: false

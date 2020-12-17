@@ -71,6 +71,10 @@ policyupdateservice:
   rolename: policy-update-service-role
 requestprocessingservice:
   configmapname: request-processing-config
+  cpulimit: 1
+  cpurequest: 0.2
+  memorylimit: 10000Mi
+  memoryrequest: 250Mi
 imagestore:
   requestprocessing:
     registry: ""

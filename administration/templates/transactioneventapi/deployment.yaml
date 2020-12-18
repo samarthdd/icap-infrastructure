@@ -1,26 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "transactioneventapi.fullname" . }}-event-api
+  name: {{ template "transaction-event-api.fullname" . }}
   labels:
-    app: {{ template "transactioneventapi.name" . }}
-    chart: {{ template "transactioneventapi.chart" . }}
-    draft: {{ .Values.draft | default "draft-app" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    {{- include "transaction-event-api.labels" . | nindent 4 }}
 spec:
   revisionHistoryLimit: 0
   replicas: {{ .Values.transactioneventapi.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "transactioneventapi.name" . }}
-      release: {{ .Release.Name }}
+      {{- include "transaction-event-api.matchLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: {{ template "transactioneventapi.name" . }}
-        draft: {{ .Values.draft | default "draft-app" }}
-        release: {{ .Release.Name }}
+        {{- include "transaction-event-api.labels" . | nindent 8 }}
       annotations:
         buildID: {{ .Values.buildID | default "" | quote }}
     spec:

@@ -36,18 +36,10 @@ spec:
           {{- end }}
           envFrom:
           - configMapRef:
-              name: {{ template "transactionqueryaggregator.fullname" . }}             
-          env:
-            - name: username
-              valueFrom:
-                secretKeyRef:
-                  name: transactionqueryserviceref
-                  key: username
-            - name: password
-              valueFrom:
-                secretKeyRef:
-                  name: transactionqueryserviceref
-                  key: password
+              name: {{ template "transactionqueryaggregator.fullname" . }}
+          envFrom:
+          - secretRef:
+              name: {{ template "transactionqueryaggregator.fullname" . }}-transactionqueryserviceref    
           resources:
 {{ toYaml .Values.transactionqueryaggregator.resources | indent 12 }}
     {{- with .Values.transactionqueryaggregator.nodeSelector }}

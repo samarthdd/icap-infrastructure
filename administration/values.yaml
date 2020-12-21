@@ -101,6 +101,7 @@ transactionqueryaggregator:
     containerPort: 443
   configuration:
     TransactionQueryServiceEndpointCsv: https://transaction-query-service.icap-adaptation.svc.cluster.local
+    ASPNETCORE_URLS: "https://+:443"
   probes:
     enabled: false
   ingress:

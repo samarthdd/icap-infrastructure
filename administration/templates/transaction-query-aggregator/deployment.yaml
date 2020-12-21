@@ -34,11 +34,10 @@ spec:
               path: /
               port: http
           {{- end }}
+          envFrom:
+          - configMapRef:
+              name: {{ template "transactionqueryaggregator.fullname" . }}             
           env:
-            - name: TransactionQueryServiceEndpointCsv
-              value: {{ .Values.transactionqueryaggregator.configuration.TransactionQueryServiceEndpointCsv }}
-            - name: ASPNETCORE_URLS
-              value: "https://+:443"
             - name: username
               valueFrom:
                 secretKeyRef:

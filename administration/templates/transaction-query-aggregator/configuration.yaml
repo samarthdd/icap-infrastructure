@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "transactionqueryaggregator.fullname" $root }}-configuration
+  name: {{ template "transactionqueryaggregator.fullname" $root }}
 data:
   {{- range $key, $value := .Values.transactionqueryaggregator.configuration }}
   {{ $key }}: {{ $value | quote }}

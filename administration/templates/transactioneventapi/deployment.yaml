@@ -34,22 +34,15 @@ spec:
               path: /
               port: http
           {{- end }}
+          envFrom:
+          - configMapRef:
+              name: {{ template "transaction-event-api.fullname" . }}         
           env:
             - name: TransactionStoreConnectionStringCsv
               valueFrom:
                 secretKeyRef:
                   name: transactionstoresecret
                   key: TransactionStoreConnectionStringCsv
-            - name: ASPNETCORE_URLS
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ template "transaction-event-api.fullname" . }} 
-                  key: ASPNETCORE_URLS
-            - name: ShareName
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ template "transaction-event-api.fullname" . }} 
-                  key: ShareName
             {{- $root := . }}
             {{- range $ref, $values := .Values.transactioneventapi.secrets }}
             {{- range $key, $value := $values }}

@@ -39,7 +39,7 @@ spec:
               name: {{ template "transactionqueryaggregator.fullname" . }}
           envFrom:
           - secretRef:
-              name: {{ template "transactionqueryaggregator.fullname" . }}-transactionqueryserviceref    
+              name: transactionqueryserviceref   
           resources:
 {{ toYaml .Values.transactionqueryaggregator.resources | indent 12 }}
     {{- with .Values.transactionqueryaggregator.nodeSelector }}

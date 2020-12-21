@@ -60,6 +60,7 @@ transactioneventapi:
     port: 443
   configuration:
     ShareName: transactions
+    ASPNETCORE_URLS: "https://+:443"
   deployment:
     containerPort: 443
   probes:

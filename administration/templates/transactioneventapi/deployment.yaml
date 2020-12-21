@@ -41,7 +41,15 @@ spec:
                   name: transactionstoresecret
                   key: TransactionStoreConnectionStringCsv
             - name: ASPNETCORE_URLS
-              value: "https://+:443"
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "transaction-event-api.fullname" . }} 
+                  key: ASPNETCORE_URLS
+            - name: ShareName
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "transaction-event-api.fullname" . }} 
+                  key: ShareName
             {{- $root := . }}
             {{- range $ref, $values := .Values.transactioneventapi.secrets }}
             {{- range $key, $value := $values }}

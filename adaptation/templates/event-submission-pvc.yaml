@@ -2,12 +2,12 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: pvc-transaction-query-service
+  name: pvc-event-submission
   annotations:
     volume.beta.kubernetes.io/storage-class: ""
 spec:
   accessModes:
-    - ReadOnlyMany
+    - ReadWriteMany
   resources:
     requests:
       storage: {{ .Values.transactionstore.storage }}

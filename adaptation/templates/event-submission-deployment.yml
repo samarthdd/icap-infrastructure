@@ -13,20 +13,19 @@ spec:
       labels:
         app: {{ .Values.eventsubmissionservice.name }}
     spec:
+      volumes:
+        - name: {{ .Values.transactionstore.shareName }}
+          persistentVolumeClaim:
+            claimName: pvc-event-submission
       containers:
       - name: event-submission-service
+        volumeMounts:
+          - name: {{ .Values.transactionstore.shareName }}
+            mountPath: {{ .Values.eventsubmissionservice.mountPath }}
         image: {{ .Values.imagestore.eventsubmission.registry}}{{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}
         env:
-        - name: ACCOUNT_NAME
-          valueFrom:
-            secretKeyRef:
-              name: transactionstoresecret
-              key: accountName
-        - name: ACCOUNT_KEY
-          valueFrom:
-            secretKeyRef:
-              name: transactionstoresecret
-              key: accountKey
+        - name: TRANSACTION_STORE_ROOT_PATH
+          value: {{ .Values.eventsubmissionservice.mountPath }}
         - name: TRANSACTION_EVENT_QUEUE_HOSTNAME
           value: {{ .Values.queue.transactionevent.hostname}}
         - name: TRANSACTION_EVENT_QUEUE_PORT

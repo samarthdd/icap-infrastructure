@@ -61,6 +61,7 @@ podjanitor:
   deleteFailedAfter: 3m
 eventsubmissionservice:
   name: event-submission-service
+  mountPath: /mnt/transactions
   replicas: 1
   amqpurl: "" # this should be deprecated in preference to queue specific hostname
 policyupdateservice:
@@ -142,9 +143,6 @@ secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
   transactionqueryservice:
-    transactionqueryservicepv:
-      azurestorageaccountname: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstorestorageaccount>>"
-      azurestorageaccountkey: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstoreaccountkey>>"
     transactionqueryservicesecret:
       username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
@@ -154,5 +152,5 @@ secrets:
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
   transactionstore:
     transactionstoresecret:
-      accountName: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
-      accountKey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"

@@ -11,6 +11,6 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   azureFile:
-    secretName: transactionqueryservicepv
+    secretName: transactionstoresecret
     shareName: {{ .Values.transactionstore.shareName }}
     readOnly: false

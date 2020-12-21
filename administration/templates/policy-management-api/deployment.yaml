@@ -2,26 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "policy-management-api.fullname" . }}-policy-api
+  name: {{ template "policy-management-api.fullname" . }}
   labels:
-    app: {{ template "policy-management-api.name" . }}
-    chart: {{ template "policy-management-api.chart" . }}
-    draft: {{ .Values.draft | default "draft-app" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    {{- include "policy-management-api.labels" . | nindent 4 }}
 spec:
   revisionHistoryLimit: 0
   replicas: {{ .Values.policymanagementapi.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "policy-management-api.name" . }}
-      release: {{ .Release.Name }}
+      {{- include "policy-management-api.matchLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: {{ template "policy-management-api.name" . }}
-        draft: {{ .Values.draft | default "draft-app" }}
-        release: {{ .Release.Name }}
+        {{- include "policy-management-api.labels" . | nindent 8 }}
       annotations:
         buildID: {{ .Values.buildID | default "" | quote }}
     spec:
@@ -29,7 +22,7 @@ spec:
       volumes:
       - name: config-volume
         configMap:
-          name: {{ template "policy-management-api.fullname" $root }}-policy-configuration
+          name: {{ template "policy-management-api.fullname" . }}
       - name: policy-volume
         persistentVolumeClaim:
           claimName: pvc-policystore        

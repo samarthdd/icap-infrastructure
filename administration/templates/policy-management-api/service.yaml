@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.policymanagementapi.fullnameOverride }}
+  name: {{ .Values.policymanagementapi.name }}
   labels:
-    app: {{ template "policy-management-api.name" . }}
-    chart: {{ template "policy-management-api.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    {{- include "policy-management-api.labels" . | nindent 4 }}
+{{- if .Values.policymanagementapi.service.labels }}
+{{ toYaml .Values.policymanagementapi.service.labels | indent 4}}
+{{- end }} 
 spec:
   type: {{ .Values.policymanagementapi.service.type }}
   ports:
@@ -14,5 +14,4 @@ spec:
       targetPort: {{ .Values.policymanagementapi.service.port }}
       protocol: TCP
   selector:
-    app: {{ template "policy-management-api.name" . }}
-    release: {{ .Release.Name }}
+    {{- include "policy-management-api.matchLabels" . | nindent 4 }}

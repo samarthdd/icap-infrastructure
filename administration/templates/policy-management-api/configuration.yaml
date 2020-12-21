@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ template "policy-management-api.fullname" $root }}-policy-configuration
+  name: {{ template "policy-management-api.fullname" . }}
 data:
   appsettings.json: |-
     {

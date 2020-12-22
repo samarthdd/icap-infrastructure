@@ -13,6 +13,7 @@ serviceAccount:
 volumemountpath:
   source: "/var/source"
   target: "/var/target"
+  transactions: /mnt/transactions
 queue:
   messagebrokersecret: "rabbitmq-service-default-user"
   host:
@@ -142,9 +143,6 @@ secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
   transactionqueryservice:
-    transactionqueryservicepv:
-      azurestorageaccountname: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstorestorageaccount>>"
-      azurestorageaccountkey: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstoreaccountkey>>"
     transactionqueryservicesecret:
       username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
@@ -154,5 +152,5 @@ secrets:
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
   transactionstore:
     transactionstoresecret:
-      accountName: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
-      accountKey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"

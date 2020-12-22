@@ -56,6 +56,14 @@ spec:
           value: {{ .Values.queue.transactionevent.hostname}}
         - name: TRANSACTION_EVENT_QUEUE_PORT
           value: {{ .Values.queue.transactionevent.port }}
+        - name: CPU_LIMIT
+          value: "{{ .Values.requestprocessingservice.cpulimit }}"
+        - name: CPU_REQUEST
+          value: "{{ .Values.requestprocessingservice.cpurequest }}"
+        - name: MEMORY_LIMIT
+          value: "{{ .Values.requestprocessingservice.memorylimit }}"
+        - name: MEMORY_REQUEST
+          value: "{{ .Values.requestprocessingservice.memoryrequest }}"
         resources:
           limits:
             cpu: "1"

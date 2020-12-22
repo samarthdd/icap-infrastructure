@@ -71,6 +71,10 @@ policyupdateservice:
   rolename: policy-update-service-role
 requestprocessingservice:
   configmapname: request-processing-config
+  cpulimit: 1
+  cpurequest: 0.2
+  memorylimit: 10000Mi
+  memoryrequest: 250Mi
 transactionqueryservice:
   fullnameOverride: transaction-query-service
   replicaCount: 1
@@ -90,13 +94,6 @@ transactionqueryservice:
   volumes:
     transactionstore:
       shareName: transactions
-  secrets:
-    transactionqueryservicepv:
-      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreStorageAccount>>"
-      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
-    transactionqueryservicesecret:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   resources: {}
   nodeSelector: {}
   tolerations: []
@@ -108,11 +105,11 @@ imagestore:
   requestprocessing:
     registry: ""
     repository: glasswallsolutions/icap-request-processing
-    tag: develop-2cce03e
+    tag: develop-77b6369
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service
-    tag: develop-db95e26
+    tag: develop-44d6fa6
   podjanitor:
     registry: ""
     repository: glasswallsolutions/pod-janitor
@@ -124,7 +121,7 @@ imagestore:
   eventsubmission:
     registry: ""
     repository: glasswallsolutions/event-submission-service
-    tag: develop-3e609e6
+    tag: develop-23bace0
   policyupdate:
     registry: ""
     repository: glasswallsolutions/policy-update-service
@@ -136,7 +133,7 @@ imagestore:
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
-    tag: develop-d868800
+    tag: develop-897191b
   transactionqueryservice:
     registry: ""
     repository: glasswallsolutions/transaction-query-service
@@ -144,3 +141,18 @@ imagestore:
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
+  transactionqueryservice:
+    transactionqueryservicepv:
+      azurestorageaccountname: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstorestorageaccount>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-vault.vault.azure.net/secrets/transactionstoreaccountkey>>"
+    transactionqueryservicesecret:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
+  policyupdateservice:
+    policyupdateservicesecret:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+  transactionstore:
+    transactionstoresecret:
+      accountName: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
+      accountKey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"

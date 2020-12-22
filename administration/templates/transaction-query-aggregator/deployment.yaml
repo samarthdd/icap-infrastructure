@@ -1,26 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "transactionqueryaggregator.fullname" . }}-event-api
+  name: {{ template "transactionqueryaggregator.fullname" . }}
   labels:
-    app: {{ template "transactionqueryaggregator.name" . }}
-    chart: {{ template "transactionqueryaggregator.chart" . }}
-    draft: {{ .Values.draft | default "draft-app" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    {{- include "transactionqueryaggregator.labels" . | nindent 4 }}
 spec:
   revisionHistoryLimit: 0
   replicas: {{ .Values.transactionqueryaggregator.replicaCount }}
   selector:
     matchLabels:
-      app: {{ template "transactionqueryaggregator.name" . }}
-      release: {{ .Release.Name }}
+      {{- include "transactionqueryaggregator.matchLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        app: {{ template "transactionqueryaggregator.name" . }}
-        draft: {{ .Values.draft | default "draft-app" }}
-        release: {{ .Release.Name }}
+        {{- include "transactionqueryaggregator.labels" . | nindent 8 }}
       annotations:
         buildID: {{ .Values.buildID | default "" | quote }}
     spec:
@@ -45,17 +38,10 @@ spec:
             - name: TransactionQueryServiceEndpointCsv
               value: {{ .Values.transactionqueryaggregator.configuration.TransactionQueryServiceEndpointCsv }}
             - name: ASPNETCORE_URLS
-              value: "https://+:443"
-            - name: username
-              valueFrom:
-                secretKeyRef:
-                  name: transactionqueryserviceref
-                  key: username
-            - name: password
-              valueFrom:
-                secretKeyRef:
-                  name: transactionqueryserviceref
-                  key: password
+              value: {{ .Values.transactionqueryaggregator.configuration.ASPNETCORE_URLS }}
+          envFrom:
+          - secretRef:
+              name: transactionqueryserviceref   
           resources:
 {{ toYaml .Values.transactionqueryaggregator.resources | indent 12 }}
     {{- with .Values.transactionqueryaggregator.nodeSelector }}

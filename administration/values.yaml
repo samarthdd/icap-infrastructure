@@ -10,7 +10,7 @@ managementui:
     transactionEventApiUrl: https://transaction-event-api/api/v1
     policyManagementApiUrl: https://policy-management-api/api/v1
 policymanagementapi:
-  fullnameOverride: policy-management-api
+  name: policy-management-api
   replicaCount: 1
   imagePullSecrets: []
   service:
@@ -31,27 +31,6 @@ policymanagementapi:
     tls: []
   PolicyUpdateServiceEndpointCsv: https://policy-update-service.icap-adaptation.svc.cluster.local:10000/
   NcfsPolicyUpdateServiceEndpointCsv: https://ncfs-policy-update-service.icap-ncfs.svc.cluster.local:10001/
-  secrets: 
-    policymanagementapipv:
-      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountName>>"
-      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountKey>>"
-    policyupdateserviceref:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
-    ncfspolicyupdateserviceref:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"        
-  # Optionally specify a set of secret objects whose values
-  # will be injected as environment variables by default.
-  # You should add this section to a file like secrets.yaml
-  # that is explicitly NOT committed to source code control
-  # and then include it as part of your helm install step.
-  # ref: https://kubernetes.io/docs/concepts/configuration/secret/
-  #
-  # This creates a secret "mysecret" and injects "mypassword"
-  # as the environment variable mysecret_mypassword=password.
-  # mysecret:
-  #   mypassword: password
   resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -67,7 +46,7 @@ policymanagementapi:
   tolerations: []
   affinity: {}
 transactioneventapi:
-  fullnameOverride: transaction-event-api
+  name: transaction-event-api
   replicaCount: 1
   imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.
@@ -81,6 +60,7 @@ transactioneventapi:
     port: 443
   configuration:
     ShareName: transactions
+    ASPNETCORE_URLS: "https://+:443"
   deployment:
     containerPort: 443
   probes:
@@ -96,18 +76,6 @@ transactioneventapi:
     # - secretName: chart-example-tls
     #   hosts:
     #     - chart-example.local
-  secrets: {}
-  # Optionally specify a set of secret objects whose values
-  # will be injected as environment variables by default.
-  # You should add this section to a file like secrets.yaml
-  # that is explicitly NOT committed to source code control
-  # and then include it as part of your helm install step.
-  # ref: https://kubernetes.io/docs/concepts/configuration/secret/
-  #
-  # This creates a secret "mysecret" and injects "mypassword"
-  # as the environment variable mysecret_mypassword=password.
-  # mysecret:
-  #   mypassword: password
   resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -123,7 +91,7 @@ transactioneventapi:
   tolerations: []
   affinity: {}
 transactionqueryaggregator:
-  fullnameOverride: transaction-query-aggregator
+  name: transaction-query-aggregator
   replicaCount: 1
   imagePullSecrets: []
   service:
@@ -133,6 +101,7 @@ transactionqueryaggregator:
     containerPort: 443
   configuration:
     TransactionQueryServiceEndpointCsv: https://transaction-query-service.icap-adaptation.svc.cluster.local
+    ASPNETCORE_URLS: "https://+:443"
   probes:
     enabled: false
   ingress:
@@ -140,10 +109,6 @@ transactionqueryaggregator:
     annotations: {}
     path: /
     tls: []
-  secrets: 
-    transactionqueryserviceref:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   resources: {}
   nodeSelector: {}
   tolerations: []
@@ -152,11 +117,11 @@ imagestore:
   icapmanagementui:
     registry: ""
     repository: glasswallsolutions/icap-management-ui
-    tag: develop-b644f5f
+    tag: develop-0909fbe
   policymanagementapi:
     registry: ""
     repository: glasswallsolutions/policy-management-api
-    tag: develop-1523a35
+    tag: develop-f08e0da
   transactioneventapi:
     registry: ""
     repository: glasswallsolutions/transactioneventapi
@@ -165,3 +130,20 @@ imagestore:
     registry: ""
     repository: glasswallsolutions/transaction-query-aggregator
     tag: develop-d246daf
+secrets:
+  containerregistry:
+    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
+  transactionqueryaggregator:
+    transactionqueryserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
+  policymanagementapi:
+    policystoresecret:
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountKey>>"
+    policyupdateserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+    ncfspolicyupdateserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServicePassword>>"  

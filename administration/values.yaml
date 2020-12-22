@@ -129,7 +129,7 @@ imagestore:
   transactionqueryaggregator:
     registry: ""
     repository: glasswallsolutions/transaction-query-aggregator
-    tag: develop-d246daf
+    tag: develop-1910399
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
@@ -146,4 +146,4 @@ secrets:
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
     ncfspolicyupdateserviceref:
       username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServicePassword>>"  
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServicePassword>>"

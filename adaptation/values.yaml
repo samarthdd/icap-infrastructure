@@ -109,4 +109,4 @@ imagestore:
     repository: glasswallsolutions/archive-processing-service
     tag: main-4fdf611
   transactionqueryservice:
-    tag: main-65d2e2d
+    tag: main-63313d2

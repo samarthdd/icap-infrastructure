@@ -138,4 +138,4 @@ imagestore:
     repository: glasswallsolutions/transactioneventapi
     tag: main-8147406
   transactionqueryaggregator:
-    tag: main-6ff4e8a
+    tag: main-bf9d425

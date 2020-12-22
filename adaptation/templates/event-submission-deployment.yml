@@ -21,11 +21,11 @@ spec:
       - name: event-submission-service
         volumeMounts:
           - name: {{ .Values.transactionstore.shareName }}
-            mountPath: {{ .Values.eventsubmissionservice.mountPath }}
+            mountPath: {{ .Values.volumemountpath.transactions }}
         image: {{ .Values.imagestore.eventsubmission.registry}}{{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}
         env:
         - name: TRANSACTION_STORE_ROOT_PATH
-          value: {{ .Values.eventsubmissionservice.mountPath }}
+          value: {{ .Values.volumemountpath.transactions }}
         - name: TRANSACTION_EVENT_QUEUE_HOSTNAME
           value: {{ .Values.queue.transactionevent.hostname}}
         - name: TRANSACTION_EVENT_QUEUE_PORT

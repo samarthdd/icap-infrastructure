@@ -13,6 +13,7 @@ serviceAccount:
 volumemountpath:
   source: "/var/source"
   target: "/var/target"
+  transactions: /mnt/transactions
 queue:
   messagebrokersecret: "rabbitmq-service-default-user"
   host:
@@ -61,7 +62,6 @@ podjanitor:
   deleteFailedAfter: 3m
 eventsubmissionservice:
   name: event-submission-service
-  mountPath: /mnt/transactions
   replicas: 1
   amqpurl: "" # this should be deprecated in preference to queue specific hostname
 policyupdateservice:

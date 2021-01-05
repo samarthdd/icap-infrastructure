@@ -124,7 +124,7 @@ imagestore:
   ncfspolicyupdateservice:
     registry: ""
     repository: glasswallsolutions/ncfs-policy-update-service
-    tag: develop-95d9095
+    tag: develop-ae4e9bb
   referencencfs:
     registry: ""
     repository: glasswallsolutions/reference-ncfs

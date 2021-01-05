@@ -113,6 +113,31 @@ transactionqueryaggregator:
   nodeSelector: {}
   tolerations: []
   affinity: {}
+identitymanagementservice:
+  name: identity-management-service
+  replicaCount: 1
+  imagePullSecrets: []
+  shareName: users
+  storage: 100Gi
+  service:
+    type: ClusterIP
+    port: 443
+  deployment:
+    containerPort: 443
+  configuration:
+    TokenLifetime: "1.00:00:00"
+    ASPNETCORE_URLS: "https://+:443"
+  probes:
+    enabled: false
+  ingress:
+    enabled: false
+    annotations: {}
+    path: /
+    tls: []
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
 imagestore:
   icapmanagementui:
     registry: ""
@@ -131,6 +156,8 @@ imagestore:
     repository: glasswallsolutions/transaction-query-aggregator
     tag: develop-1910399
   identitymanagementservice:
+    registry: ""
+    repository: glasswallsolutions/identity-management-service
     tag: develop-f3917dc
 secrets:
   containerregistry:
@@ -149,3 +176,6 @@ secrets:
     ncfspolicyupdateserviceref:
       username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"
       password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServicePassword>>"
+  identitymanagementservice:
+    identitymanagementservicesecrets:
+      TokenSecret: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/identityManagementTokenSecret>>"

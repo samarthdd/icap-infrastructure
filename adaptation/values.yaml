@@ -95,7 +95,7 @@ imagestore:
   eventsubmission:
     registry: ""
     repository: glasswallsolutions/event-submission-service
-    tag: main-685fa96
+    tag: main-2059f86
   policyupdate:
     registry: ""
     repository: glasswallsolutions/policy-update-service

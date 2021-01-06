@@ -117,7 +117,7 @@ identitymanagementservice:
   name: identity-management-service
   replicaCount: 1
   imagePullSecrets: []
-  shareName: users
+  shareName: transactions
   storage: 100Gi
   service:
     type: ClusterIP

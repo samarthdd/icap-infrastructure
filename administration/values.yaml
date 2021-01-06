@@ -179,3 +179,6 @@ secrets:
   identitymanagementservice:
     identitymanagementservicesecrets:
       TokenSecret: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/identityManagementTokenSecret>>"
+    userstoresecret:
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/userStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/userStoreAccountKey>>"

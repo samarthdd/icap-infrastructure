@@ -131,7 +131,7 @@ imagestore:
     repository: glasswallsolutions/transaction-query-aggregator
     tag: develop-1910399
   identitymanagementservice:
-    tag: develop-79da1e9
+    tag: develop-c99d06c
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"

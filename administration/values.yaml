@@ -7,7 +7,7 @@ managementui:
     name: icap-management-ui-service
     port: 80
   config:
-    transactionEventApiUrl: https://transaction-event-api/api/v1
+    transactionEventApiUrl: https://transaction-query-aggregator/api/v1
     policyManagementApiUrl: https://policy-management-api/api/v1
 policymanagementapi:
   name: policy-management-api

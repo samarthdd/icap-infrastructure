@@ -4,7 +4,6 @@ metadata:
   labels:
     app: {{ .Values.podjanitor.name }}
   name: {{ .Values.podjanitor.name }}
-  namespace: {{.Values.adaptationservice.namespace}}
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -22,7 +21,7 @@ spec:
             - name: pod-janitor
               image: {{ .Values.imagestore.podjanitor.registry }}{{ .Values.imagestore.podjanitor.repository }}:{{ .Values.imagestore.podjanitor.tag }}
               args:
-              - --pod-namespace={{ .Values.podjanitor.namespace }}
+              - --pod-namespace={{ .Release.Namespace }}
               - --delete-successful-after={{ .Values.podjanitor.deleteSuccessfulAfter }}
               - --delete-failed-after={{ .Values.podjanitor.deleteFailedAfter }}
               resources:

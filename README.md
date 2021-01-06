@@ -250,14 +250,15 @@ imagePullSecrets:
 A secret config yaml needs to be added to each helm chart, e.g:
 
 ```
+{{- if .Values.secrets }}
 apiVersion: v1
 kind: Secret
 metadata:
   name: adaptation-registry-credential
-  namespace: {{.Values.adaptationservice.namespace}}
 data:
   .dockerconfigjson: {{ .Values.secrets.containerregistry.dockerconfigjson }}
 type: kubernetes.io/dockerconfigjson
+{{- end }} 
 ```
 
 We've also written another script called update-secrets.sh [https://github.com/filetrust/rancher-git-server] which dynamically replaces all secret values with values from azure vault.

@@ -15,6 +15,8 @@ spec:
       containers:
       - name: event-submission-service
         image: {{ .Values.imagestore.eventsubmission.registry}}{{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}
+        ports:
+        - containerPort: {{ .Values.prometheus.metricsport }}
         env:
         - name: ACCOUNT_NAME
           valueFrom:
@@ -26,6 +28,8 @@ spec:
             secretKeyRef:
               name: transactionstoresecret
               key: accountKey
+        - name: METRICS_PORT
+          value: "{{ .Values.prometheus.metricsport }}"
         - name: TRANSACTION_EVENT_QUEUE_HOSTNAME
           value: {{ .Values.queue.transactionevent.hostname}}
         - name: TRANSACTION_EVENT_QUEUE_PORT

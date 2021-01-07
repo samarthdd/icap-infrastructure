@@ -16,6 +16,8 @@ spec:
       containers:
       - name: adaptation-service
         image: {{ .Values.imagestore.archiveadaptationservice.registry }}{{ .Values.imagestore.archiveadaptationservice.repository }}:{{ .Values.imagestore.archiveadaptationservice.tag }}
+        ports:
+        - containerPort: {{ .Values.prometheus.metricsport }}
         env:
         - name: POD_NAMESPACE
           valueFrom:
@@ -23,6 +25,8 @@ spec:
               fieldPath: metadata.namespace
         - name: EXCHANGE
           value: {{ .Values.archiveadaptationservice.exchange }}
+        - name: METRICS_PORT
+          value: "{{ .Values.prometheus.metricsport }}"
         - name: INPUT_MOUNT
           value: {{ .Values.volumemountpath.source }}
         - name: OUTPUT_MOUNT

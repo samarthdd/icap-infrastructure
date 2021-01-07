@@ -13,6 +13,8 @@ serviceAccount:
 volumemountpath:
   source: "/var/source"
   target: "/var/target"
+prometheus:
+  metricsport: 8081
 queue:
   messagebrokersecret: "rabbitmq-service-default-user"
   host:

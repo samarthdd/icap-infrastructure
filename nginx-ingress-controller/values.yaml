@@ -46,4 +46,7 @@ icapBackend:
   serviceNamespace: "icap-adaptation"
   serviceName: "icap-service"
 
+secrets:
+  containerregistry:
+    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
 

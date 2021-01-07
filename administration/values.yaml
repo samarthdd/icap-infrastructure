@@ -140,4 +140,4 @@ imagestore:
   transactionqueryaggregator:
     tag: main-bf9d425
   identitymanagementservice:
-    tag: main-7ecbfb4
+    tag: main-71878e5

@@ -24,7 +24,7 @@ spec:
             mountPath: {{ .Values.volumemountpath.transactions }}
         image: {{ .Values.imagestore.eventsubmission.registry}}{{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}
         ports:
-        - containerPort: {{ .Values.prometheus.metricsport}}
+        - containerPort: {{ .Values.prometheus.metricsport }}
         env:
         - name: TRANSACTION_STORE_ROOT_PATH
           value: {{ .Values.volumemountpath.transactions }}

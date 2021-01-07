@@ -18,7 +18,7 @@ spec:
       - name: adaptation-service
         image: {{ .Values.imagestore.archiveadaptationservice.registry }}{{ .Values.imagestore.archiveadaptationservice.repository }}:{{ .Values.imagestore.archiveadaptationservice.tag }}
         ports:
-        - containerPort: {{ .Values.prometheus.metricsport}}
+        - containerPort: {{ .Values.prometheus.metricsport }}
         env:
         - name: POD_NAMESPACE
           valueFrom:

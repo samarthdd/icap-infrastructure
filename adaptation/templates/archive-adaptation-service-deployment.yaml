@@ -58,3 +58,5 @@ spec:
           requests:
             cpu: 0.5
             memory: 100Mi
+      imagePullSecrets:
+        - name: adaptation-registry-credential

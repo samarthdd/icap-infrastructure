@@ -42,3 +42,5 @@ spec:
               name: {{ .Values.queue.messagebrokersecret }}
               key: password
         {{- end }}               
+      imagePullSecrets:
+        - name: adaptation-registry-credential

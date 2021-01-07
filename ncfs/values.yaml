@@ -1,4 +1,6 @@
 environment:
+prometheus:
+  metricsport: 8081
 referencencfs:
   fullNameOverride: reference-ncfs
   applabel: reference-ncfs

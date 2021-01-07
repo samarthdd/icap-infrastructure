@@ -3,10 +3,15 @@ kind: RabbitmqCluster
 metadata:
   labels: 
     app: {{ .Values.rabbitmqService.app }}
-    compenent: {{ .Values.rabbitmqService.component }}
+    component: {{ .Values.rabbitmqService.component }}
   name: {{ .Values.rabbitmqService.name }}
 spec:
  replicas: 3
+{{- if .Values.imagestore.rabbitmq }} 
+ image: "{{ .Values.imagestore.rabbitmq.registry }}{{ .Values.imagestore.rabbitmq.repository }}:{{ .Values.imagestore.rabbitmq.tag }}"
+ imagePullSecrets:
+  - name: rabbitmq-service-registry-credential
+{{- end }}     
  affinity:
    podAntiAffinity:
      preferredDuringSchedulingIgnoredDuringExecution: 
@@ -19,3 +24,6 @@ spec:
             values:
             - store
          topologyKey: kubernetes.io/hostname
+ persistence:
+   storageClassName: azurefile
+   storage: 10Gi

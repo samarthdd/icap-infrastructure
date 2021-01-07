@@ -13,6 +13,7 @@ serviceAccount:
 volumemountpath:
   source: "/var/source"
   target: "/var/target"
+  transactions: /mnt/transactions
 prometheus:
   metricsport: 8081
 queue:
@@ -76,6 +77,32 @@ requestprocessingservice:
   cpurequest: 0.2
   memorylimit: 10000Mi
   memoryrequest: 250Mi
+transactionqueryservice:
+  fullnameOverride: transaction-query-service
+  replicaCount: 1
+  imagePullSecrets: []
+  service:
+    type: ClusterIP
+    port: 443
+  deployment:
+    containerPort: 443
+  probes:
+    enabled: false
+  ingress:
+    enabled: false
+    annotations: {}
+    path: /
+    tls: []
+  volumes:
+    transactionstore:
+      shareName: transactions
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+transactionstore:
+  shareName: transactions
+  storage: 100Gi
 imagestore:
   requestprocessing:
     registry: ""
@@ -110,4 +137,21 @@ imagestore:
     repository: glasswallsolutions/archive-processing-service
     tag: main-4fdf611
   transactionqueryservice:
+    registry: ""
+    repository: glasswallsolutions/transaction-query-service
     tag: main-63313d2
+secrets:
+  containerregistry:
+    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
+  transactionqueryservice:
+    transactionqueryservicesecret:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
+  policyupdateservice:
+    policyupdateservicesecret:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+  transactionstore:
+    transactionstoresecret:
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"

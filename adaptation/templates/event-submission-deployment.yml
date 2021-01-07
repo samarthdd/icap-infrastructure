@@ -12,12 +12,21 @@ spec:
       labels:
         app: {{ .Values.eventsubmissionservice.name }}
     spec:
+      volumes:
+        - name: {{ .Values.transactionstore.shareName }}
+          persistentVolumeClaim:
+            claimName: pvc-event-submission
       containers:
       - name: event-submission-service
+        volumeMounts:
+          - name: {{ .Values.transactionstore.shareName }}
+            mountPath: {{ .Values.volumemountpath.transactions }}
         image: {{ .Values.imagestore.eventsubmission.registry}}{{ .Values.imagestore.eventsubmission.repository }}:{{ .Values.imagestore.eventsubmission.tag }}
         ports:
         - containerPort: {{ .Values.prometheus.metricsport }}
         env:
+        - name: TRANSACTION_STORE_ROOT_PATH
+          value: {{ .Values.volumemountpath.transactions }}
         - name: ACCOUNT_NAME
           valueFrom:
             secretKeyRef:
@@ -46,3 +55,5 @@ spec:
               name: {{ .Values.queue.messagebrokersecret }}
               key: password
         {{- end }}               
+      imagePullSecrets:
+        - name: adaptation-registry-credential

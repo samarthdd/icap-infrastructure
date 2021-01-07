@@ -3,7 +3,7 @@ kind: RabbitmqCluster
 metadata:
   labels: 
     app: {{ .Values.rabbitmqService.app }}
-    compenent: {{ .Values.rabbitmqService.component }}
+    component: {{ .Values.rabbitmqService.component }}
   name: {{ .Values.rabbitmqService.name }}
 spec:
  replicas: 3
@@ -24,3 +24,6 @@ spec:
             values:
             - store
          topologyKey: kubernetes.io/hostname
+ persistence:
+   storageClassName: azurefile
+   storage: 10Gi

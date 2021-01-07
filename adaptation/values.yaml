@@ -84,7 +84,7 @@ imagestore:
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service
-    tag: main-1b0cdfa
+    tag: main-196459e
   podjanitor:
     registry: ""
     repository: glasswallsolutions/pod-janitor

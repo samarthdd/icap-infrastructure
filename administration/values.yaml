@@ -7,7 +7,7 @@ managementui:
     name: icap-management-ui-service
     port: 80
   config:
-    transactionEventApiUrl: https://transaction-event-api/api/v1
+    transactionEventApiUrl: https://transaction-query-aggregator/api/v1
     policyManagementApiUrl: https://policy-management-api/api/v1
 policymanagementapi:
   fullnameOverride: policy-management-api
@@ -124,6 +124,54 @@ transactioneventapi:
   nodeSelector: {}
   tolerations: []
   affinity: {}
+transactionqueryaggregator:
+  name: transaction-query-aggregator
+  replicaCount: 1
+  imagePullSecrets: []
+  service:
+    type: ClusterIP
+    port: 443
+  deployment:
+    containerPort: 443
+  configuration:
+    TransactionQueryServiceEndpointCsv: https://transaction-query-service.icap-adaptation.svc.cluster.local
+    ASPNETCORE_URLS: "https://+:443"
+  probes:
+    enabled: false
+  ingress:
+    enabled: false
+    annotations: {}
+    path: /
+    tls: []
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+identitymanagementservice:
+  name: identity-management-service
+  replicaCount: 1
+  imagePullSecrets: []
+  shareName: transactions
+  storage: 100Gi
+  service:
+    type: ClusterIP
+    port: 443
+  deployment:
+    containerPort: 443
+  configuration:
+    TokenLifetime: "1.00:00:00"
+    ASPNETCORE_URLS: "https://+:443"
+  probes:
+    enabled: false
+  ingress:
+    enabled: false
+    annotations: {}
+    path: /
+    tls: []
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
 imagestore:
   icapmanagementui:
     registry: ""
@@ -138,6 +186,33 @@ imagestore:
     repository: glasswallsolutions/transactioneventapi
     tag: main-8147406
   transactionqueryaggregator:
+    registry: ""
+    repository: glasswallsolutions/transaction-query-aggregator
     tag: main-bf9d425
   identitymanagementservice:
+    registry: ""
+    repository: glasswallsolutions/identity-management-service
     tag: main-71878e5
+secrets:
+  containerregistry:
+    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
+  transactionqueryaggregator:
+    transactionqueryserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
+  policymanagementapi:
+    policystoresecret:
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyStoreAccountKey>>"
+    policyupdateserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+    ncfspolicyupdateserviceref:
+      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServiceUsername>>"
+      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/ncfsPolicyUpdateServicePassword>>"
+  identitymanagementservice:
+    identitymanagementservicesecrets:
+      TokenSecret: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/identityManagementTokenSecret>>"
+    userstoresecret:
+      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/userStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/userStoreAccountKey>>"

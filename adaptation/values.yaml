@@ -111,7 +111,7 @@ imagestore:
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service
-    tag: develop-44d6fa6
+    tag: develop-35db718
   podjanitor:
     registry: ""
     repository: glasswallsolutions/pod-janitor

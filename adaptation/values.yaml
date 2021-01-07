@@ -131,7 +131,7 @@ imagestore:
   archiveadaptationservice:
     registry: ""
     repository: glasswallsolutions/archive-adaptation-service
-    tag: develop-f2f04eb
+    tag: develop-5b883e3
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service

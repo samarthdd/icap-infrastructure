@@ -100,7 +100,7 @@ imagestore:
   policyupdate:
     registry: ""
     repository: glasswallsolutions/policy-update-service
-    tag: main-9bd5527
+    tag: main-3269b2a
   archiveadaptationservice:
     registry: ""
     repository: glasswallsolutions/archive-adaptation-service

@@ -155,3 +155,7 @@ secrets:
     transactionstoresecret:
       azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
       azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
+  mvpicapservice:
+    tls:
+      tlsCert: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/mvpicapserviceTlsCert>>"
+      tlsKey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/mvpicapserviceTlsKey>>"

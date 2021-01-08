@@ -1,9 +1,0 @@
-{{- $root := . }}
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ template "transaction-event-api.fullname" . }}
-data:
-  {{- range $key, $value := .Values.transactioneventapi.configuration }}
-  {{ $key }}: {{ $value | quote }}
-  {{- end }}

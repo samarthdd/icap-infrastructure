@@ -108,7 +108,7 @@ imagestore:
   requestprocessing:
     registry: ""
     repository: glasswallsolutions/icap-request-processing
-    tag: develop-77b6369
+    tag: develop-e14105a
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service

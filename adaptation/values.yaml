@@ -112,7 +112,7 @@ imagestore:
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service
-    tag: develop-35db718
+    tag: develop-d1896ea
   podjanitor:
     registry: ""
     repository: glasswallsolutions/pod-janitor

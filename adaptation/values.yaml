@@ -16,7 +16,7 @@ volumemountpath:
   transactions: /mnt/transactions
 prometheus:
   metricsport: 8081
-  pushgatewayendpoint: "http://pushgateway-prometheus-pushgateway:9091/metrics" 
+  pushgatewayendpoint: "http://pushgateway-prometheus-pushgateway:9091/metrics"
 queue:
   messagebrokersecret: "rabbitmq-service-default-user"
   host:
@@ -136,7 +136,7 @@ imagestore:
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
-    tag: main-4fdf611
+    tag: main-2a4936b
   transactionqueryservice:
     registry: ""
     repository: glasswallsolutions/transaction-query-service

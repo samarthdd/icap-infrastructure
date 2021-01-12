@@ -116,7 +116,7 @@ imagestore:
   podjanitor:
     registry: ""
     repository: glasswallsolutions/pod-janitor
-    tag: main-5ce5e69
+    tag: main-b5f9752
   icapservice:
     registry: ""
     repository: glasswallsolutions/mvp-icap-service

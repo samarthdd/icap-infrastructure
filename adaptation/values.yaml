@@ -146,17 +146,17 @@ secrets:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
   transactionqueryservice:
     transactionqueryservicesecret:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
+      username: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   policyupdateservice:
     policyupdateservicesecret:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+      username: "<<https://gw-icap-keyvault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
+      password: "<<https://gw-icap-keyvault.vault.azure.net/secrets/policyUpdateServicePassword>>"
   transactionstore:
     transactionstoresecret:
-      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
-      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
+      azurestorageaccountname: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionStoreAccountKey>>"
   mvpicapservice:
     tls:
-      tlsCert: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/mvpicapserviceTlsCert>>"
-      tlsKey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/mvpicapserviceTlsKey>>"
+      tlsCert: "<<https://gw-icap-keyvault.vault.azure.net/secrets/mvpicapserviceTlsCert>>"
+      tlsKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/mvpicapserviceTlsKey>>"

@@ -46,6 +46,13 @@ spec:
             - name: tls-config-vol
               mountPath: /usr/local/c-icap/cert
               readOnly: true
+        resources:
+          limits:
+            cpu: "1"
+            memory: 500Mi
+          requests:
+            cpu: "0.5"
+            memory: 100Mi
       imagePullSecrets:
         - name: adaptation-registry-credential
       volumes:

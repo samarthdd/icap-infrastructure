@@ -1,7 +1,7 @@
 environment:
 rabbitmqService:
   name: rabbitmq-service
-  replicas: # use this to give the hpa the scale range
+  replicas:
     min: 3
     max: 6
   port: 5672
@@ -39,7 +39,7 @@ queue:
     port: "\"5672\""
 adaptationservice:
   name: adaptation-service
-  replicas: # use this to give the hpa the scale range
+  replicas:
     min: 1
     max: 80
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
@@ -47,7 +47,7 @@ adaptationservice:
 archiveadaptationservice:
   name: archive-adaptation-service
   namespace: icap-adaptation
-  replicas: # use this to give the hpa the scale range
+  replicas:
     min: 1
     max: 10
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
@@ -56,7 +56,7 @@ archiveadaptationservice:
 icapservice:
   name: mvp-icap-service
   applabel: adaptation
-  replicas: # use this to give the hpa the scale range
+  replicas:
     min: 1
     max: 150
   port: 1344
@@ -73,7 +73,7 @@ podjanitor:
 eventsubmissionservice:
   name: event-submission-service
   replicas: 1
-  amqpurl: "" # this should be deprecated in preference to queue specific hostname
+  amqpurl: ""
 policyupdateservice:
   name: policy-update-service
   applabel: policyupdate

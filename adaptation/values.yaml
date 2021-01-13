@@ -2,8 +2,8 @@ environment:
 rabbitmqService:
   name: rabbitmq-service
   replicas:
-    min: 3
-    max: 6
+    min: "3"
+    max: "6"
   port: 5672
   component: rabbitmq
   app: taskQueue
@@ -41,16 +41,16 @@ queue:
 adaptationservice:
   name: adaptation-service
   replicas:
-    min: 1
-    max: 80
+    min: "1"
+    max: "80"
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
   rolename: adaptation-service-role
 archiveadaptationservice:
   name: archive-adaptation-service
   namespace: icap-adaptation
   replicas:
-    min: 1
-    max: 10
+    min: "1"
+    max: "10"
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
   exchange: adaptation-exchange
   rolename: archive-adaptation-service-role
@@ -58,8 +58,8 @@ icapservice:
   name: mvp-icap-service
   applabel: adaptation
   replicas:
-    min: 1
-    max: 150
+    min: "1"
+    max: "150"
   port: 1344
   tlsport: 1345
   enableFileId: true

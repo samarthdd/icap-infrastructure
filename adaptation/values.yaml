@@ -2,8 +2,8 @@ environment:
 rabbitmqService:
   name: rabbitmq-service
   replicas:
-    min: "3"
-    max: "6"
+    min: 3
+    max: 6
   port: 5672
   component: rabbitmq
   app: taskQueue
@@ -19,6 +19,7 @@ volumemountpath:
   transactions: /mnt/transactions
 prometheus:
   metricsport: 8081
+  pushgatewayendpoint: "http://pushgateway-prometheus-pushgateway:9091/metrics"
 queue:
   messagebrokersecret: "rabbitmq-service-default-user"
   host:
@@ -39,26 +40,26 @@ queue:
     port: "\"5672\""
 adaptationservice:
   name: adaptation-service
-  replicas:
-    min: "1"
-    max: "80"
+  replicas: 
+    min: 1
+    max: 80
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
   rolename: adaptation-service-role
 archiveadaptationservice:
   name: archive-adaptation-service
   namespace: icap-adaptation
-  replicas:
-    min: "1"
-    max: "10"
+  replicas: 
+    min: 1
+    max: 10
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
   exchange: adaptation-exchange
   rolename: archive-adaptation-service-role
 icapservice:
   name: mvp-icap-service
   applabel: adaptation
-  replicas:
-    min: "1"
-    max: "150"
+  replicas: 
+    min: 1
+    max: 150
   port: 1344
   tlsport: 1345
   enableFileId: true
@@ -73,7 +74,7 @@ podjanitor:
 eventsubmissionservice:
   name: event-submission-service
   replicas: 1
-  amqpurl: ""
+  amqpurl: "" # this should be deprecated in preference to queue specific hostname
 policyupdateservice:
   name: policy-update-service
   applabel: policyupdate
@@ -116,15 +117,15 @@ imagestore:
   requestprocessing:
     registry: ""
     repository: glasswallsolutions/icap-request-processing
-    tag: develop-77b6369
+    tag: develop-e14105a
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service
-    tag: develop-44d6fa6
+    tag: develop-d1896ea
   podjanitor:
     registry: ""
     repository: glasswallsolutions/pod-janitor
-    tag: develop-dd4c0f8
+    tag: develop-d2f944d
   icapservice:
     registry: ""
     repository: glasswallsolutions/mvp-icap-service
@@ -132,35 +133,39 @@ imagestore:
   eventsubmission:
     registry: ""
     repository: glasswallsolutions/event-submission-service
-    tag: develop-51d193d
+    tag: develop-1f75835
   policyupdate:
     registry: ""
     repository: glasswallsolutions/policy-update-service
-    tag: develop-ab601cd
+    tag: develop-25d78e8
   archiveadaptationservice:
     registry: ""
     repository: glasswallsolutions/archive-adaptation-service
-    tag: develop-f2f04eb
+    tag: develop-60296f7
   archiveprocessingservice:
     registry: ""
     repository: glasswallsolutions/archive-processing-service
-    tag: develop-897191b
+    tag: develop-0e36a0e
   transactionqueryservice:
     registry: ""
     repository: glasswallsolutions/transaction-query-service
-    tag: develop-2cc1cbf
+    tag: develop-12eb95a
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
   transactionqueryservice:
     transactionqueryservicesecret:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionQueryServicePassword>>"
+      username: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionQueryServiceUsername>>"
+      password: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionQueryServicePassword>>"
   policyupdateservice:
     policyupdateservicesecret:
-      username: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
-      password: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/policyUpdateServicePassword>>"
+      username: "<<https://gw-icap-keyvault.vault.azure.net/secrets/policyUpdateServiceUsername>>"
+      password: "<<https://gw-icap-keyvault.vault.azure.net/secrets/policyUpdateServicePassword>>"
   transactionstore:
     transactionstoresecret:
-      azurestorageaccountname: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountName>>"
-      azurestorageaccountkey: "<<https://gw-tfstate-Vault.vault.azure.net/secrets/transactionStoreAccountKey>>"
+      azurestorageaccountname: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionStoreAccountName>>"
+      azurestorageaccountkey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionStoreAccountKey>>"
+  mvpicapservice:
+    tls:
+      tlsCert: "<<https://gw-icap-keyvault.vault.azure.net/secrets/mvpicapserviceTlsCert>>"
+      tlsKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/mvpicapserviceTlsKey>>"

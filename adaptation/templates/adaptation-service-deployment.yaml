@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Values.adaptationservice.name }}
 spec:
+  replicas: {{ .Values.adaptationservice.replicas }}
   selector:
     matchLabels:
       app: {{ .Values.adaptationservice.name }}
@@ -26,6 +27,8 @@ spec:
           value: {{ .Values.adaptationservice.amqpurl }}
         - name: METRICS_PORT
           value: "{{ .Values.prometheus.metricsport }}"
+        - name: PUSHGATEWAY_ENDPOINT
+          value: {{ .Values.prometheus.pushgatewayendpoint }}
         - name: INPUT_MOUNT
           value: {{ .Values.volumemountpath.source }}
         - name: OUTPUT_MOUNT

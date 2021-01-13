@@ -36,16 +36,6 @@ component: {{ .Values.policymanagementapi.name | quote }}
 {{ include "icap-administration.common.matchLabels" . }}
 {{- end -}}
 
-{{- define "transaction-event-api.labels" -}}
-{{ include "transaction-event-api.matchLabels" . }}
-{{ include "icap-administration.common.metaLabels" . }}
-{{- end -}}
-
-{{- define "transaction-event-api.matchLabels" -}}
-component: {{ .Values.transactioneventapi.name | quote }}
-{{ include "icap-administration.common.matchLabels" . }}
-{{- end -}}
-
 {{- define "transactionqueryaggregator.labels" -}}
 {{ include "transactionqueryaggregator.matchLabels" . }}
 {{ include "icap-administration.common.metaLabels" . }}
@@ -100,25 +90,6 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 {{- end -}}
 {{- end -}}
-
-{{/*
-Create a fully qualified transaction-event-api name.
-We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
-*/}}
-
-{{- define "transaction-event-api.fullname" -}}
-{{- if .Values.transactioneventapi.fullnameOverride -}}
-{{- .Values.transactioneventapi.fullnameOverride | trunc 63 | trimSuffix "-" -}}
-{{- else -}}
-{{- $name := default .Chart.Name .Values.nameOverride -}}
-{{- if contains $name .Release.Name -}}
-{{- printf "%s-%s" .Release.Name .Values.transactioneventapi.name | trunc 63 | trimSuffix "-" -}}
-{{- else -}}
-{{- printf "%s-%s-%s" .Release.Name $name .Values.transactioneventapi.name | trunc 63 | trimSuffix "-" -}}
-{{- end -}}
-{{- end -}}
-{{- end -}}
-
 
 {{/*
 Create a fully qualified transactionqueryaggregator name.

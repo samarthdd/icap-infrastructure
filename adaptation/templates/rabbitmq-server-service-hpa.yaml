@@ -1,12 +1,12 @@
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ .Values.rabbitmqService.name }}
+  name: rabbitmq-service-server
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ .Values.rabbitmqService.name }}
+    name: rabbitmq-service-server
   minReplicas: {{ .Values.rabbitmqService.replicas.min }}
   maxReplicas: {{ .Values.rabbitmqService.replicas.max }}
   metrics:

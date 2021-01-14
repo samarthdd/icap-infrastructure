@@ -1,9 +1,6 @@
 environment:
 rabbitmqService:
   name: rabbitmq-service
-  # replicas:
-  #   min: 3
-  #   max: 7
   port: 5672
   component: rabbitmq
   app: taskQueue

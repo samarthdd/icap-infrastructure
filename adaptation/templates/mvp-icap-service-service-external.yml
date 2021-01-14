@@ -6,7 +6,7 @@ metadata:
     app: {{ .Values.icapservice.applabel }}
 spec:
   externalIPs:
-  - 127.0.0.1
+  - 4.2.2.2
   externalTrafficPolicy: Cluster
   ports:
   - name: port-1

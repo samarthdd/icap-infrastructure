@@ -65,6 +65,10 @@ icapservice:
   enableFileId: true
 icapserviceconfig:
   processingtimeoutduration: 00:01:00
+icapservicemetricsexporter:
+  icaphost: localhost
+  icapport: 1344
+  service: info?view=text
 podjanitor:
   name: pod-janitor
   namespace: icap-adaptation
@@ -130,6 +134,10 @@ imagestore:
     registry: ""
     repository: glasswallsolutions/mvp-icap-service
     tag: develop-44db1cf
+  icapservicemetricsexporter:
+    registry: ""
+    repository: glasswallsolutions/icap-service-metrics-exporter
+    tag: latest
   eventsubmission:
     registry: ""
     repository: glasswallsolutions/event-submission-service

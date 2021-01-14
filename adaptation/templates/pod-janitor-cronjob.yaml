@@ -5,6 +5,7 @@ metadata:
     app: {{ .Values.podjanitor.name }}
   name: {{ .Values.podjanitor.name }}
 spec:
+  startingDeadlineSeconds: 200
   schedule: "*/1 * * * *"
   jobTemplate:
      metadata:

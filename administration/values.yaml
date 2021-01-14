@@ -5,7 +5,8 @@ managementui:
     port: 8080
   service:
     name: icap-management-ui-service
-    port: 80
+    port: 8080
+    nodeport: 31829
   config:
     transactionEventApiUrl: https://transaction-query-aggregator/api/v1
     policyManagementApiUrl: https://policy-management-api/api/v1

@@ -52,6 +52,19 @@ spec:
             requests:
               cpu: "0.5"
               memory: 100Mi
+        - name: icap-service-metrics-exporter
+          image: {{ .Values.imagestore.icapservicemetricsexporter.registry }}{{ .Values.imagestore.icapservicemetricsexporter.repository }}:{{ .Values.imagestore.icapservicemetricsexporter.tag }}
+          ports:
+            - containerPort: {{ .Values.prometheus.metricsport }}
+          env:
+            - name: ICAP_HOST
+              value: {{ .Values.icapservicemetricsexporter.icaphost }}
+            - name: ICAP_PORT
+              value: "{{ .Values.icapservicemetricsexporter.icapport }}"
+            - name: SERVICE
+              value: {{ .Values.icapservicemetricsexporter.service }}
+            - name: METRICS_PORT
+              value: "{{ .Values.prometheus.metricsport }}"
       imagePullSecrets:
         - name: adaptation-registry-credential
       volumes:

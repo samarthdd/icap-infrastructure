@@ -126,9 +126,8 @@ service:
   annotations: {}
   labels: {}
   portName: service
-  loadBalancerSourceRanges:
-  - 212.59.65.142/32
-  - 157.245.44.137/32
+  loadBalancerSourceRanges: {}
+ # - 0.0.0.0
 serviceMonitor:
   ## If true, a ServiceMonitor CRD is created for a prometheus operator
   ## https://github.com/coreos/prometheus-operator

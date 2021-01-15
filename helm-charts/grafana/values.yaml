@@ -52,7 +52,8 @@ livenessProbe:
 # schedulerName: "default-scheduler"
 
 image:
-  repository: gwicapcontainerregistry.azurecr.io/grafana/grafana
+  registry: gwicapcontainerregistry.azurecr.io
+  repository: grafana/grafana
   tag: v7.3.6
   sha: ""
   pullPolicy: IfNotPresent
@@ -66,7 +67,8 @@ image:
 
 testFramework:
   enabled: true
-  image: "gwicapcontainerregistry.azurecr.io/grafana/bats"
+  registry: gwicapcontainerregistry.azurecr.io
+  repository: grafana/bats
   tag: "v1.1.0"
   imagePullPolicy: IfNotPresent
   securityContext: {}
@@ -94,7 +96,8 @@ extraEmptyDirMounts: []
 # priorityClassName:
 
 downloadDashboardsImage:
-  repository: gwicapcontainerregistry.azurecr.io/grafana/curl
+  registry: gwicapcontainerregistry.azurecr.io
+  repository: grafana/curl
   tag: 7.73.0
   sha: ""
   pullPolicy: IfNotPresent
@@ -254,7 +257,8 @@ initChownData:
   ## initChownData container image
   ##
   image:
-    repository:  gwicapcontainerregistry.azurecr.io/grafana/busybox
+    registry: gwicapcontainerregistry.azurecr.io
+    repository: grafana/busybox
     tag: "1.31.1"
     sha: ""
     pullPolicy: IfNotPresent
@@ -549,7 +553,8 @@ smtp:
 ## Requires at least Grafana 5 to work and can't be used together with parameters dashboardProviders, datasources and dashboards
 sidecar:
   image:
-    repository: gwicapcontainerregistry.azurecr.io/grafana/k8s-sidecar
+    registry: gwicapcontainerregistry.azurecr.io
+    repository: grafana/k8s-sidecar
     tag: 1.1.0
     sha: ""
   imagePullPolicy: IfNotPresent

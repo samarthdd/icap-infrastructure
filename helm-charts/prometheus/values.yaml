@@ -426,7 +426,7 @@ nodeExporter:
   ## node-exporter container image
   ##
   image:
-    repository: prom/node-exporter
+    repository: gwicapcontainerregistry.azurecr.io/prometheus/node-exporter
     tag: v1.0.1
     pullPolicy: IfNotPresent
 
@@ -966,7 +966,7 @@ pushgateway:
   ## pushgateway container image
   ##
   image:
-    repository: prom/pushgateway
+    repository: gwicapcontainerregistry.azurecr.io/prometheus/pushgateway
     tag: v1.2.0
     pullPolicy: IfNotPresent
 

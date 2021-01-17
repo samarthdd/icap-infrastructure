@@ -4,6 +4,7 @@ metadata:
   name: glasswalltarget-pv
   labels:
     type: local
+    usage: glasswalltarget-pv
 spec:
   # storageClassName: azurefile
   capacity:
@@ -11,4 +12,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/run/desktop/mnt/host/c/test-data-output"
+    path: "/run/desktop/mnt/host/c/rebuild-data-out"

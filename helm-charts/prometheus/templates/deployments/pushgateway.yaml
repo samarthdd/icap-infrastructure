@@ -38,7 +38,7 @@ spec:
 {{- end }}
       containers:
         - name: {{ template "prometheus.name" . }}-{{ .Values.pushgateway.name }}
-          image: "{{ .Values.pushgateway.image.repository }}:{{ .Values.pushgateway.image.tag }}"
+          image: "{{ .Values.imagestore.pushgateway.repository }}:{{ .Values.imagestore.pushgateway.tag }}"
           imagePullPolicy: "{{ .Values.pushgateway.image.pullPolicy }}"
           args:
           {{- range $key, $value := .Values.pushgateway.extraArgs }}

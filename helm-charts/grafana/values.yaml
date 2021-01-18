@@ -125,6 +125,7 @@ service:
   type: NodePort
   port: 80
   targetPort: 3000
+  nodePort: 32325
     # targetPort: 4181 To be used with a proxy extraContainer
   annotations: {}
   labels: {}

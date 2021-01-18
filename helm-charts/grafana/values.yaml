@@ -52,7 +52,7 @@ livenessProbe:
 # schedulerName: "default-scheduler"
 
 image:
-  registry: ""
+  registry: gwicapcontainerregistry.azurecr.io
   repository: glasswallsolutions/grafana
   tag: v7.3.6
   sha: ""
@@ -96,7 +96,7 @@ extraEmptyDirMounts: []
 # priorityClassName:
 
 downloadDashboardsImage:
-  registry: ""
+  registry: gwicapcontainerregistry.azurecr.io
   repository: glasswallsolutions/curl
   tag: 7.73.0
   sha: ""
@@ -122,16 +122,17 @@ podPortName: grafana
 ## ref: http://kubernetes.io/docs/user-guide/services/
 ##
 service:
-  type: NodePort
+  type: LoadBalancer
   port: 80
   targetPort: 3000
-  nodePort: 32325
+  #nodePort: 32325
     # targetPort: 4181 To be used with a proxy extraContainer
   annotations: {}
   labels: {}
   portName: service
-  loadBalancerSourceRanges: {}
- # - 0.0.0.0
+  loadBalancerSourceRanges:
+  - 212.59.65.142/32
+  - 157.245.44.137/32
 serviceMonitor:
   ## If true, a ServiceMonitor CRD is created for a prometheus operator
   ## https://github.com/coreos/prometheus-operator
@@ -258,7 +259,7 @@ initChownData:
   ## initChownData container image
   ##
   image:
-    registry: ""
+    registry: gwicapcontainerregistry.azurecr.io
     repository: glasswallsolutions/busybox
     tag: "1.31.1"
     sha: ""
@@ -450,17 +451,17 @@ dashboardProviders:
 ##
 ## dashboards per provider, use provider name as key.
 ##
-dashboards: {}
-  # default:
-  #   some-dashboard:
-  #     json: |
-  #       $RAW_JSON
-  #   custom-dashboard:
-  #     file: dashboards/custom-dashboard.json
-  #   prometheus-stats:
-  #     gnetId: 2
-  #     revision: 2
-  #     datasource: Prometheus
+dashboards:
+   default:
+     some-dashboard:
+       json: |
+         $RAW_JSON
+     custom-dashboard:
+       file: dashboards/custom-dashboard.json
+     prometheus-stats:
+       gnetId: 2
+       revision: 2
+       datasource: Prometheus
   #   local-dashboard:
   #     url: https://example.com/repository/test.json
   #   local-dashboard-base64:
@@ -554,7 +555,7 @@ smtp:
 ## Requires at least Grafana 5 to work and can't be used together with parameters dashboardProviders, datasources and dashboards
 sidecar:
   image:
-    registry: ""
+    registry: gwicapcontainerregistry.azurecr.io
     repository: glasswallsolutions/k8s-sidecar
     tag: 1.1.0
     sha: ""
@@ -673,3 +674,29 @@ imageRenderer:
 #   requests:
 #     cpu: 50m
 #     memory: 50Mi
+imagestore:
+  grafana:
+    registry: ""
+    repository: glasswallsolutions/grafana
+    tag: v7.3.6
+  testFramework:
+    registry: ""
+    repository: glasswallsolutions/bats
+    tag: "v1.1.0"    
+  downloadDashboardsImage:
+    registry: ""
+    repository: glasswallsolutions/curl
+    tag: 7.73.0
+  initChownData:
+    registry: ""
+    repository: glasswallsolutions/busybox
+    tag: "1.31.1"
+  sidecar:
+    registry: ""
+    repository: glasswallsolutions/k8s-sidecar
+    tag: 1.1.0
+  imageRenderer:
+    registry: ""
+    repository: glasswallsolutions/grafana-image-renderer
+    tag: latest
+ 

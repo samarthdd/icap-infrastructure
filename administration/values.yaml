@@ -130,6 +130,13 @@ secrets:
   identitymanagementservice:
     identitymanagementservicesecrets:
       TokenSecret: "<<https://gw-icap-keyvault.vault.azure.net/secrets/identityManagementTokenSecret>>"
+      ManagementUIEndpoint: "<<https://gw-icap-keyvault.vault.azure.net/secrets/ManagementUIEndpoint>>"
     userstoresecret:
       azurestorageaccountname: "<<https://gw-icap-keyvault.vault.azure.net/secrets/userStoreAccountName>>"
       azurestorageaccountkey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/userStoreAccountKey>>"
+      EncryptionSecret: "<<https://gw-icap-keyvault.vault.azure.net/secrets/userStoreEncryptionKey>>"
+    smtpsecret:
+      SmtpHost: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpHost>>"
+      SmtpPort: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpPort>>"
+      SmtpUser: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpUser>>"
+      SmtpPass: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpPass>>"

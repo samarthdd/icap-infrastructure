@@ -52,8 +52,8 @@ livenessProbe:
 # schedulerName: "default-scheduler"
 
 image:
-  registry: gwicapcontainerregistry.azurecr.io
-  repository: grafana/grafana
+  registry: ""
+  repository: glasswallsolutions/grafana
   tag: v7.3.6
   sha: ""
   pullPolicy: IfNotPresent
@@ -67,8 +67,8 @@ image:
 
 testFramework:
   enabled: true
-  registry: gwicapcontainerregistry.azurecr.io
-  repository: grafana/bats
+  registry: ""
+  repository: glasswallsolutions/bats
   tag: "v1.1.0"
   imagePullPolicy: IfNotPresent
   securityContext: {}
@@ -96,8 +96,8 @@ extraEmptyDirMounts: []
 # priorityClassName:
 
 downloadDashboardsImage:
-  registry: gwicapcontainerregistry.azurecr.io
-  repository: grafana/curl
+  registry: ""
+  repository: glasswallsolutions/curl
   tag: 7.73.0
   sha: ""
   pullPolicy: IfNotPresent
@@ -258,8 +258,8 @@ initChownData:
   ## initChownData container image
   ##
   image:
-    registry: gwicapcontainerregistry.azurecr.io
-    repository: grafana/busybox
+    registry: ""
+    repository: glasswallsolutions/busybox
     tag: "1.31.1"
     sha: ""
     pullPolicy: IfNotPresent
@@ -554,8 +554,8 @@ smtp:
 ## Requires at least Grafana 5 to work and can't be used together with parameters dashboardProviders, datasources and dashboards
 sidecar:
   image:
-    registry: gwicapcontainerregistry.azurecr.io
-    repository: grafana/k8s-sidecar
+    registry: ""
+    repository: glasswallsolutions/k8s-sidecar
     tag: 1.1.0
     sha: ""
   imagePullPolicy: IfNotPresent
@@ -633,7 +633,7 @@ imageRenderer:
   replicas: 1
   image:
     # image-renderer Image repository
-    repository: grafana/grafana-image-renderer
+    repository: glasswallsolutions/grafana-image-renderer
     # image-renderer Image tag
     tag: latest
     # image-renderer Image sha (optional)

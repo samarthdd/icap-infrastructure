@@ -130,7 +130,7 @@ secrets:
   identitymanagementservice:
     identitymanagementservicesecrets:
       TokenSecret: "<<https://gw-icap-keyvault.vault.azure.net/secrets/identityManagementTokenSecret>>"
-      ManagementUIEndpoint: "<<https://gw-icap-keyvault.vault.azure.net/secrets/ManagementUIEndpoint>>"
+      ManagementUIEndpoint: "<<https://gw-icap-keyvault.vault.azure.net/secrets/managementUIEndpoint>>"
     userstoresecret:
       azurestorageaccountname: "<<https://gw-icap-keyvault.vault.azure.net/secrets/userStoreAccountName>>"
       azurestorageaccountkey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/userStoreAccountKey>>"

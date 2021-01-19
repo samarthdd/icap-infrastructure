@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mvp-icap-service
+  name: icap-service
   labels:
     app: {{ .Values.icapservice.applabel }}
 spec:
@@ -18,7 +18,7 @@ spec:
         prometheus.io/port: "{{ .Values.prometheus.metricsport }}"
     spec:
       containers:
-        - name: mvp-icap-service
+        - name: icap-service
           image: {{ .Values.imagestore.icapservice.registry}}{{ .Values.imagestore.icapservice.repository }}:{{ .Values.imagestore.icapservice.tag }}
           ports:
             - containerPort: 1344

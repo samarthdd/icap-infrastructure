@@ -53,7 +53,7 @@ archiveadaptationservice:
   exchange: adaptation-exchange
   rolename: archive-adaptation-service-role
 icapservice:
-  name: mvp-icap-service
+  name: icap-service
   applabel: adaptation
   replicas:
     min: 1

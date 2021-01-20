@@ -16,6 +16,7 @@ volumemountpath:
   transactions: /mnt/transactions
 prometheus:
   metricsport: 8081
+  metricspath: /metrics  
   pushgatewayendpoint: "http://pushgateway-prometheus-pushgateway:9091/metrics"
 queue:
   messagebrokersecret: "rabbitmq-service-default-user"

@@ -19,6 +19,6 @@ spec:
       - backend:
           serviceName: {{ .Values.managementui.service.name }}
           servicePort: {{ .Values.managementui.service.port }}
-        path: {{ .Values.managementui.ingress.name }}
+        path: {{ .Values.managementui.ingress.path }}
 
       

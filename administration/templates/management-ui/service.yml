@@ -3,11 +3,11 @@ kind: Service
 metadata:
   annotations:
     service.beta.kubernetes.io/azure-dns-label-name: management-ui
-  name: {{ .Values.managementui.service.name }}
+  name: {{ .Values.service.name }}
 spec:
+  type: ClusterIP
   selector:
-    app: {{ .Values.managementui.deployment.name }}
+    app: {{ .Values.deployment.name }}
   ports:
-    - port: {{ .Values.managementui.service.port }}
-      targetPort: {{ .Values.managementui.deployment.port }}
-  type: LoadBalancer
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.deployment.port }}

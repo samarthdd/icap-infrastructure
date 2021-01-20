@@ -8,10 +8,6 @@ metadata:
     draft: {{ .Values.draft | default "draft-app" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  annotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/path: {{ .Values.prometheus.metricspath }}
-    prometheus.io/port: "{{ .Values.prometheus.metricsport }}"
 spec:
   replicas: {{ .Values.ncfspolicyupdateservice.replicas }}
   selector:
@@ -21,6 +17,10 @@ spec:
     metadata:
       labels:
         app: {{ template "ncfs-policy-update-service.name" . }}  
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: {{ .Values.prometheus.metricspath }}
+        prometheus.io/port: "{{ .Values.prometheus.metricsport }}"
     spec:
       serviceAccountName: ncfs-policy-update-service-account
       containers:

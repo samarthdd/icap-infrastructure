@@ -1,6 +1,7 @@
 environment:
 prometheus:
   metricsport: 8081
+  metricspath: /metrics
 referencencfs:
   fullNameOverride: reference-ncfs
   applabel: reference-ncfs

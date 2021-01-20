@@ -10,6 +10,10 @@ spec:
     metadata:
       labels:
         app: {{ .Values.adaptationservice.name }}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: {{ .Values.prometheus.metricspath }}
+        prometheus.io/port: "{{ .Values.prometheus.metricsport }}"
     spec:
       serviceAccountName: {{ .Values.serviceAccount.adaptationname  }}
       containers:

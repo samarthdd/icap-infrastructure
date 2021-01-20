@@ -22,6 +22,10 @@ spec:
         draft: {{ .Values.draft | default "draft-app" }}
         release: {{ .Release.Name }}
       annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: {{ .Values.prometheus.metricspath }}
+        prometheus.io/port: "{{ .Values.transactionqueryservice.deployment.containerPort }}"
+      annotations:
         buildID: {{ .Values.buildID | default "" | quote }}
     spec:
       volumes:

@@ -9,5 +9,5 @@ spec:
   selector:
     app: {{ .Values.managementui.deployment.name }}
   ports:
-    - port: {{ .Values.managementui.service.name }}
-      targetPort: {{ .Values.managementui.deployment.name }}
+    - port: {{ .Values.managementui.service.port }}
+      targetPort: {{ .Values.managementui.deployment.port }}

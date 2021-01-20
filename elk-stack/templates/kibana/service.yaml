@@ -1,0 +1,35 @@
+{{- if .Values.kibana.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "kibana.fullname" . }}
+  labels: {{ include "kibana.labels" . | nindent 4 }}
+{{- if .Values.kibana.service.labels }}
+{{ toYaml .Values.kibana.service.labels | indent 4}}
+{{- end }}
+{{- with .Values.kibana.service.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
+spec:
+  type: {{ .Values.kibana.service.type }}
+{{- if .Values.kibana.service.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.kibana.service.loadBalancerIP }}
+{{- end }}
+{{- with .Values.kibana.service.loadBalancerSourceRanges }}
+  loadBalancerSourceRanges:
+{{ toYaml . | indent 4 }}
+{{- end }}
+  ports:
+    - port: {{ .Values.kibana.service.port }}
+{{- if .Values.kibana.service.nodePort }}
+      nodePort: {{ .Values.kibana.service.nodePort }}
+{{- end }}
+      protocol: TCP
+      name: {{ .Values.kibana.service.httpPortName | default "http" }}
+      targetPort: {{ .Values.kibana.httpPort }}
+  selector:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name | quote }}
+{{- end }}

@@ -11,5 +11,5 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /run/desktop/mnt/host/c/policymanagementapi
+    path: /var/local/rancher/host/c/policymanagementapi
     type: ""

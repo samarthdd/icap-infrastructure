@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ .Values.managementui.ingress.name }}
+    - {{ .Values.managementui.ingress.host }}
     secretName: tls-secret
   rules:
-  - host: {{ .Values.managementui.ingress.name }}
+  - host: {{ .Values.managementui.ingress.host }}
     http:
       paths:
       - backend:

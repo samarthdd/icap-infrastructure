@@ -11,6 +11,10 @@ spec:
     metadata:
       labels:
         app: {{ .Values.eventsubmissionservice.name }}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: {{ .Values.prometheus.metricspath }}
+        prometheus.io/port: "{{ .Values.prometheus.metricsport }}"
     spec:
       volumes:
         - name: {{ .Values.transactionstore.shareName }}

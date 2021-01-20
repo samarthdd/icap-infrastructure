@@ -12,6 +12,10 @@ spec:
     metadata:
       labels:
         app: {{ .Values.icapservice.applabel }}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: {{ .Values.prometheus.metricspath }}
+        prometheus.io/port: "{{ .Values.prometheus.metricsport }}"
     spec:
       containers:
         - name: mvp-icap-service

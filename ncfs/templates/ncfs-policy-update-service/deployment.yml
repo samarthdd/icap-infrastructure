@@ -17,9 +17,13 @@ spec:
     metadata:
       labels:
         app: {{ template "ncfs-policy-update-service.name" . }}  
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: {{ .Values.prometheus.metricspath }}
+        prometheus.io/port: "{{ .Values.prometheus.metricsport }}"
     spec:
       serviceAccountName: ncfs-policy-update-service-account
-      containers:    
+      containers:
       - name: {{ .Chart.Name }}
         image: {{ .Values.imagestore.ncfspolicyupdateservice.registry}}{{ .Values.imagestore.ncfspolicyupdateservice.repository }}:{{ .Values.imagestore.ncfspolicyupdateservice.tag }}
         ports:

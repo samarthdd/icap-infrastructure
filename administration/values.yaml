@@ -109,7 +109,7 @@ imagestore:
   identitymanagementservice:
     registry: ""
     repository: glasswallsolutions/identity-management-service
-    tag: main-2244df2
+    tag: main-21780f3
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
@@ -139,4 +139,4 @@ secrets:
       SmtpHost: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpHost>>"
       SmtpPort: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpPort>>"
       SmtpUser: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpUser>>"
-      SmtpPass: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpPass>>" 
+      SmtpPass: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpPass>>"

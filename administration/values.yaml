@@ -6,6 +6,11 @@ managementui:
   service:
     name: icap-management-ui-service
     port: 80
+  ingress:
+    name: icap-management-ui-ingress
+    port: 80
+    host: management-ui-develop.uksouth.cloudapp.azure.com
+    path: /(.*)
   config:
     transactionEventApiUrl: https://transaction-query-aggregator/api/v1
     policyManagementApiUrl: https://policy-management-api/api/v1
@@ -113,6 +118,9 @@ imagestore:
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
+  managementui:
+    tlsCrt: "<<https://gw-icap-keyvault.vault.azure.net/secrets/managementuiTlsCert>>"
+    tlsKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/managementuiTlsKey>>"
   transactionqueryaggregator:
     transactionqueryserviceref:
       username: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionQueryServiceUsername>>"

@@ -119,8 +119,8 @@ secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
   managementui:
-    tlsCrt: "<<>>"
-    tlsKey: "<<>>"
+    tlsCrt: "<<https://icap-neu-keyvault.vault.azure.net/secrets/management-ui-cert/2cc07447a95e4dd4af42d9d5d5fdfc54>>"
+    tlsKey: "<<https://icap-neu-keyvault.vault.azure.net/secrets/management-ui-tls-key/fe8f7d162d294f48aa29a1c34765c205>>"
   transactionqueryaggregator:
     transactionqueryserviceref:
       username: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionQueryServiceUsername>>"

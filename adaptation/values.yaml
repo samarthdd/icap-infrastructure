@@ -16,7 +16,7 @@ volumemountpath:
   transactions: /mnt/transactions
 prometheus:
   metricsport: 8081
-  metricspath: /metrics  
+  metricspath: /metrics
   pushgatewayendpoint: "http://pushgateway-prometheus-pushgateway:9091/metrics"
 queue:
   messagebrokersecret: "rabbitmq-service-default-user"
@@ -149,7 +149,7 @@ imagestore:
   transactionqueryservice:
     registry: ""
     repository: glasswallsolutions/transaction-query-service
-    tag: main-f1b85eb
+    tag: main-83c51ea
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"

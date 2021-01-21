@@ -3,7 +3,6 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: fluentd
-  namespace: icap-adaptation
   labels:
     k8s-app: fluentd-logging
     version: v1

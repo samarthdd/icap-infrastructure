@@ -10,5 +10,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: fluentd
-  namespace: icap-adaptation
 {{- end }}

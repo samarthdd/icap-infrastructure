@@ -25,7 +25,7 @@ spec:
         buildID: {{ .Values.buildID | default "" | quote }}
         prometheus.io/scrape: "true"
         prometheus.io/path: {{ .Values.prometheus.metricspath }}
-        prometheus.io/port: "{{ .Values.transactionqueryservice.deployment.containerPort }}"
+        prometheus.io/port: "{{ .Values.prometheus.metricsport }}"
     spec:
       volumes:
         - name: {{ .Values.transactionstore.shareName }}
@@ -42,6 +42,9 @@ spec:
             - name: http
               containerPort: {{ .Values.transactionqueryservice.deployment.containerPort }}
               protocol: TCP
+            - name: metrics
+              containerPort: {{ .Values.prometheus.metricsport }}
+              protocol: TCP
           {{- if .Values.transactionqueryservice.probes.enabled }}
           livenessProbe:
             httpGet:
@@ -54,7 +57,7 @@ spec:
           {{- end }}
           env:
             - name: ASPNETCORE_URLS
-              value: "https://+:443"
+              value: "https://+:443;http://+:{{ .Values.prometheus.metricsport }}"
             - name: username
               valueFrom:
                 secretKeyRef:

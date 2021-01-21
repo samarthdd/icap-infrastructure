@@ -33,7 +33,7 @@ spec:
           {{- end }}
           {{- if .Values.fluentd.elasticsearchport }}
           - name:  FLUENT_ELASTICSEARCH_PORT
-            value: {{ .Values.fluentd.elasticsearchport }}
+            value: "{{ .Values.fluentd.elasticsearchport }}"
           {{- end }}
           {{- if .Values.fluentd.elasticsearchscheme }}
           - name: FLUENT_ELASTICSEARCH_SCHEME
@@ -43,7 +43,7 @@ spec:
           # ================================================================
           {{- if .Values.fluentd.elasticsearchsslverify }}
           - name: FLUENT_ELASTICSEARCH_SSL_VERIFY
-            value: {{ .Values.fluentd.elasticsearchsslverify }}
+            value: "{{ .Values.fluentd.elasticsearchsslverify }}"
           {{- end }}
           # Option to configure elasticsearch plugin with tls
           # ================================================================

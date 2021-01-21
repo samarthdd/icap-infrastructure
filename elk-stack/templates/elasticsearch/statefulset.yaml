@@ -95,7 +95,7 @@ spec:
               matchExpressions:
               - key: app
                 operator: In
-               .Values.elasticsearch.
+                values:
                 - "{{ template "elasticsearch.uname" .}}"
             topologyKey: {{ .Values.elasticsearch.antiAffinityTopologyKey }}
       {{- else if eq .Values.elasticsearch.antiAffinity "soft" }}
@@ -108,7 +108,7 @@ spec:
                 matchExpressions:
                 - key: app
                   operator: In
-                 .Values.elasticsearch.
+                  values:
                   - "{{ template "elasticsearch.uname" . }}"
       {{- end }}
       {{- with .Values.elasticsearch.nodeAffinity }}

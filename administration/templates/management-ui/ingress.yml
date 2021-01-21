@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: {{ .Values.ingress.name }}
+  name: {{ .Values.managementui.ingress.name }}
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$1
@@ -10,15 +10,15 @@ metadata:
 spec:
   tls:
   - hosts:
-    - {{ .Values.ingress.host }}
+    - {{ .Values.managementui.ingress.host }}
     secretName: tls-secret
   rules:
-  - host: {{ .Values.ingress.host }}
+  - host: {{ .Values.managementui.ingress.host }}
     http:
       paths:
       - backend:
-          serviceName: {{ .Values.service.name }}
-          servicePort: {{ .Values.service.port }}
-        path: {{ .Values.ingress.path }}
+          serviceName: {{ .Values.managementui.service.name }}
+          servicePort: {{ .Values.managementui.service.port }}
+        path: {{ .Values.managementui.ingress.path }}
 
       

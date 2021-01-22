@@ -12,6 +12,7 @@ metadata:
   annotations:
 {{ toYaml . | indent 4 }}
 {{- end }}
+{{ include "elkstack.namespace" . | indent 2 }}
 spec:
   type: {{ .Values.kibana.service.type }}
 {{- if .Values.kibana.service.loadBalancerIP }}

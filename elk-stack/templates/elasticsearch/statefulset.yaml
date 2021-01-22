@@ -11,6 +11,7 @@ metadata:
     {{- range $key, $value := .Values.elasticsearch.labels }}
     {{ $key }}: {{ $value | quote }}
     {{- end }}
+{{ include "elkstack.namespace" . | indent 2 }}
   annotations:
     esMajorVersion: "{{ include "elasticsearch.esMajorVersion" . }}"
 spec:

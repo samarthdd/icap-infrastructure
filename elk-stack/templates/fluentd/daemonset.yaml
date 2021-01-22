@@ -6,6 +6,7 @@ metadata:
   labels:
     k8s-app: fluentd-logging
     version: v1
+{{ include "elkstack.namespace" . | indent 2 }}
 spec:
   selector:
     matchLabels:

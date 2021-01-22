@@ -504,7 +504,7 @@ kibana:
 fluentd:
   enabled: true
   
-  elasticssearchhost: elasticsearch-master
+  elasticsearchhost: elasticsearch-master
   elasticsearchport: 9200
   elasticsearchscheme: http
   elasticsearchsslverify: true

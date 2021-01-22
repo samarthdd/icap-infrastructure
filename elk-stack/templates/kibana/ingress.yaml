@@ -12,6 +12,7 @@ metadata:
   annotations:
 {{ toYaml . | indent 4 }}
 {{- end }}
+{{ include "elkstack.namespace" . | indent 2 }}
 spec:
 {{- if .Values.kibana.ingress.tls }}
   tls:

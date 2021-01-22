@@ -520,6 +520,9 @@ fluentd:
     limits:
       memory: 200Mi
 
+# Force namespace of namespaced resources
+forceNamespace: null
+
 imagestore:
   elasticsearch:
     registry: docker.elastic.co/

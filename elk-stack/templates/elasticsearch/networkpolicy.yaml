@@ -9,6 +9,7 @@ metadata:
     release: {{ .Release.Name | quote }}
     chart: "{{ .Chart.Name }}"
     app: "{{ template "elasticsearch.uname" . }}"
+{{ include "elkstack.namespace" . | indent 2 }}
 spec:
   podSelector:
     matchLabels:

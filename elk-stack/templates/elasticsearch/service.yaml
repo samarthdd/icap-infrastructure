@@ -15,6 +15,7 @@ metadata:
 {{- if .Values.elasticsearch.service.labels }}
 {{ toYaml .Values.elasticsearch.service.labels | indent 4}}
 {{- end }}
+{{ include "elkstack.namespace" . | indent 2 }}
   annotations:
 {{ toYaml .Values.elasticsearch.service.annotations | indent 4 }}
 spec:

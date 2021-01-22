@@ -10,7 +10,7 @@ spec:
   - name: icap-port
     port: 1344
     targetPort: 1344
-  - name: mvp-icap-service
+  - name: icap-service
     port: 1345
     targetPort: 1345
   selector:

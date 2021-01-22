@@ -1,0 +1,53 @@
+{{- if .Values.kibana.enabled }}
+{{- if .Values.kibana.ingress.enabled -}}
+{{- $fullName := include "kibana.fullname" . -}}
+{{- $httpPort := .Values.kibana.httpPort -}}
+{{- $ingressPath := .Values.kibana.ingress.path -}}
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  labels: {{ include "kibana.labels" . | nindent 4 }}
+{{- with .Values.kibana.ingress.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
+spec:
+{{- if .Values.kibana.ingress.tls }}
+  tls:
+  {{- if .ingressPath }}
+  {{- range .Values.kibana.ingress.tls }}
+  - hosts:
+    {{- range .hosts }}
+      - {{ . }}
+    {{- end }}
+    secretName: {{ .secretName }}
+    {{- end }}
+  {{- else }}
+{{ toYaml .Values.kibana.ingress.tls | indent 4 }}
+  {{- end }}
+{{- end }}
+  rules:
+  {{- range .Values.kibana.ingress.hosts }}
+    {{- if $ingressPath }}
+    - host: {{ . }}
+      http:
+        paths:
+          - path: {{ $ingressPath }}
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: {{ $httpPort }}
+    {{- else }}
+    - host: {{ .host }}
+      http:
+        paths:
+        {{- range .paths }}
+          - path: {{ .path }}
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: {{ .servicePort | default $httpPort }}
+        {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- end }}

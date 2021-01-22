@@ -97,6 +97,12 @@ cicapservice:
     AccessLog: /proc/self/fd/1
     Service: echo srv_echo.so
     Include: gw_rebuild.conf
+  rebuild:
+    Service: gw_rebuild gw_rebuild.so
+    gw_rebuild.MaxObjectSize: 2000M
+    gw_rebuild.Allow204Responses: !!string on
+    gw_rebuild.ProxyAppLocation: /usr/local/bin/cloud-proxy-app
+    gw_rebuild.DataCleanup: !!string on    
 icapservicemetricsexporter:
   icaphost: localhost
   icapport: 1344

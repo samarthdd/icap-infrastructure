@@ -62,7 +62,7 @@ spec:
           {{- if .Values.imageRenderer.image.sha }}
           image: "{{ .Values.imageRenderer.image.repository }}:{{ .Values.imageRenderer.image.tag }}@sha256:{{ .Values.imageRenderer.image.sha }}"
           {{- else }}
-          image: "{{ .Values.imagestore.imageRenderer.registry }}{{ .Values.imagestore.imageRenderer.repository }}:{{ .Values.imagestore.imageRenderer.tag }}"
+          image: "{{ .Values.imagestore.imageRenderer.registry }}/{{ .Values.imagestore.imageRenderer.repository }}:{{ .Values.imagestore.imageRenderer.tag }}"
           {{- end }}
           imagePullPolicy: {{ .Values.imageRenderer.image.pullPolicy }}
         {{- if .Values.imageRenderer.command }}

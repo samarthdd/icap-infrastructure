@@ -67,7 +67,7 @@ image:
 
 testFramework:
   enabled: true
-  registry: ""
+  registry: "gwicapcontainerregistry.azurecr.io"
   repository: glasswallsolutions/bats
   tag: "v1.1.0"
   imagePullPolicy: IfNotPresent
@@ -456,7 +456,17 @@ dashboards:
        json: |
          $RAW_JSON
      custom-dashboard:
-       file: dashboards/custom-dashboard.json
+       file: dashboards/k8s-resources-cluster.json
+       file: dashboards/cluster-total.json
+       file: dashboards/k8s-resources-namespace.json
+       file: dashboards/k8s-resources-namespace.json
+       file: dashboards/k8s-resources-node.json
+       file: dashboards/k8s-resources-pod.json
+       file: dashboards/k8s-resources-workload.json
+       file: dashboards/k8s-resources-workloads-namespace.json
+       file: dashboards/kubelet.json
+       file: dashboards/namespace-by-pod.json
+       file: dashboards/namespace-by-workload.json
      prometheus-stats:
        gnetId: 2
        revision: 2
@@ -675,27 +685,27 @@ imageRenderer:
 #     memory: 50Mi
 imagestore:
   grafana:
-    registry: ""
+    registry: "gwicapcontainerregistry.azurecr.io"
     repository: glasswallsolutions/grafana
     tag: v7.3.6
   testFramework:
-    registry: ""
+    registry: "gwicapcontainerregistry.azurecr.io"
     repository: glasswallsolutions/bats
     tag: "v1.1.0"    
   downloadDashboardsImage:
-    registry: ""
+    registry: "gwicapcontainerregistry.azurecr.io"
     repository: glasswallsolutions/curl
     tag: 7.73.0
   initChownData:
-    registry: ""
+    registry: "gwicapcontainerregistry.azurecr.io"
     repository: glasswallsolutions/busybox
     tag: "1.31.1"
   sidecar:
-    registry: ""
+    registry: "gwicapcontainerregistry.azurecr.io"
     repository: glasswallsolutions/k8s-sidecar
     tag: 1.1.0
   imageRenderer:
-    registry: ""
+    registry: "gwicapcontainerregistry.azurecr.io"
     repository: glasswallsolutions/grafana-image-renderer
     tag: latest
  

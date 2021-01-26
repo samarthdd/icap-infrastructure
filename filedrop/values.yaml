@@ -1,7 +1,6 @@
 environment:
-
 imagestore:
   icapfiledropui:
     registry: ""
     repository: glasswallsolutions/icap-filedrop-ui
-    tag: develop-0000000
+    tag: develop-8efb367

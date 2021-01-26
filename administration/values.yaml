@@ -118,9 +118,6 @@ imagestore:
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
-  managementui:
-    tlsCrt: "<<https://gw-icap-keyvault.vault.azure.net/secrets/managementuiTlsCert>>"
-    tlsKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/managementuiTlsKey>>"
   transactionqueryaggregator:
     transactionqueryserviceref:
       username: "<<https://gw-icap-keyvault.vault.azure.net/secrets/transactionQueryServiceUsername>>"

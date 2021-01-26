@@ -148,7 +148,13 @@ transactionqueryservice:
   volumes:
     transactionstore:
       shareName: transactions
-  resources: {}
+  resources:
+    limits:
+      cpu: "1"
+      memory: 500Mi
+    requests:
+      cpu: 500m
+      memory: 100Mi
   nodeSelector: {}
   tolerations: []
   affinity: {}

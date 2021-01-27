@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.filedropui.ingress.name }}
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  tls:
+  - hosts:
+    - {{ .Values.filedropui.ingress.host }}
+    secretName: tls-secret
+  rules:
+  - host: {{ .Values.filedropui.ingress.host }}
+    http:
+      paths:
+      - backend:
+          serviceName: {{ .Values.filedropui.service.name }}
+          servicePort: {{ .Values.filedropui.service.port }}
+        path: {{ .Values.filedropui.ingress.path }}
+
+      

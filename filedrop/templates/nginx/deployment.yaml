@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "nginx.fullname" . }}
+  labels:
+    {{- include "nginx.labels" . | nindent 4 }}
+spec:
+  revisionHistoryLimit: 0
+  replicas: {{ .Values.nginx.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "nginx.matchLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "nginx.labels" . | nindent 8 }}
+      annotations:
+        buildID: {{ .Values.buildID | default "" | quote }}
+    spec:    
+      volumes:
+      - name: config-volume
+        configMap:
+          name: {{ template "nginx.fullname" . }}
+      containers: 
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.imagestore.nginx.registry }}{{ .Values.imagestore.nginx.repository }}:{{ .Values.imagestore.nginx.tag }}"
+          ports:
+            - name: http
+              containerPort: {{ .Values.nginx.deployment.containerPort }}
+              protocol: TCP
+          {{- if .Values.nginx.probes.enabled }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          {{- end }}
+          volumeMounts:
+          - name: config-volume
+            mountPath: /etc/nginx
+          env:
+            {{- range $key, $value := .Values.nginx.configuration }}
+            - name: {{ $key }}
+              value: "{{ $value }}"
+            {{- end }}
+          resources:
+{{ toYaml .Values.nginx.resources | indent 12 }}
+    {{- with .Values.nginx.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.nginx.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.nginx.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+      imagePullSecrets:
+        - name: nginx-registry-credential

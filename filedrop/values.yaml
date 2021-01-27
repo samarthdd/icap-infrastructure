@@ -1,8 +1,59 @@
 environment:
+
+nginx:
+  name: nginx
+  deployment:
+    containerPort: 80
+  service:
+    name: nginx-service
+    port: 80
+  probes:
+    enabled: false
+  replicaCount: 1
+  configuration:
+    NGINX_ENTRYPOINT_QUIET_LOGS: "1"
+  resources: {}
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+  probes:
+    enabled: false
+  ingress:
+    enabled: false
+    annotations: {}
+    path: /
+    tls: []
+
+filedropui:
+  deployment:
+    name: file-drop-ui
+    port: 8080
+  service:
+    name: file-drop-ui-service
+    port: 80
+  ingress:
+    name: file-drop-ui-ingress
+    port: 80
+    host: file-drop-ui-develop.uksouth.cloudapp.azure.com
+    path: /
+
+secrets:
+  containerregistry:
+    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
+  filedropui:
+    tlsCrt: "<<https://gw-icap-keyvault.vault.azure.net/secrets/fileDropTlsCert>>"
+    tlsKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/fileDropTlsKey>>"
+
 imagestore:
-  icapfiledropui:
+  filedropui:
     registry: ""
     repository: glasswallsolutions/icap-filedrop-ui
     tag: develop-8efb367
   icapfiledropapi:
+    registry: ""
+    repository: glasswallsolutions/icap-rebuild-api
     tag: develop-d65979b
+  nginx:
+    registry: ""
+    repository: nginx
+    tag: alpine

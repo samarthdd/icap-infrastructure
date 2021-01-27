@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.filedropui.deployment.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.filedropui.deployment.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.filedropui.deployment.name }}
+    spec:
+      containers:
+        - name: file-drop-ui
+          image: {{ .Values.imagestore.filedropui.registry }}{{ .Values.imagestore.filedropui.repository }}:{{ .Values.imagestore.filedropui.tag }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: {{ .Values.filedropui.deployment.port }}
+          env:
+            - name: NODE_TLS_REJECT_UNAUTHORIZED
+              value: "0" 
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+      imagePullSecrets:
+        - name: file-drop-ui-registry-credential

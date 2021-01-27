@@ -26,23 +26,23 @@ chart: {{ template "icap-file-drop.chart" . }}
 heritage: {{ .Release.Service }}
 {{- end -}}
 
-{{- define "policy-management-api.labels" -}}
-{{ include "policy-management-api.matchLabels" . }}
+{{- define "filedropui.labels" -}}
+{{ include "filedropui.matchLabels" . }}
 {{ include "icap-file-drop.common.metaLabels" . }}
 {{- end -}}
 
-{{- define "policy-management-api.matchLabels" -}}
+{{- define "filedropui.matchLabels" -}}
 component: {{ .Values.policymanagementapi.name | quote }}
 {{ include "icap-file-drop.common.matchLabels" . }}
 {{- end -}}
 
-{{- define "transactionqueryaggregator.labels" -}}
-{{ include "transactionqueryaggregator.matchLabels" . }}
+{{- define "filedropapi.labels" -}}
+{{ include "filedropapi.matchLabels" . }}
 {{ include "icap-file-drop.common.metaLabels" . }}
 {{- end -}}
 
-{{- define "transactionqueryaggregator.matchLabels" -}}
-component: {{ .Values.transactionqueryaggregator.name | quote }}
+{{- define "filedropapi.matchLabels" -}}
+component: {{ .Values.filedropapi.name | quote }}
 {{ include "icap-file-drop.common.matchLabels" . }}
 {{- end -}}
 
@@ -74,11 +74,11 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{/*
-Create a fully qualified policy-management-api name.
+Create a fully qualified filedropui name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
 
-{{- define "policy-management-api.fullname" -}}
+{{- define "filedropui.fullname" -}}
 {{- if .Values.policymanagementapi.fullnameOverride -}}
 {{- .Values.policymanagementapi.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -92,19 +92,19 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{/*
-Create a fully qualified transactionqueryaggregator name.
+Create a fully qualified filedropapi name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
 
-{{- define "transactionqueryaggregator.fullname" -}}
-{{- if .Values.transactionqueryaggregator.fullnameOverride -}}
-{{- .Values.transactionqueryaggregator.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- define "filedropapi.fullname" -}}
+{{- if .Values.filedropapi.fullnameOverride -}}
+{{- .Values.filedropapi.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- if contains $name .Release.Name -}}
-{{- printf "%s-%s" .Release.Name .Values.transactionqueryaggregator.name | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s" .Release.Name .Values.filedropapi.name | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
-{{- printf "%s-%s-%s" .Release.Name $name .Values.transactionqueryaggregator.name | trunc 63 | trimSuffix "-" -}}
+{{- printf "%s-%s-%s" .Release.Name $name .Values.filedropapi.name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}

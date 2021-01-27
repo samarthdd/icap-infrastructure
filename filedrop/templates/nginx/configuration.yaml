@@ -12,5 +12,8 @@ data:
             location / {
                 proxy_pass http://file-drop-ui-service/;
             }
+            location /api {
+                proxy_pass http://file-drop-api-service/;
+            }
         }
     }

@@ -1,7 +1,7 @@
-{{- if .Values.filedropui.ingress.enabled -}}
-{{- $fullName := include "filedropui.fullname" . -}}
-{{- $servicePort := .Values.filedropui.service.port -}}
-{{- $ingressPath := .Values.filedropui.ingress.path -}}
+{{- if .Values.filedropapi.ingress.enabled -}}
+{{- $fullName := include "filedropapi.fullname" . -}}
+{{- $servicePort := .Values.filedropapi.service.port -}}
+{{- $ingressPath := .Values.filedropapi.ingress.path -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
 {{- else -}}
@@ -11,15 +11,15 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app: {{ .Values.filedropui.deployment.name }}
+    app: {{ .Values.filedropapi.deployment.name }}
 {{- with .Values.ingress.annotations }}
   annotations:
 {{ toYaml . | indent 4 }}
 {{- end }}
 spec:
-{{- if .Values.filedropui.ingress.tls }}
+{{- if .Values.filedropapi.ingress.tls }}
   tls:
-  {{- range .Values.filedropui.ingress.tls }}
+  {{- range .Values.filedropapi.ingress.tls }}
     - hosts:
       {{- range .hosts }}
         - {{ . }}
@@ -28,7 +28,7 @@ spec:
   {{- end }}
 {{- end }}
   rules:
-  {{- range .Values.filedropui.ingress.hosts }}
+  {{- range .Values.filedropapi.ingress.hosts }}
     - host: {{ . }}
       http:
         paths:

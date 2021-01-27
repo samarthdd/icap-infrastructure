@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: file-drop-ui
-          image: {{ .Values.imagestore.filedropui.registry }}{{ .Values.imagestore.filedropui.repository }}:{{ .Values.imagestore.filedropui.tag }}
+          image: {{ .Values.imagestore.icapfiledropui.registry }}{{ .Values.imagestore.icapfiledropui.repository }}:{{ .Values.imagestore.icapfiledropui.tag }}
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: {{ .Values.filedropui.deployment.port }}

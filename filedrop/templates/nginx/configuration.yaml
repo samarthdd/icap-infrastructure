@@ -10,10 +10,10 @@ data:
         client_max_body_size 0;
         server {
             location / {
-                proxy_pass http://file-drop-ui-service/;
+                proxy_pass http://{{ .Values.filedropui.service.name }}/;
             }
             location /api {
-                proxy_pass http://file-drop-api-service/;
+                proxy_pass http://{{ .Values.filedropapi.service.name }}/;
             }
         }
     }

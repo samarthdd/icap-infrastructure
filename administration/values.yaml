@@ -145,3 +145,4 @@ secrets:
       SmtpPort: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpPort>>"
       SmtpUser: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpUser>>"
       SmtpPass: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpPass>>"
+      SmtpSecureSocketOptions: "<<https://gw-icap-keyvault.vault.azure.net/secrets/smtpSecureSocketOptions>>"

@@ -51,9 +51,9 @@ spec:
       {{- if .Values.imageRenderer.priorityClassName }}
       priorityClassName: {{ .Values.imageRenderer.priorityClassName }}
       {{- end }}
-      {{- if .Values.imageRenderer.image.pullSecrets }}
+      {{- if .Values.image.pullSecrets }}
       imagePullSecrets:
-      {{- range .Values.imageRenderer.image.pullSecrets }}
+      {{- range .Values.image.pullSecrets }}
         - name: {{ . }}
       {{- end}}
       {{- end }}
@@ -62,7 +62,7 @@ spec:
           {{- if .Values.imageRenderer.image.sha }}
           image: "{{ .Values.imageRenderer.image.repository }}:{{ .Values.imageRenderer.image.tag }}@sha256:{{ .Values.imageRenderer.image.sha }}"
           {{- else }}
-          image: "{{ .Values.imagestore.imageRenderer.registry }}/{{ .Values.imagestore.imageRenderer.repository }}:{{ .Values.imagestore.imageRenderer.tag }}"
+          image: "{{ .Values.imagestore.imageRenderer.registry }}{{ .Values.imagestore.imageRenderer.repository }}:{{ .Values.imagestore.imageRenderer.tag }}"
           {{- end }}
           imagePullPolicy: {{ .Values.imageRenderer.image.pullPolicy }}
         {{- if .Values.imageRenderer.command }}

@@ -52,7 +52,7 @@ livenessProbe:
 # schedulerName: "default-scheduler"
 
 image:
-  registry: gwicapcontainerregistry.azurecr.io
+  registry: ""
   repository: glasswallsolutions/grafana
   tag: v7.3.6
   sha: ""
@@ -62,12 +62,12 @@ image:
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
-  # pullSecrets:
-  #   - myRegistrKeySecretName
+  pullSecrets:
+    - containerregistry
 
 testFramework:
   enabled: true
-  registry: "gwicapcontainerregistry.azurecr.io"
+  registry: ""
   repository: glasswallsolutions/bats
   tag: "v1.1.0"
   imagePullPolicy: IfNotPresent
@@ -96,9 +96,9 @@ extraEmptyDirMounts: []
 # priorityClassName:
 
 downloadDashboardsImage:
-  registry: gwicapcontainerregistry.azurecr.io
+  registry: ""
   repository: glasswallsolutions/curl
-  tag: 7.73.0
+  tag: v7.73.0
   sha: ""
   pullPolicy: IfNotPresent
 
@@ -258,7 +258,7 @@ initChownData:
   ## initChownData container image
   ##
   image:
-    registry: gwicapcontainerregistry.azurecr.io
+    registry: ""
     repository: glasswallsolutions/busybox
     tag: "1.31.1"
     sha: ""
@@ -564,9 +564,9 @@ smtp:
 ## Requires at least Grafana 5 to work and can't be used together with parameters dashboardProviders, datasources and dashboards
 sidecar:
   image:
-    registry: gwicapcontainerregistry.azurecr.io
+    registry: ""
     repository: glasswallsolutions/k8s-sidecar
-    tag: 1.1.0
+    tag: hardened
     sha: ""
   imagePullPolicy: IfNotPresent
   resources: {}
@@ -685,27 +685,26 @@ imageRenderer:
 #     memory: 50Mi
 imagestore:
   grafana:
-    registry: "gwicapcontainerregistry.azurecr.io"
+    registry: ""
     repository: glasswallsolutions/grafana
-    tag: v7.3.6
+    tag: "v7.3.6"
   testFramework:
-    registry: "gwicapcontainerregistry.azurecr.io"
+    registry: ""
     repository: glasswallsolutions/bats
     tag: "v1.1.0"    
   downloadDashboardsImage:
-    registry: "gwicapcontainerregistry.azurecr.io"
+    registry: ""
     repository: glasswallsolutions/curl
-    tag: 7.73.0
+    tag: "v7.73.0"
   initChownData:
-    registry: "gwicapcontainerregistry.azurecr.io"
+    registry: ""
     repository: glasswallsolutions/busybox
     tag: "1.31.1"
   sidecar:
-    registry: "gwicapcontainerregistry.azurecr.io"
+    registry: ""
     repository: glasswallsolutions/k8s-sidecar
-    tag: 1.1.0
+    tag: "hardened"
   imageRenderer:
-    registry: "gwicapcontainerregistry.azurecr.io"
+    registry: ""
     repository: glasswallsolutions/grafana-image-renderer
-    tag: latest
- 
+    tag: "hardened"

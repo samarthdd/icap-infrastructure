@@ -5,7 +5,7 @@ podSecurityPolicy:
   enabled: false
 
 imagePullSecrets:
-# - name: "image-pull-secret"
+ - name: "containerregistry"
 
 ## Define serviceAccount names for components. Defaults to component's fully qualified name.
 ##
@@ -1580,20 +1580,20 @@ forceNamespace: null
 imagestore:
   server:
     registry: ""
-    repository: gwicapcontainerregistry.azurecr.io/prometheus/prometheus
+    repository: glasswallsolutions/prometheus
     tag: v2.21.0
   configmap-reload:
     registry: ""
-    repository: jimmidyson/configmap-reload
-    tag: v0.4.0
+    repository: glasswallsolutions/configmap-reload
+    tag: latest
   nodeExporter:
     registry: ""
-    repository: gwicapcontainerregistry.azurecr.io/prometheus/node-exporter
-    tag: v1.0.1
+    repository: glasswallsolutions/node-exporter
+    tag: latest
   pushgateway:
     registry: ""
-    repository: gwicapcontainerregistry.azurecr.io/prometheus/pushgateway
-    tag: v1.2.0
+    repository: glasswallsolutions/pushgateway
+    tag: latest
 
   
   

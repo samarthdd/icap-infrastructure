@@ -52,7 +52,7 @@ livenessProbe:
 # schedulerName: "default-scheduler"
 
 image:
-  registry: gwicapcontainerregistry.azurecr.io
+  registry: ""
   repository: glasswallsolutions/grafana
   tag: v7.3.6
   sha: ""
@@ -62,8 +62,8 @@ image:
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   ##
-  # pullSecrets:
-  #   - myRegistrKeySecretName
+  pullSecrets:
+    - containerregistry
 
 testFramework:
   enabled: true
@@ -96,9 +96,9 @@ extraEmptyDirMounts: []
 # priorityClassName:
 
 downloadDashboardsImage:
-  registry: gwicapcontainerregistry.azurecr.io
+  registry: ""
   repository: glasswallsolutions/curl
-  tag: 7.73.0
+  tag: v7.73.0
   sha: ""
   pullPolicy: IfNotPresent
 
@@ -258,7 +258,7 @@ initChownData:
   ## initChownData container image
   ##
   image:
-    registry: gwicapcontainerregistry.azurecr.io
+    registry: ""
     repository: glasswallsolutions/busybox
     tag: "1.31.1"
     sha: ""
@@ -456,7 +456,17 @@ dashboards:
        json: |
          $RAW_JSON
      custom-dashboard:
-       file: dashboards/custom-dashboard.json
+       file: dashboards/k8s-resources-cluster.json
+       file: dashboards/cluster-total.json
+       file: dashboards/k8s-resources-namespace.json
+       file: dashboards/k8s-resources-namespace.json
+       file: dashboards/k8s-resources-node.json
+       file: dashboards/k8s-resources-pod.json
+       file: dashboards/k8s-resources-workload.json
+       file: dashboards/k8s-resources-workloads-namespace.json
+       file: dashboards/kubelet.json
+       file: dashboards/namespace-by-pod.json
+       file: dashboards/namespace-by-workload.json
      prometheus-stats:
        gnetId: 2
        revision: 2
@@ -554,9 +564,9 @@ smtp:
 ## Requires at least Grafana 5 to work and can't be used together with parameters dashboardProviders, datasources and dashboards
 sidecar:
   image:
-    registry: gwicapcontainerregistry.azurecr.io
+    registry: ""
     repository: glasswallsolutions/k8s-sidecar
-    tag: 1.1.0
+    tag: hardened
     sha: ""
   imagePullPolicy: IfNotPresent
   resources: {}
@@ -677,7 +687,7 @@ imagestore:
   grafana:
     registry: ""
     repository: glasswallsolutions/grafana
-    tag: v7.3.6
+    tag: "v7.3.6"
   testFramework:
     registry: ""
     repository: glasswallsolutions/bats
@@ -685,7 +695,7 @@ imagestore:
   downloadDashboardsImage:
     registry: ""
     repository: glasswallsolutions/curl
-    tag: 7.73.0
+    tag: "v7.73.0"
   initChownData:
     registry: ""
     repository: glasswallsolutions/busybox
@@ -693,9 +703,8 @@ imagestore:
   sidecar:
     registry: ""
     repository: glasswallsolutions/k8s-sidecar
-    tag: 1.1.0
+    tag: "hardened"
   imageRenderer:
     registry: ""
     repository: glasswallsolutions/grafana-image-renderer
-    tag: latest
- 
+    tag: "hardened"

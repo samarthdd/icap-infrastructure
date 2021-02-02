@@ -122,16 +122,17 @@ podPortName: grafana
 ## ref: http://kubernetes.io/docs/user-guide/services/
 ##
 service:
-  type: NodePort
+  type: LoadBalancer
   port: 80
   targetPort: 3000
-  nodePort: 32325
+  #nodePort: 32325
     # targetPort: 4181 To be used with a proxy extraContainer
   annotations: {}
   labels: {}
   portName: service
-  #loadBalancerSourceRanges:
-  #- 0.0.0.0
+  loadBalancerSourceRanges:
+  - 212.59.65.142/32
+  - 157.245.44.137/32
 serviceMonitor:
   ## If true, a ServiceMonitor CRD is created for a prometheus operator
   ## https://github.com/coreos/prometheus-operator

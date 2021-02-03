@@ -279,7 +279,7 @@ initChownData:
 
 # Administrator credentials when not using an existing secret (see below)
 adminUser: admin
-# adminPassword: strongpassword
+adminPassword: glasswall
 
 # Use an existing secret for the admin user.
 admin:
@@ -453,21 +453,47 @@ dashboardProviders:
 ##
 dashboards:
    default:
-     some-dashboard:
-       json: |
-         $RAW_JSON
-     custom-dashboard:
-       file: dashboards/k8s-resources-cluster.json
+    # some-dashboard:
+     #  json: |
+      #   $RAW_JSON
+     custome-dashboard_1:
        file: dashboards/cluster-total.json
+     custome-dashboard_2:
        file: dashboards/k8s-resources-namespace.json
-       file: dashboards/k8s-resources-namespace.json
+     custome-dashboard_3:
        file: dashboards/k8s-resources-node.json
+     custome-dashboard_4:
        file: dashboards/k8s-resources-pod.json
+     custome-dashboard_5:
        file: dashboards/k8s-resources-workload.json
+     custome-dashboard_6:
        file: dashboards/k8s-resources-workloads-namespace.json
-       file: dashboards/kubelet.json
-       file: dashboards/namespace-by-pod.json
+     custome-dashboard_7:
        file: dashboards/namespace-by-workload.json
+     custome-dashboard_8:
+       file: dashboards/node-cluster-rsrc-use.json
+     custome-dashboard_9:
+       file: dashboards/node-rsrc-use.json
+     custome-dashboard_10:
+       file: dashboards/nodes.json
+     custome-dashboard_11:
+       file: dashboards/persistentvolumesusage.json
+     custome-dashboard_12:
+       file: dashboards/pod-total.json
+     custome-dashboard_13:
+       file: dashboards/workload-total.json
+     custome-dashboard_14:
+       file: dashboards/etcd.json
+     custome-dashboard_15:
+       file: dashboards/k8s-coredns.json
+     custome-dashboard_16:
+       file: dashboards/k8s-cluster-metrics_rev1.json
+     custome-dashboard_17:
+       file: dashboards/Rabbitmq-overview.json
+     custome-dashboard_18:
+       file: dashboards/rabbitmq-monitoring.json
+     custome-dashboard_19:
+       file: dashboards/apiserver.json
      prometheus-stats:
        gnetId: 2
        revision: 2

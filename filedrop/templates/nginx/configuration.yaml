@@ -13,7 +13,7 @@ data:
                 proxy_pass http://{{ .Values.filedropui.service.name }}/;
             }
             location /api {
-                proxy_pass http://{{ .Values.filedropapi.service.name }}/;
+                proxy_pass http://{{ .Values.filedropapi.service.name }};
             }
         }
     }

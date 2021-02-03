@@ -6,6 +6,7 @@ nginx:
     name: file-drop-nginx
     containerPort: 80
   service:
+    type: ClusterIP
     name: nginx-service
     port: 80
   probes:

@@ -1,18 +1,6 @@
 apiVersion: cert-manager.io/v1alpha2
-kind: ClusterIssuer
+kind: Issuer
 metadata:
-  name: letsencryptapi
+  name: selfsigning-issuerapi
 spec:
-  acme:
-    server: https://acme-v02.api.letsencrypt.org/directory
-    email: support@glasswallsolutions.com
-    privateKeySecretRef:
-      name: letsencrypt
-    solvers:
-    - http01:
-        ingress:
-          class: nginx
-          podTemplate:
-            spec:
-              nodeSelector:
-                "kubernetes.io/os": linux
+  selfSigned: {} 

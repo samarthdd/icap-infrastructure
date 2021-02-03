@@ -279,7 +279,7 @@ initChownData:
 
 # Administrator credentials when not using an existing secret (see below)
 adminUser: admin
-adminPassword: glasswall
+#adminPassword: glasswall
 
 # Use an existing secret for the admin user.
 admin:

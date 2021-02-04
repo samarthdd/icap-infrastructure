@@ -35,10 +35,10 @@ filedropui:
     name: file-drop-ui-service
     port: 80
   ingress:
-    enabled: false
-    annotations: {}
+    name: file-drop-ui-service-ingress
+    port: 80
+    host: file-drop-develop.uksouth.cloudapp.azure.com
     path: /
-    tls: []
 
 filedropapi:
   name: file-drop-api
@@ -49,20 +49,10 @@ filedropapi:
     name: file-drop-api-service
     port: 80
   ingress:
-    enabled: false
-    annotations: {}
-    path: /
-    tls: []
-
-secrets:
-  containerregistry:
-    dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"
-  filedropui:
-    tlsCrt: "<<https://gw-icap-keyvault.vault.azure.net/secrets/fileDropTlsCert>>"
-    tlsKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/fileDropTlsKey>>"
-  filedropapi:
-    tlsCrt: "<<https://gw-icap-keyvault.vault.azure.net/secrets/fileDropTlsCert>>"
-    tlsKey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/fileDropTlsKey>>"
+    name: file-drop-api-service-ingress
+    port: 80
+    host: file-drop-develop.uksouth.cloudapp.azure.com
+    path: /api
 
 imagestore:
   icapfiledropui:

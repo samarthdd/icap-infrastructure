@@ -35,10 +35,10 @@ filedropui:
     name: file-drop-ui-service
     port: 80
   ingress:
-    name: file-drop-ui-service-ingress
-    port: 80
-    host: file-drop-develop.uksouth.cloudapp.azure.com
+    enabled: false
+    annotations: {}
     path: /
+    tls: []
 
 filedropapi:
   name: file-drop-api
@@ -49,10 +49,10 @@ filedropapi:
     name: file-drop-api-service
     port: 80
   ingress:
-    name: file-drop-api-service-ingress
-    port: 80
-    host: file-drop-develop.uksouth.cloudapp.azure.com
+    enabled: false
+    annotations: {}
     path: /api
+    tls: []
 
 imagestore:
   icapfiledropui:

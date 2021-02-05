@@ -1,0 +1,16 @@
+{{- if .Values.kibana.enabled }}
+{{- if .Values.kibana.kibanaConfig }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "kibana.fullname" . }}-config
+  labels: {{ include "kibana.labels" . | nindent 4 }}
+{{ include "elkstack.namespace" . | indent 2 }}
+data:
+{{- range $path, $config := .Values.kibana.kibanaConfig }}
+  {{ $path }}: |
+{{ tpl $config $ | indent 4 -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}

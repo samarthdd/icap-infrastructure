@@ -1,0 +1,57 @@
+{{- if .Values.elasticsearch.enabled }}
+{{- if .Values.elasticsearch.ingress.enabled -}}
+{{- $fullName := include "elasticsearch.uname" . -}}
+{{- $httpPort := .Values.elasticsearch.httpPort -}}
+{{- $ingressPath := .Values.elasticsearch.ingress.path -}}
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app: {{ .Chart.Name }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+{{ include "elkstack.namespace" . | indent 2 }}
+{{- with .Values.elasticsearch.ingress.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
+spec:
+{{- if .Values.elasticsearch.ingress.tls }}
+  tls:
+  {{- if .ingressPath }}
+  {{- range .Values.elasticsearch.ingress.tls }}
+    - hosts:
+      {{- range .hosts }}
+        - {{ . }}
+      {{- end }}
+      secretName: {{ .secretName }}
+    {{- end }}
+  {{- else }}
+{{ toYaml .Values.elasticsearch.ingress.tls | indent 4 }}
+  {{- end }}
+{{- end }}
+  rules:
+  {{- range .Values.elasticsearch.ingress.hosts }}
+    {{- if $ingressPath }}
+    - host: {{ . }}
+      http:
+        paths:
+          - path: {{ $ingressPath }}
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: {{ $httpPort }}
+    {{- else }}
+    - host: {{ .host }}
+      http:
+        paths:
+        {{- range .paths }}
+          - path: {{ .path }}
+            backend:
+              serviceName: {{ $fullName }}
+              servicePort: {{ .servicePort | default $httpPort }}
+        {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- end }}

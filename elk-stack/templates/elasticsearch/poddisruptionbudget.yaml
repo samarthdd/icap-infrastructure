@@ -1,0 +1,14 @@
+{{- if .Values.elasticsearch.enabled }}
+{{- if .Values.elasticsearch.maxUnavailable }}
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: "{{ template "elasticsearch.uname" . }}-pdb"
+{{ include "elkstack.namespace" . | indent 2 }}
+spec:
+  maxUnavailable: {{ .Values.elasticsearch.maxUnavailable }}
+  selector:
+    matchLabels:
+      app: "{{ template "elasticsearch.uname" . }}"
+{{- end }}
+{{- end }}

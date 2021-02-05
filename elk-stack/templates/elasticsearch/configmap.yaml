@@ -1,0 +1,19 @@
+{{- if .Values.elasticsearch.enabled }}
+{{- if .Values.elasticsearch.esConfig }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "elasticsearch.uname" . }}-config
+  labels:
+    heritage: {{ .Release.Service | quote }}
+    release: {{ .Release.Name | quote }}
+    chart: "{{ .Chart.Name }}"
+    app: "{{ template "elasticsearch.uname" . }}"
+{{ include "elkstack.namespace" . | indent 2 }}
+data:
+{{- range $path, $config := .Values.elasticsearch.esConfig }}
+  {{ $path }}: |
+{{ $config | indent 4 -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}

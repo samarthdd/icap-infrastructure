@@ -7,8 +7,6 @@ rabbitmqService:
   key: rabbitmq-cluster-operator
 lbService:
   dnsname: icap-client-main
-  nontlsport: 1344
-  tlsport: 1345
 serviceAccount:
   adaptationname: adaptation-service-sa
   archiveadaptationname: archive-adaptation-service-sa

@@ -8,10 +8,10 @@ spec:
   type: LoadBalancer
   ports:
   - name: icap-port
-    port: {{ .Values.lbService.nontlsport }}
-    targetPort: {{ .Values.lbService.nontlsport }}
+    port: {{ .Values.icapservice.port }}
+    targetPort: {{ .Values.icapservice.port }}
   - name: icap-service
-    port: {{ .Values.lbService.tlsport }}
-    targetPort: {{ .Values.lbService.tlsport }}
+    port: {{ .Values.icapservice.tlsport }}
+    targetPort: {{ .Values.icapservice.tlsport }}
   selector:
     app: adaptation

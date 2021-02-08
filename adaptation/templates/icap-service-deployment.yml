@@ -82,6 +82,18 @@ spec:
               value: {{ .Values.icapservicemetricsexporter.service }}
             - name: METRICS_PORT
               value: "{{ .Values.prometheus.metricsport }}"
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: {{ .Values.prometheus.metricsport }}
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /health/readiness
+              port: {{ .Values.prometheus.metricsport }}
+            initialDelaySeconds: 3
+            periodSeconds: 3
       imagePullSecrets:
         - name: adaptation-registry-credential
       volumes:

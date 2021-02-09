@@ -9,7 +9,7 @@ managementui:
   ingress:
     name: icap-management-ui-ingress
     port: 80
-    host: management-ui-develop.uksouth.cloudapp.azure.com
+    host: management-ui-develop-t3.ukwest.cloudapp.azure.com
     path: /(.*)
   config:
     transactionEventApiUrl: https://transaction-query-aggregator/api/v1

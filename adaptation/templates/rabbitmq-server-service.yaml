@@ -24,6 +24,10 @@ spec:
             values:
             - store
          topologyKey: kubernetes.io/hostname
+ rabbitmq:
+   additionalConfig: |
+    cluster_formation.randomized_startup_delay_range.min = 5
+    cluster_formation.randomized_startup_delay_range.max = 60
  persistence:
    storageClassName: azurefile
    storage: 10Gi

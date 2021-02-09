@@ -88,6 +88,7 @@ identitymanagementservice:
   configuration:
     TokenLifetime: "1.00:00:00"
     ASPNETCORE_URLS: "https://+:443"
+    ManagementUIEndpoint: "management-ui-develop.uksouth.cloudapp.azure.com"
   probes:
     enabled: false
   ingress:
@@ -136,7 +137,6 @@ secrets:
   identitymanagementservice:
     identitymanagementservicesecrets:
       TokenSecret: "<<https://gw-icap-keyvault.vault.azure.net/secrets/identityManagementTokenSecret>>"
-      ManagementUIEndpoint: "<<https://gw-icap-keyvault.vault.azure.net/secrets/managementUIEndpoint>>"
     userstoresecret:
       azurestorageaccountname: "<<https://gw-icap-keyvault.vault.azure.net/secrets/userStoreAccountName>>"
       azurestorageaccountkey: "<<https://gw-icap-keyvault.vault.azure.net/secrets/userStoreAccountKey>>"

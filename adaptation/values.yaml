@@ -6,7 +6,7 @@ rabbitmqService:
   app: taskQueue
   key: rabbitmq-cluster-operator
 lbService:
-  dnsname: icap-client-main
+  dnsname: icap-client-main-t3
 serviceAccount:
   adaptationname: adaptation-service-sa
   archiveadaptationname: archive-adaptation-service-sa

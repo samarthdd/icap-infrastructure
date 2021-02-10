@@ -424,7 +424,7 @@ notifiers:
 #      org_name: Main Org.
       is_default: true
       settings:
-        url: https://hooks.slack.com/services/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
+        url: 
 #        addresses: an_email_address@example.com
 #    delete_notifiers:
 

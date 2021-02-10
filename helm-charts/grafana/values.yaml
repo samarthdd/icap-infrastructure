@@ -412,18 +412,19 @@ datasources:
 ## Configure notifiers
 ## ref: http://docs.grafana.org/administration/provisioning/#alert-notification-channels
 ##
-notifiers: {}
-#  notifiers.yaml:
-#    notifiers:
-#    - name: email-notifier
-#      type: email
-#      uid: email1
+notifiers:
+  notifiers.yaml:
+    notifiers:
+    - name: slack-notifier
+      type: slack
+      uid: slack
 #      # either:
-#      org_id: 1
+      org_id: 1
 #      # or
 #      org_name: Main Org.
-#      is_default: true
-#      settings:
+      is_default: true
+      settings:
+        url: https://hooks.slack.com/services/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
 #        addresses: an_email_address@example.com
 #    delete_notifiers:
 
@@ -486,14 +487,14 @@ dashboards:
        file: dashboards/etcd.json
      custome-dashboard_15:
        file: dashboards/k8s-coredns.json
-     custome-dashboard_16:
-       file: dashboards/k8s-cluster-metrics_rev1.json
+    # custome-dashboard_16:
+    #   file: dashboards/k8s-cluster-metrics_rev1.json
      custome-dashboard_17:
        file: dashboards/Rabbitmq-overview.json
      custome-dashboard_18:
        file: dashboards/rabbitmq-monitoring.json
-     custome-dashboard_19:
-       file: dashboards/apiserver.json
+    # custome-dashboard_19:
+    #   file: dashboards/apiserver.json
      prometheus-stats:
        gnetId: 2
        revision: 2
@@ -647,7 +648,7 @@ sidecar:
     # It's also possible to specify ALL to search in all namespaces
     searchNamespace: null
   notifiers:
-    enabled: false
+    enabled: true
     # label that the configmaps with notifiers are marked with
     label: grafana_notifier
     # If specified, the sidecar will search for notifier config-maps inside this namespace.

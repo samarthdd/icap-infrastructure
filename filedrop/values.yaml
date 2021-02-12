@@ -50,6 +50,12 @@ filedropapi:
     annotations: {}
     path: /api
     tls: []
+  limits:
+    cpu: 1
+    memory: 10000Mi
+  requests:
+    memory: 250Mi
+    cpu: 0.2
 imagestore:
   icapfiledropui:
     registry: ""

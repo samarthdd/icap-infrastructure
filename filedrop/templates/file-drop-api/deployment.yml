@@ -20,7 +20,10 @@ spec:
             - containerPort: {{ .Values.filedropapi.deployment.port }}
           resources:
             limits:
-              memory: "128Mi"
-              cpu: "500m"
+              cpu: "{{ .Values.filedropapi.limits.cpu }}"
+              memory: "{{ .Values.filedropapi.limits.memory }}"
+            requests:
+              cpu: "{{ .Values.filedropapi.requests.cpu }}"
+              memory: "{{ .Values.filedropapi.requests.memory }}"
       imagePullSecrets:
         - name: file-drop-api-registry-credential

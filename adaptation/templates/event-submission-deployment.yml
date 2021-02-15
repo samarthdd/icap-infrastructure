@@ -36,7 +36,7 @@ spec:
         - name: TRANSACTION_EVENT_QUEUE_HOSTNAME
           value: {{ .Values.queue.transactionevent.hostname}}
         - name: TRANSACTION_EVENT_QUEUE_PORT
-          value: {{ .Values.queue.transactionevent.port }}              
+          value: {{ .Values.queue.transactionevent.port }}
         {{- if .Values.queue.messagebrokersecret }}
         - name: MESSAGE_BROKER_USER
           valueFrom:
@@ -51,4 +51,3 @@ spec:
         {{- end }}               
       imagePullSecrets:
         - name: adaptation-registry-credential
-

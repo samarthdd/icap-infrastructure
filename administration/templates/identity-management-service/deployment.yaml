@@ -48,11 +48,11 @@ spec:
             {{- end }}
           envFrom:
           - secretRef:
-              name: identitymanagementservicesecrets   
+              name: identitymanagementservicesecrets
           - secretRef:
-              name: userstoresecret   
+              name: userstoresecret
           - secretRef:
-              name: smtpsecret   
+              name: smtpsecret
           resources:
 {{ toYaml .Values.identitymanagementservice.resources | indent 12 }}
     {{- with .Values.identitymanagementservice.nodeSelector }}

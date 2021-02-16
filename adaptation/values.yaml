@@ -5,6 +5,9 @@ rabbitmqService:
   component: rabbitmq
   app: taskQueue
   key: rabbitmq-cluster-operator
+lbService:
+  nontlsport: 1344
+  tlsport: 1345
 serviceAccount:
   adaptationname: adaptation-service-sa
   archiveadaptationname: archive-adaptation-service-sa

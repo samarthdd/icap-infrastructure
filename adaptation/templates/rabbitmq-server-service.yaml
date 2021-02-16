@@ -6,14 +6,11 @@ metadata:
     component: {{ .Values.rabbitmqService.component }}
   name: {{ .Values.rabbitmqService.name }}
 spec:
-<<<<<<< HEAD
  replicas: 3
  override:
   statefulSet:
     spec:
       podManagementPolicy: Parallel
-=======
->>>>>>> fe065e9... Reverting commit to add HPA changes
 {{- if .Values.imagestore.rabbitmq }} 
  image: "{{ .Values.imagestore.rabbitmq.registry }}{{ .Values.imagestore.rabbitmq.repository }}:{{ .Values.imagestore.rabbitmq.tag }}"
  imagePullSecrets:

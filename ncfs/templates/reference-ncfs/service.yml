@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "reference-ncfs.fullname" . }}-service
+  name: ncfs-reference-service
   labels:
     app: {{ template "reference-ncfs.name" . }}
     chart: {{ template "reference-ncfs.chart" . }}

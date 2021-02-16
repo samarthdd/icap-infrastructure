@@ -133,6 +133,7 @@ requestprocessingservice:
   cpurequest: 0.2
   memorylimit: 10000Mi
   memoryrequest: 250Mi
+  ncfsurl: https://ncfs-reference-service.icap-ncfs.svc.cluster.local
 transactionqueryservice:
   fullnameOverride: transaction-query-service
   replicaCount: 1

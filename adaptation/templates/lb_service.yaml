@@ -6,6 +6,7 @@ metadata:
   name: frontend-icap-lb
 spec:
   type: LoadBalancer
+  externalTrafficPolicy: Local
   ports:
   - name: icap-port
     port: {{ .Values.lbService.nontlsport }}

@@ -22,14 +22,14 @@ spec:
           livenessProbe:
             httpGet:
               path: /health/live
-              port: http
+              port: 80
             initialDelaySeconds: 15
             timeoutSeconds: 5
             periodSeconds: 6
           readinessProbe:
             httpGet:
               path: /health/ready
-              port: http
+              port: 80
             initialDelaySeconds: 15
             timeoutSeconds: 15
             periodSeconds: 6

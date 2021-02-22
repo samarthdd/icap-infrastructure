@@ -18,6 +18,22 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: {{ .Values.filedropapi.deployment.port }}
+          {{- if .Values.filedropapi.probes.enabled }}
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: http
+            initialDelaySeconds: 15
+            timeoutSeconds: 5
+            periodSeconds: 6
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: http
+            initialDelaySeconds: 15
+            timeoutSeconds: 15
+            periodSeconds: 6
+          {{- end }}
           resources:
             limits:
               cpu: "{{ .Values.filedropapi.limits.cpu }}"

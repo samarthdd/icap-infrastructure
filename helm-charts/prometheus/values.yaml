@@ -426,7 +426,7 @@ nodeExporter:
   ## node-exporter container image
   ##
   image:
-    repository: gwicapcontainerregistry.azurecr.io/prometheus/node-exporter
+    repository: glasswallsolutions/node-exporter
     tag: v1.0.1
     pullPolicy: IfNotPresent
 
@@ -567,7 +567,7 @@ server:
   ## Prometheus server container image
   ##
   image:
-    repository: gwicapcontainerregistry.azurecr.io/prometheus/prometheus
+    repository: glasswallsolutions/prometheus
     tag: v2.21.0
     pullPolicy: IfNotPresent
 
@@ -966,7 +966,7 @@ pushgateway:
   ## pushgateway container image
   ##
   image:
-    repository: gwicapcontainerregistry.azurecr.io/prometheus/pushgateway
+    repository: glasswallsolutions/prometheus/pushgateway
     tag: v1.2.0
     pullPolicy: IfNotPresent
 

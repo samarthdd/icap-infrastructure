@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ template "reference-ncfs.fullname" . }}
+  annotations:
+    configmap.reloader.stakater.com/reload: "{{ .Values.referencencfs.configmapname }}"
   labels:
     app: {{ template "reference-ncfs.name" . }}
     chart: {{ template "reference-ncfs.chart" . }}

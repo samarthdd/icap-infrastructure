@@ -567,7 +567,7 @@ server:
   ## Prometheus server container image
   ##
   image:
-    repository: gwicapcontainerregistry.azurecr.io/prometheus/prometheus
+    repository: glasswallsolutions/prometheus
     tag: v2.21.0
     pullPolicy: IfNotPresent
 
@@ -913,7 +913,9 @@ server:
     fsGroup: 65534
 
   service:
-    annotations: {}
+    annotations:
+      service.beta.kubernetes.io/azure-dns-label-name: prometheus-lb
+    name: aks-prometheus-lb
     labels: {}
     clusterIP: ""
 
@@ -922,11 +924,11 @@ server:
     ##
     externalIPs: []
 
-    loadBalancerIP: ""
-    loadBalancerSourceRanges: []
+    loadBalancerIP: {} 
+    loadBalancerSourceRanges: {}
     servicePort: 80
     sessionAffinity: None
-    type: ClusterIP
+    type: LoadBalancer
 
     ## Enable gRPC port on service to allow auto discovery with thanos-querier
     gRPC:
@@ -1205,6 +1207,12 @@ serverFiles:
         static_configs:
           - targets:
             - localhost:9090
+
+      - job_name: cadvisor
+        scrape_interval: 5s
+        static_configs:
+          - targets:
+            - cadvisor:8080
 
       # A scrape configuration for running Prometheus on a Kubernetes cluster.
       # This uses separate scrape configs for cluster components (i.e. API server, node)

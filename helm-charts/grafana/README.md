@@ -402,30 +402,27 @@ private data like SMTP usernames and passwords. Secrets are the more appropriate
 
 Example datasource config adapted from [Grafana](https://grafana.com/docs/grafana/latest/administration/provisioning/#alert-notification-channels):
 
+
 ```yaml
 notifiers:
   - name: notification-channel-1
     type: slack
-    uid: notifier1
+    uid: slack-notifier
     # either
-    org_id: 2
+    org_id: 1
     # or
     org_name: Main Org.
     is_default: true
     send_reminder: true
-    frequency: 1h
-    disable_resolve_message: false
     # See `Supported Settings` section for settings supporter for each
     # alert notification type.
     settings:
-      recipient: 'XXX'
-      token: 'xoxb'
       uploadImage: true
       url: https://slack.com
 
 delete_notifiers:
   - name: notification-channel-1
-    uid: notifier1
+    uid: slack-notifier
     org_id: 2
   - name: notification-channel-2
     # default org_id: 1

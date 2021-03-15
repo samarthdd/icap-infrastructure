@@ -6,6 +6,7 @@ metadata:
   annotations:
 {{ toYaml .Values.server.service.annotations | indent 4 }}
 {{- end }}
+  name: {{ .Values.server.service.name }}
   labels:
     {{- include "prometheus.server.labels" . | nindent 4 }}
 {{- if .Values.server.service.labels }}
@@ -48,6 +49,7 @@ spec:
     {{- end }}
     {{- end }}
   selector:
+    app: {{ .Values.server.service.name }}
   {{- if and .Values.server.statefulSet.enabled .Values.server.service.statefulsetReplica.enabled }}
     statefulset.kubernetes.io/pod-name: {{ template "prometheus.server.fullname" . }}-{{ .Values.server.service.statefulsetReplica.replica }}
   {{- else -}}

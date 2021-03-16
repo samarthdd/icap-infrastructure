@@ -130,9 +130,8 @@ service:
   annotations: {}
   labels: {}
   portName: service
-  loadBalancerSourceRanges:
-  - 212.59.65.150/32
-  - 212.59.65.142/32
+  loadBalancerSourceRanges: {}
+  #- subnet or IP
 serviceMonitor:
   ## If true, a ServiceMonitor CRD is created for a prometheus operator
   ## https://github.com/coreos/prometheus-operator
@@ -412,18 +411,19 @@ datasources:
 ## Configure notifiers
 ## ref: http://docs.grafana.org/administration/provisioning/#alert-notification-channels
 ##
-notifiers: {}
-#  notifiers.yaml:
-#    notifiers:
-#    - name: email-notifier
-#      type: email
-#      uid: email1
+notifiers:
+  notifiers.yaml:
+    notifiers:
+   # - name: slack-notifier
+     # type: slack
+     # uid: slack
 #      # either:
-#      org_id: 1
+    #  org_id: 1
 #      # or
 #      org_name: Main Org.
-#      is_default: true
-#      settings:
+      #is_default: true
+      #settings:
+       # url: ""
 #        addresses: an_email_address@example.com
 #    delete_notifiers:
 
@@ -459,41 +459,21 @@ dashboards:
      custome-dashboard_1:
        file: dashboards/cluster-total.json
      custome-dashboard_2:
-       file: dashboards/k8s-resources-namespace.json
+       file: dashboards/namespace-by-pod.json
      custome-dashboard_3:
-       file: dashboards/k8s-resources-node.json
-     custome-dashboard_4:
        file: dashboards/k8s-resources-pod.json
+     custome-dashboard_4:
+       file: dashboards/Icap-App-Metric.json
      custome-dashboard_5:
-       file: dashboards/k8s-resources-workload.json
-     custome-dashboard_6:
-       file: dashboards/k8s-resources-workloads-namespace.json
-     custome-dashboard_7:
-       file: dashboards/namespace-by-workload.json
-     custome-dashboard_8:
-       file: dashboards/node-cluster-rsrc-use.json
-     custome-dashboard_9:
-       file: dashboards/node-rsrc-use.json
-     custome-dashboard_10:
-       file: dashboards/nodes.json
-     custome-dashboard_11:
-       file: dashboards/persistentvolumesusage.json
-     custome-dashboard_12:
-       file: dashboards/pod-total.json
-     custome-dashboard_13:
-       file: dashboards/workload-total.json
-     custome-dashboard_14:
-       file: dashboards/etcd.json
-     custome-dashboard_15:
-       file: dashboards/k8s-coredns.json
-     custome-dashboard_16:
-       file: dashboards/k8s-cluster-metrics_rev1.json
-     custome-dashboard_17:
        file: dashboards/Rabbitmq-overview.json
-     custome-dashboard_18:
+     custome-dashboard_6:
        file: dashboards/rabbitmq-monitoring.json
-     custome-dashboard_19:
-       file: dashboards/apiserver.json
+     custome-dashboard_7:
+       file: dashboards/Icap-App-Metric-v1.json
+     custome-dashboard_8:
+       file: dashboards/Icap-Adaptation-Containers  
+     custome-dashboard_9:
+       file: dashboards/kubernetes-cluster-monitoring.json
      prometheus-stats:
        gnetId: 2
        revision: 2
@@ -647,7 +627,7 @@ sidecar:
     # It's also possible to specify ALL to search in all namespaces
     searchNamespace: null
   notifiers:
-    enabled: false
+    enabled: true
     # label that the configmaps with notifiers are marked with
     label: grafana_notifier
     # If specified, the sidecar will search for notifier config-maps inside this namespace.

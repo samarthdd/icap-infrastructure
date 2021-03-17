@@ -66,11 +66,7 @@ imagestore:
   icapfiledropapi:
     registry: ""
     repository: glasswallsolutions/icap-filedrop-api
-<<<<<<< HEAD
     tag: main-3c216de
-=======
-    tag: develop-1604f2b
->>>>>>> develop
   nginx:
     registry: ""
     repository: nginx

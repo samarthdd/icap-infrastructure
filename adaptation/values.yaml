@@ -164,11 +164,7 @@ imagestore:
   requestprocessing:
     registry: ""
     repository: glasswallsolutions/icap-request-processing
-<<<<<<< HEAD
     tag: main-b79d603
-=======
-    tag: develop-8aa7c2c
->>>>>>> develop
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service
@@ -180,11 +176,7 @@ imagestore:
   icapservice:
     registry: ""
     repository: glasswallsolutions/mvp-icap-service
-<<<<<<< HEAD
     tag: main-550d0fc
-=======
-    tag: develop-7e402cd
->>>>>>> develop
   icapservicemetricsexporter:
     registry: ""
     repository: glasswallsolutions/icap-service-metrics-exporter
@@ -208,11 +200,7 @@ imagestore:
   transactionqueryservice:
     registry: ""
     repository: glasswallsolutions/transaction-query-service
-<<<<<<< HEAD
     tag: main-5e5cbd2
-=======
-    tag: develop-3f00fa9
->>>>>>> develop
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"

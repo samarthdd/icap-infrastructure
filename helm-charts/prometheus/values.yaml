@@ -915,7 +915,7 @@ server:
   service:
     annotations:
       service.beta.kubernetes.io/azure-dns-label-name: prometheus-lb
-    name: aks-prometheus-lb
+    name: prometheus
     labels: {}
     clusterIP: ""
 

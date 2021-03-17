@@ -56,7 +56,7 @@ serviceAccount:
 
 podSecurityPolicy:
   create: false
-  privileged: false
+  privileged: true
 
 nodeSelector: {}
 

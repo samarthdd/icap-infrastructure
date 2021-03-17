@@ -15,137 +15,9 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 23,
   "links": [],
   "panels": [
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "description": "Icap-server-monit",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 3,
-      "gridPos": {
-        "h": 10,
-        "w": 24,
-        "x": 0,
-        "y": 0
-      },
-      "hiddenSeries": false,
-      "id": 10,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.3.6",
-      "pointradius": 2,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "gw_icap_server_used_servers",
-          "interval": "",
-          "legendFormat": "icap-server-used-servers",
-          "refId": "A"
-        },
-        {
-          "expr": "gw_icap_server_children_number",
-          "interval": "",
-          "legendFormat": "icap-server-children-number",
-          "refId": "B"
-        },
-        {
-          "expr": "gw_icap_server_closed_processes",
-          "interval": "",
-          "legendFormat": "icap-server-closed-processes",
-          "refId": "C"
-        },
-        {
-          "expr": "gw_icap_server_free_servers",
-          "interval": "",
-          "legendFormat": "gw_icap_server_free_servers",
-          "refId": "D"
-        },
-        {
-          "expr": "gw_icap_server_crashed_processes",
-          "interval": "",
-          "legendFormat": "icap-server-crashed-processes",
-          "refId": "E"
-        },
-        {
-          "expr": "gw_icap_server_started_processes",
-          "interval": "",
-          "legendFormat": "icap-server-starte-processes",
-          "refId": "F"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Icap-Server-Monit",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:1290",
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:1291",
-          "format": "none",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
     {
       "aliasColors": {},
       "bars": false,
@@ -178,17 +50,17 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 10
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 6,
       "legend": {
         "alignAsTable": true,
-        "avg": false,
+        "avg": true,
         "current": true,
         "hideEmpty": false,
-        "max": false,
-        "min": false,
+        "max": true,
+        "min": true,
         "show": true,
         "total": false,
         "values": true
@@ -201,8 +73,8 @@
       },
       "percentage": false,
       "pluginVersion": "7.3.6",
-      "pointradius": 0.5,
-      "points": true,
+      "pointradius": 2,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -212,16 +84,16 @@
         {
           "expr": "gw_rebuild_reqmods",
           "format": "time_series",
-          "instant": false,
+          "instant": true,
           "interval": "",
-          "legendFormat": "GW_REQMOD",
+          "legendFormat": "",
           "refId": "A"
         },
         {
           "expr": "gw_rebuild_respmods",
           "format": "time_series",
           "interval": "",
-          "legendFormat": "GW_RESPMOD",
+          "legendFormat": "",
           "refId": "C"
         }
       ],
@@ -245,7 +117,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:194",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -254,7 +125,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:195",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -286,7 +156,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 10
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 4,
@@ -294,13 +164,11 @@
         "alignAsTable": true,
         "avg": false,
         "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
         "max": false,
         "min": false,
         "rightSide": false,
         "show": true,
-        "total": false,
+        "total": true,
         "values": true
       },
       "lines": true,
@@ -320,10 +188,10 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "(gw_rebuild_scan_rebuilt)",
-          "format": "time_series",
+          "expr": "gw_rebuild_scan_rebuilt",
+          "format": "table",
           "interval": "",
-          "legendFormat": "ICAP-SAFE",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -347,7 +215,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:101",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -356,7 +223,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:102",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -406,7 +272,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 8
       },
       "hiddenSeries": false,
       "id": 2,
@@ -420,11 +286,11 @@
         "rightSide": false,
         "show": true,
         "sideWidth": 100,
-        "total": false,
+        "total": true,
         "values": true
       },
       "lines": true,
-      "linewidth": 2,
+      "linewidth": 1,
       "nullPointMode": "null",
       "options": {
         "alertThreshold": true
@@ -437,15 +303,15 @@
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": true,
-      "steppedLine": true,
+      "steppedLine": false,
       "targets": [
         {
           "expr": "gw_rebuild_requests_scanned",
-          "format": "time_series",
+          "format": "table",
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "TOTAL_FILE_PROCESSED",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -469,9 +335,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:346",
-          "decimals": null,
-          "format": "none",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -479,7 +343,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:347",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -525,7 +388,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 8
       },
       "hiddenSeries": false,
       "id": 8,
@@ -533,8 +396,8 @@
         "alignAsTable": true,
         "avg": false,
         "current": true,
-        "max": false,
-        "min": false,
+        "max": true,
+        "min": true,
         "show": true,
         "total": false,
         "values": true
@@ -547,19 +410,19 @@
       },
       "percentage": false,
       "pluginVersion": "7.3.6",
-      "pointradius": 0.5,
+      "pointradius": 2,
       "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
-      "stack": true,
+      "stack": false,
       "steppedLine": false,
       "targets": [
         {
           "expr": "gw_rebuild_rebuild_failures",
           "instant": false,
           "interval": "",
-          "legendFormat": "BLOCKED",
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -583,8 +446,7 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:512",
-          "format": "none",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -592,8 +454,7 @@
           "show": true
         },
         {
-          "$$hashKey": "object:513",
-          "format": "none",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -614,12 +475,12 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Icap-App-Metrics",
   "uid": "B4o-86PGk",
-  "version": 1
+  "version": 9
 }

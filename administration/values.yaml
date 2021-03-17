@@ -103,11 +103,19 @@ imagestore:
   icapmanagementui:
     registry: ""
     repository: glasswallsolutions/icap-management-ui
+<<<<<<< HEAD
     tag: main-4223c6c
   policymanagementapi:
     registry: ""
     repository: glasswallsolutions/policy-management-api
     tag: main-210e5ee
+=======
+    tag: develop-615e67a
+  policymanagementapi:
+    registry: ""
+    repository: glasswallsolutions/policy-management-api
+    tag: develop-83e8e72
+>>>>>>> develop
   transactionqueryaggregator:
     registry: ""
     repository: glasswallsolutions/transaction-query-aggregator
@@ -115,7 +123,11 @@ imagestore:
   identitymanagementservice:
     registry: ""
     repository: glasswallsolutions/identity-management-service
+<<<<<<< HEAD
     tag: main-7f9e842
+=======
+    tag: develop-b8d0066
+>>>>>>> develop
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"

@@ -1,0 +1,775 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 8,
+  "links": [],
+  "panels": [
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "icap_server_children_number",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 0,
+        "y": 0
+      },
+      "id": 15,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_icap_server_children_number",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "icap_server_children_number",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Running_Server_Statistics",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "Icap Running_Server_Statistics",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "icap_server_free_servers",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 8,
+        "y": 0
+      },
+      "id": 13,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_icap_server_free_servers",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "icap_server_free_servers",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Running_Server_Statistics",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "displayName": "icap_server_used_servers",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 16,
+        "y": 0
+      },
+      "id": 14,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_icap_server_used_servers",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "icap_server_used_servers",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Running_Server_Statistics",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "Running_Server_Statistics",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 0
+              },
+              {
+                "color": "#6ED0E0",
+                "value": 10
+              },
+              {
+                "color": "#EF843C",
+                "value": 20
+              },
+              {
+                "color": "#E24D42",
+                "value": 30
+              },
+              {
+                "color": "#1F78C1",
+                "value": 40
+              },
+              {
+                "color": "#BA43A9",
+                "value": 50
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 10,
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_icap_server_used_servers",
+          "interval": "",
+          "legendFormat": "icap-server-used-servers",
+          "refId": "A"
+        },
+        {
+          "expr": "gw_icap_server_children_number",
+          "interval": "",
+          "legendFormat": "icap-server-children-number",
+          "refId": "B"
+        },
+        {
+          "expr": "gw_icap_server_closed_processes",
+          "interval": "",
+          "legendFormat": "icap-server-closed-processes",
+          "refId": "C"
+        },
+        {
+          "expr": "gw_icap_server_free_servers",
+          "interval": "",
+          "legendFormat": "icap_server_free_servers",
+          "refId": "D"
+        },
+        {
+          "expr": "gw_icap_server_crashed_processes",
+          "interval": "",
+          "legendFormat": "icap-server-crashed-processes",
+          "refId": "E"
+        },
+        {
+          "expr": "gw_icap_server_started_processes",
+          "interval": "",
+          "legendFormat": "icap-server-starte-processes",
+          "refId": "F"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Running_Server_Statistics",
+      "type": "bargauge"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              },
+              {
+                "color": "#EAB839",
+                "value": 90
+              },
+              {
+                "color": "#6ED0E0",
+                "value": 100
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 18,
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_rebuild_requests_scanned",
+          "interval": "",
+          "legendFormat": "Requests Scanned",
+          "refId": "A"
+        },
+        {
+          "expr": "gw_rebuild_rebuild_failures",
+          "interval": "",
+          "legendFormat": "Rebuild Failures",
+          "refId": "B"
+        },
+        {
+          "expr": "gw_rebuild_rebuild_errors",
+          "interval": "",
+          "legendFormat": "Rebuild Errors",
+          "refId": "C"
+        },
+        {
+          "expr": "gw_rebuild_scan_rebuilt",
+          "interval": "",
+          "legendFormat": "Scans Rebuilt",
+          "refId": "D"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "gw_rebuild Statistics: Requests Rebuilt",
+      "type": "bargauge"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              },
+              {
+                "color": "#EAB839",
+                "value": 90
+              },
+              {
+                "color": "#6ED0E0",
+                "value": 100
+              },
+              {
+                "color": "#EF843C",
+                "value": 110
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 11,
+        "x": 0,
+        "y": 20
+      },
+      "id": 6,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_rebuild_reqmods",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "GW_REQMOD",
+          "refId": "A"
+        },
+        {
+          "expr": "gw_rebuild_respmods",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "GW_RESPMOD",
+          "refId": "C"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total Icap Requests(SUM OF All Value)",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 13,
+        "x": 11,
+        "y": 20
+      },
+      "id": 16,
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_rebuild_reqmods",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "GW_REQMOD",
+          "refId": "A"
+        },
+        {
+          "expr": "gw_rebuild_respmods",
+          "format": "time_series",
+          "interval": "",
+          "legendFormat": "GW_RESPMOD",
+          "refId": "C"
+        },
+        {
+          "expr": "gw_rebuild_unprocessed",
+          "interval": "",
+          "legendFormat": "Unprocessed",
+          "refId": "B"
+        },
+        {
+          "expr": "gw_rebuild_unprocessable",
+          "interval": "",
+          "legendFormat": "Unprocessable",
+          "refId": "D"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total Icap Requests (Average Value): Request",
+      "type": "bargauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 26
+      },
+      "id": 2,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_rebuild_requests_scanned",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "TOTAL_FILE_PROCESSED",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total File Processed",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "light-orange",
+            "mode": "fixed"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 7,
+        "x": 8,
+        "y": 26
+      },
+      "id": 4,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "7.3.6",
+      "targets": [
+        {
+          "expr": "gw_rebuild_scan_rebuilt",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "ICAP-SAFE ",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Icap-Safe (Scans Rebuilt )",
+      "type": "gauge"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 5,
+      "gridPos": {
+        "h": 6,
+        "w": 9,
+        "x": 15,
+        "y": 26
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.3.6",
+      "pointradius": 0.5,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": true,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "gw_rebuild_rebuild_failures",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "BLOCKED",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Blocked By NCFS & Blocked By Policy [Blocked]",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "none",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "10s",
+  "schemaVersion": 26,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Icap-Adaptation / App_Metrics ",
+  "uid": "B4o-86PGk123",
+  "version": 14
+}

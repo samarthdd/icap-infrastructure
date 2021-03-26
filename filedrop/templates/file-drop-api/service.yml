@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/azure-dns-label-name: file-drop-api
+  name: {{ .Values.filedropapi.service.name }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .Values.filedropapi.deployment.name }}
+  ports:
+    - port: {{ .Values.filedropapi.service.port }}
+      targetPort: {{ .Values.filedropapi.deployment.port }}

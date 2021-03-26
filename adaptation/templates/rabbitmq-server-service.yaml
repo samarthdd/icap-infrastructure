@@ -7,6 +7,10 @@ metadata:
   name: {{ .Values.rabbitmqService.name }}
 spec:
  replicas: 3
+ override:
+  statefulSet:
+    spec:
+      podManagementPolicy: Parallel
 {{- if .Values.imagestore.rabbitmq }} 
  image: "{{ .Values.imagestore.rabbitmq.registry }}{{ .Values.imagestore.rabbitmq.repository }}:{{ .Values.imagestore.rabbitmq.tag }}"
  imagePullSecrets:
@@ -24,6 +28,10 @@ spec:
             values:
             - store
          topologyKey: kubernetes.io/hostname
+ rabbitmq:
+   additionalConfig: |
+    cluster_formation.randomized_startup_delay_range.min = 5
+    cluster_formation.randomized_startup_delay_range.max = 60
  persistence:
    storageClassName: azurefile
    storage: 10Gi

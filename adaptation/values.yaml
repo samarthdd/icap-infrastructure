@@ -5,6 +5,10 @@ rabbitmqService:
   component: rabbitmq
   app: taskQueue
   key: rabbitmq-cluster-operator
+lbService:
+  dnsname: icap-client-main
+  nontlsport: 1344
+  tlsport: 1345
 serviceAccount:
   adaptationname: adaptation-service-sa
   archiveadaptationname: archive-adaptation-service-sa
@@ -17,7 +21,7 @@ volumemountpath:
 prometheus:
   metricsport: 8081
   metricspath: /metrics
-  pushgatewayendpoint: "http://pushgateway-prometheus-pushgateway:9091/metrics"
+  pushgatewayendpoint: "http://prometheus-pushgateway.icap-central-monitoring.svc.cluster.local:9091"
 queue:
   messagebrokersecret: "rabbitmq-service-default-user"
   host:
@@ -38,20 +42,26 @@ queue:
     port: "\"5672\""
 adaptationservice:
   name: adaptation-service
-  replicas: 1
+  replicas:
+    min: 1
+    max: 80
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
   rolename: adaptation-service-role
 archiveadaptationservice:
   name: archive-adaptation-service
   namespace: icap-adaptation
-  replicas: 1
+  replicas:
+    min: 1
+    max: 10
   amqpurl: "amqp://guest:guest@rabbitmq-service:5672/"
   exchange: adaptation-exchange
   rolename: archive-adaptation-service-role
 icapservice:
   name: icap-service
   applabel: adaptation
-  replicas: 1
+  replicas:
+    min: 1
+    max: 150
   port: 1344
   tlsport: 1345
   enableFileId: true
@@ -61,7 +71,7 @@ cicapservice:
   conf:
     PidFile: /var/run/c-icap/c-icap.pid
     CommandsSocket: /var/run/c-icap/c-icap.ctl
-    Timeout: 300
+    Timeout: 4
     MaxKeepAliveRequests: 100
     KeepAliveTimeout: 600
     StartServers: 3
@@ -123,6 +133,7 @@ requestprocessingservice:
   cpurequest: 0.2
   memorylimit: 10000Mi
   memoryrequest: 250Mi
+  ncfsurl: https://ncfs-reference-service.icap-ncfs.svc.cluster.local
 transactionqueryservice:
   fullnameOverride: transaction-query-service
   replicaCount: 1
@@ -153,7 +164,7 @@ imagestore:
   requestprocessing:
     registry: ""
     repository: glasswallsolutions/icap-request-processing
-    tag: main-ffd2a52
+    tag: main-7ed2b48
   adaptationservice:
     registry: ""
     repository: glasswallsolutions/icap-adaptation-service
@@ -165,7 +176,7 @@ imagestore:
   icapservice:
     registry: ""
     repository: glasswallsolutions/mvp-icap-service
-    tag: main-550d0fc
+    tag: main-9b53c1c
   icapservicemetricsexporter:
     registry: ""
     repository: glasswallsolutions/icap-service-metrics-exporter
@@ -189,7 +200,7 @@ imagestore:
   transactionqueryservice:
     registry: ""
     repository: glasswallsolutions/transaction-query-service
-    tag: main-daae6c9
+    tag: main-197b9da
 secrets:
   containerregistry:
     dockerconfigjson: "<<https://gw-icap-keyvault.vault.azure.net/secrets/az-registry-dockerconfig>>"

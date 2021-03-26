@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.filedropapi.deployment.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.filedropapi.deployment.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.filedropapi.deployment.name }}
+    spec:
+      containers:
+        - name: file-drop-api
+          image: {{ .Values.imagestore.icapfiledropapi.registry }}{{ .Values.imagestore.icapfiledropapi.repository }}:{{ .Values.imagestore.icapfiledropapi.tag }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: {{ .Values.filedropapi.deployment.port }}
+          {{- if .Values.filedropapi.probes.enabled }}
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: 80
+            initialDelaySeconds: 15
+            timeoutSeconds: 5
+            periodSeconds: 6
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 80
+            initialDelaySeconds: 15
+            timeoutSeconds: 15
+            periodSeconds: 6
+          {{- end }}
+          resources:
+            limits:
+              cpu: "{{ .Values.filedropapi.limits.cpu }}"
+              memory: "{{ .Values.filedropapi.limits.memory }}"
+            requests:
+              cpu: "{{ .Values.filedropapi.requests.cpu }}"
+              memory: "{{ .Values.filedropapi.requests.memory }}"
+      imagePullSecrets:
+        - name: file-drop-api-registry-credential
